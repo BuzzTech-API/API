@@ -1,0 +1,7 @@
+cd C:\Users\Aluno\Desktop\API
+py -3 -m venv venv
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine
+venv\Scripts\activate
+pip install Flask
+pip install tinyDB
+pip install pandas

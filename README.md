@@ -1,4 +1,5 @@
 # API-ADS-SistemaOrdemServiço
+
 <p align="center">
       <img src="/doc/frontend/logo-BuzzTech.png" alt="logo da Buzz Tech" width="200">
       <h2 align="center"> Buzz Tech</h2>
@@ -17,8 +18,10 @@
   <a href ="#backlog"> Backlog do Produto </a>  | 
   <a href ="#personas"> Personas </a>  |
   <a href ="#historia"> Histórias de usuário </a>  | 
-  <a href ="#equipe"> Equipe </a>
+  <a href ="#equipe"> Equipe </a>  |
+  <a href ="#focal"> Focal Point </a>
 </p>
+
 
 
 
@@ -29,8 +32,10 @@
  <a href="https://www.w3schools.com/tags/tag_doctype.asp"><img src = "https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/></a>
  <a href="https://www.w3schools.com/css/"><img src = "https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/></a>
  <a href="https://getbootstrap.com/docs/4.1/getting-started/introduction/"><img src = "https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white"/></a>
+ <a href="https://flask.palletsprojects.com/en/2.2.x/"><img src = "https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white"/></a>
  <a href="https://docs.github.com/pt"><img src = "https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/></a>
 </h4>
+
 
 <br>
 <br>
@@ -41,13 +46,15 @@
 
 ## :medal_sports: Desafio <a id="desafio"></a>
 
-...
+
 
 Desenvolver um **Sistema Web para Controle de Ordens de Serviço (SOS)** para automatizar o processo de informação de equipamentos com mau funcionamento de  *Hardware* e *Software*. Para isto, criar um mapa de localização *(Layout)* e uma legenda com possíveis defeitos. Os desenvolvedores deverão através da  experiência adquirida sinalizar esses defeitos e sugerir ao cliente possibilidades visuais dessas indicações. Mudanças de *layout*,  nomenclatura do computador, características do *hardware* e *software*, bem como outras situações similares são funcionalidades que deverão ser contemplados no sistema. Bem como toda a documentação de desenvolvimento deverá ser lastreado no GitHub com todos os processos necessários para a fidelização do cliente.
 
 <br>
 
 ## :goal_net: Escopo do Projeto <a id="escopo"></a>
+
+
 
 *Pré-requisitos:*
 
@@ -65,8 +72,9 @@ Desenvolver um **Sistema Web para Controle de Ordens de Serviço (SOS)** para au
 
 <br>
 
-
 ## :books: Metodologia <a id="metodologia"></a>
+
+
 
 O framework de *Metodologia Ágil* utilizado no produto foi o **Scrum**, um método ágil adaptativo, iterativo, flexível e eficaz. Este método possui os seguintes princípios norteadores:
 
@@ -85,6 +93,8 @@ Para embasar a tomada de decisão e priorizar as tarefas com maior entrega de va
 
 ## 🚀 MVP <a id="mvp"></a>
 
+
+
 A definição do nosso *Minimal Viable Product (MVP)* é uma versão sintética, porém funcional, de um sistema web para Controle de Ordens de Serviços. Nele o usuário poderá abrir um chamado para alertar um equipamento com mau funcionamento, no qual conterá as seguintes informações:
 
 - Identificação do Laboratório
@@ -101,6 +111,8 @@ Este chamado será automaticamente gerado e organizado em uma tabela na qual o t
 
 ## :date: Sprints <a id="sprint"></a>
 
+
+
 🔖 SPRINT 1 ([Link da Pasta](https://github.com/whatscodeg3/API-2DSM-DailyBot/blob/main/doc/sprints/sprint1.md)):  Em construção :construction:
 
 🔖 SPRINT 2 ([Link da Pasta]()):  Aguardando ::stop_sign:
@@ -111,7 +123,7 @@ Este chamado será automaticamente gerado e organizado em uma tabela na qual o t
 
 <br>
 
-## :dart: Backlog do Produto<a id="backlog"></a>
+## :seedling: Backlog do Produto<a id="backlog"></a>
 
 
 
@@ -193,13 +205,25 @@ Este chamado será automaticamente gerado e organizado em uma tabela na qual o t
 
 ## :mortar_board: Equipe <a id="equipe"></a>
 
-| Membro                | Função        | Github                                                                                                                                                | Linkedin                                                                                                                                                                                         |
-| :-------------------: | :-----------: | :---------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| Vitor Lima | Scrum Master  | <a href="https://github.com/lima2206"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href=""><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>                           |
-| Alícea Rocha | Product Owner | <a href="https://github.com/alicearocha"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/al%C3%ADcea-paula-de-lima-rocha-bab682157/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
-| Cláudia Secco | Desenvolvedor | <a href="https://github.com/ClaudiaCBS"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> |  |
+
+
+|      Membro      |    Função     |                            Github                            |                           Linkedin                           |
+| :--------------: | :-----------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|    Vitor Lima    | Scrum Master  | <a href="https://github.com/lima2206"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href=""><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+|   Alícea Rocha   | Product Owner | <a href="https://github.com/alicearocha"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/al%C3%ADcea-paula-de-lima-rocha-bab682157/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+|  Cláudia Secco   | Desenvolvedor | <a href="https://github.com/ClaudiaCBS"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> |                                                              |
 | Danilo Rodrigues | Desenvolvedor | <a href="https://github.com/Circerion"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/danilo-baptistella-5757aa20a"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
-| Giuliano Bianco | Desenvolvedor | <a href="https://github.com/giuliano-marcus-bianco"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/giuliano-marcus-bianco/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
-| Isaque da Silva | Desenvolvedor | <a href="https://github.com/KhovetS2"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/isaque-elis-da-silva-2a4087226/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
-| Joice de Araújo | Desenvolvedor | <a href="https://github.com/Joice-Araujo"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/joice-aparecida-581226250"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+| Giuliano Bianco  | Desenvolvedor | <a href="https://github.com/giuliano-marcus-bianco"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/giuliano-marcus-bianco/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+| Isaque da Silva  | Desenvolvedor | <a href="https://github.com/KhovetS2"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/isaque-elis-da-silva-2a4087226/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+| Joice de Araújo  | Desenvolvedor | <a href="https://github.com/Joice-Araujo"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/joice-aparecida-581226250"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 | Maurício Joaquim | Desenvolvedor | <a href="https://github.com/Mauricio-Joaquim"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/mauricio-da-silva-joaquim-9a6a0565/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+
+<br>
+
+## :dart: Focal Point<a id="focal"></a>
+
+
+
+| PO²              | M²       |
+| :-------------------: | :-----------: |
+| <a href='  http://lattes.cnpq.br/0858832006050432'>Prof. Antonio Egydio São Thiago Graça</a> | <a href='http://lattes.cnpq.br/4723982029081265'>Prof.  Jean Carlos Lourenço Costa</a> |

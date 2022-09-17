@@ -80,7 +80,7 @@ Este chamado será automaticamente gerado e organizado em uma tabela na qual o t
 
    | ![Laboratório com 32 computadores](/doc/sprints/sprint1/img/32comp.png) | ![Laboratório com 24 computadores](/doc/sprints/sprint1/img/24comp.png) |
    | ------------------------------------------------------------ | ------------------------------------------------------------ |
-   | ![Laboratório médio com 18 computadores](C:\Users\gm_bi\Documents\GitHub\API_ADS_2022.2_SOS\doc\sprints\sprint1\img\18comp_medio.png) | ![Laboratório menor com 18 computadores](C:\Users\gm_bi\Documents\GitHub\API_ADS_2022.2_SOS\doc\sprints\sprint1\img\18comp_menores.png) |
+   | ![Laboratório médio com 18 computadores](/doc/sprints/sprint1/img/18comp_medio.png) | ![Laboratório menor com 18 computadores](/doc/sprints/sprint1/img/18comp_menores.png) |
 
    | Laboratório | Quantidade | Somatório de Computadores |
    | ----------- | ---------- | ------------------------- |
@@ -159,9 +159,9 @@ Este chamado será automaticamente gerado e organizado em uma tabela na qual o t
 
    
 
-   |                       Home                        |                     Abertura de Chamado                      |                   Visualização de Chamado                    |
-   | :-----------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-   | ![Home](/doc/sprints/sprint1/img/Página Home.png) | ![Abertura de Chamado](/doc/sprints/sprint1/img/Abertura de chamados.png) | ![Visualização de Chamado](/doc/sprints/sprint1/img/Visualização de chamados.png) |
+   |                       Home                       |                     Abertura de Chamado                      |                   Visualização de Chamado                    |
+   | :----------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+   | ![Home](/doc/sprints/sprint1/img/PáginaHome.png) | ![Abertura de Chamado](/doc/sprints/sprint1/img/AberturaDeChamados.png) | ![Visualização de Chamado](/doc/sprints/sprint1/img/VisualizaçãoDeChamados.png) |
 
    Para visualizar o *Wireframe* em PDF, acesse o <a href='/doc/sprints/sprint1/img/Wireframe.pdf'>link :link:</a>.
 
@@ -253,4 +253,5 @@ Como a metodologia ágil Scrum tem como princípios a adaptabilidade e o process
 
 ## :mega: Apresentação da Sprint<a id='#apresentação'></a>
 
- <iframe width="100%" height="800" src="/doc/sprints/sprint1/img/Sprint1 - API - BuzzTech.pdf">
+ <iframe width="100%" height="800" src="/doc/sprints/sprint1/img/Sprint1.pdf">
+

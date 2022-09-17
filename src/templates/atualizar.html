@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width",
+        initial-scale="1.0">
+        <title>Techelp - Atualizar Problema</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/styles.css">
+    </head>
+    <body class="body">
+    
+        <div class="menu">
+            <div style="background-color:#2A80DB; margin-right: 87%; margin-left: 1%; padding-left: 0.08%; border-radius: 20px;">
+                <a href="/"><img src="../static/img/Logo.png" alt="logo" width="150" height="80"></a>
+            </div>
+            
+            <div style="text-align: end;margin-top: -7.2%; margin-left: 50%; margin-right: 1%;">
+                <p style="text-align: center;">
+                    <a class="tuiuiu" href="/" style="background-color: #D9D9D9; border-radius: 10px; padding-left: 5%; padding-right: 5%;">Home</a>
+                
+                    <a class="tuiuiu" href="/abertura" style="background-color: #D9D9D9; border-radius: 10px; padding-left: 5%; padding-right: 5%;">Relatar um Problema</a>
+                
+                    <a class="tuiuiu" href="/visualizar" style="background-color: #D9D9D9; border-radius: 10px; padding-left: 5%; padding-right: 5%;">Visialização de Problemas</a>
+                </p>      
+            </div>
+        </div>
+        
+        <div style="margin-top: 5%;">
+            <hr style= "color: white; opacity: 100%; margin-left: 2%; margin-right: 2%;">
+        </div>
+
+        <div class="principal">
+            <form action="{{chamado[0]['id']}}" method="POST">
+                <div style="text-align: end; float: right; margin-right: 5%">
+                    <p>
+                        <label for="description" form="form-label"><h3 style="color: white;">Descrição:</h3></label>
+                        <textarea name="description" id="description" cols="30" rows="10" name="description" style="border-radius: 20px; background-color: #A4C0DD; padding:3%;">{{chamado[0]['description']}}</textarea>
+                    </p>
+                </div>
+                <div class="mb-3" style="margin-left: 5%;">
+                    <p>
+                        <label for="lab" form="form-label"><h3 style="color: white;">Laboratório:</h3></label>
+                        <input type="text" id="lab" name="lab" value="{{chamado[0]['lab']}}" style="border-radius: 20px; background-color: #A4C0DD">
+                    </p>
+                </div>
+    
+                <div class="mb-3" style="margin-left: 5%;">
+                    <p>
+                        <label for="comp" form="form-label"><h3 style="color: white;">Computador:</h3></label>
+                        <input type="text" id="comp" name="comp" value="{{chamado[0]['comp']}}" style="border-radius: 20px; background-color: #A4C0DD">
+                    </p>
+                </div>
+    
+                <div class="mb-3" style="margin-left: 5%;">
+                    <p>
+                        <label for="problem_type" form="form-label"><h3 style="color: white;">Tipo de problema:</h3></label>
+                        <input type="text" id="problem_type" name="problem_type" value="{{chamado[0]['problem_type']}}" style="border-radius: 20px; background-color: #A4C0DD">
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <input type="submit" id="Enviar" value="Enviar" style="border-radius: 20px; height: 20%;width: 30%; background-color: #DBEDFF; margin-left: 35%;margin-top: 3%;">
+                    </p>
+                </div>
+                
+            </form>
+        </div>
+        <div class="bottom">
+            <p> 
+                <h4 style="color: white; text-align: center;;">Desenvolvido por BuzzTech</h5>
+            </p>
+        </div>
+    </body>
+</html>

@@ -253,7 +253,8 @@ Como a metodologia ágil Scrum tem como princípios a adaptabilidade e o process
 
 ## :mega: Apresentação da Sprint<a id='#apresentação'></a>
 
- <embed src="https://github.com/BuzzTech-API/API_ADS_2022.2_SOS/raw/main/doc/sprints/sprint1/img/Sprint1.pdf" type='application/pdf'>
+
+
 
 ```html
 <embed src="https://github.com/BuzzTech-API/API_ADS_2022.2_SOS/raw/main/doc/sprints/sprint1/img/Sprint1.pdf" width="500" height="375" 
@@ -261,3 +262,5 @@ Como a metodologia ágil Scrum tem como princípios a adaptabilidade e o process
 ```
 
 [embed] https://github.com/BuzzTech-API/API_ADS_2022.2_SOS/raw/main/doc/sprints/sprint1/img/Sprint1.pdf [/embed]
+
+<iframe width="100%" height="800" src="https://github.com/BuzzTech-API/API_ADS_2022.2_SOS/raw/main/doc/sprints/sprint1/img/Sprint1.pdf ">

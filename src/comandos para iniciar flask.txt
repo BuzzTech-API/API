@@ -1,7 +1,25 @@
-cd C:\Users\Aluno\Desktop\API
+Dentro do powershell ou terminal do windows o que for mais comondo e executar como ADMINISTRADOR
+
+Primeiro passo é criar uma pasta para você trabalhar sua aplicação
+mkdir flask
+
+Segundo você entrar na pasta
+cd flask/
+
+Apos isso você devera verificar se você está com python está instalado no seu computador se não estiver você deverá baixar no site oficial do python
+python --version
+
+Depois você criara um ambiente virtual para executar sua aplicação
 py -3 -m venv venv
+
+Depois você mudará a politica de execução do seu windows para conseguir ativar o ambiente virtual
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine
+
+Vai ativar o ambiente virtual
 venv\Scripts\activate
-pip install Flask
-pip install tinyDB
-pip install pandas
+
+Vai colocar os arquivos da API nesse diretorio que você criou e executar o seguinte comando para instalar as bibliotecas
+pip install -r .\requirements.txt
+
+Depois é so executar a aplicação fazendo 
+python app.py

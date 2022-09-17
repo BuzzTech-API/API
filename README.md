@@ -113,13 +113,13 @@ Este chamado será automaticamente gerado e organizado em uma tabela na qual o t
 
 
 
-🔖 SPRINT 1 ([Link da Pasta](https://github.com/whatscodeg3/API-2DSM-DailyBot/blob/main/doc/sprints/sprint1.md)):  Em construção :construction:
+🔖 SPRINT 1 ([Link da Pasta](https://github.com/BuzzTech-API/API_ADS_2022.2_SOS/tree/main/doc/sprints/sprint1)):  Em construção :construction:
 
-🔖 SPRINT 2 ([Link da Pasta]()):  Aguardando ::stop_sign:
+🔖 SPRINT 2 ([Link da Pasta](https://github.com/BuzzTech-API/API_ADS_2022.2_SOS/tree/main/doc/sprints/sprint2)):  Aguardando ::stop_sign:
 
-🔖 SPRINT 3 ([Link da Pasta]()):  Aguardando ::stop_sign:
+🔖 SPRINT 3 ([Link da Pasta](https://github.com/BuzzTech-API/API_ADS_2022.2_SOS/tree/main/doc/sprints/sprint3)):  Aguardando ::stop_sign:
 
-🔖 SPRINT 4 ([Link da Pasta]()):  Aguardando ::stop_sign:
+🔖 SPRINT 4 ([Link da Pasta](https://github.com/BuzzTech-API/API_ADS_2022.2_SOS/tree/main/doc/sprints/sprint4)):  Aguardando ::stop_sign:
 
 <br>
 
@@ -209,7 +209,7 @@ Este chamado será automaticamente gerado e organizado em uma tabela na qual o t
 
 |      Membro      |    Função     |                            Github                            |                           Linkedin                           |
 | :--------------: | :-----------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|    Vitor Lima    | Scrum Master  | <a href="https://github.com/lima2206"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href=""><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+|    Vitor Lima    | Scrum Master  | <a href="https://github.com/lima2206"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/vitor-spricigo-lima-84a377184"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 |   Alícea Rocha   | Product Owner | <a href="https://github.com/alicearocha"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/al%C3%ADcea-paula-de-lima-rocha-bab682157/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 |  Cláudia Secco   | Desenvolvedor | <a href="https://github.com/ClaudiaCBS"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> |                                                              |
 | Danilo Rodrigues | Desenvolvedor | <a href="https://github.com/Circerion"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/danilo-baptistella-5757aa20a"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
@@ -226,4 +226,4 @@ Este chamado será automaticamente gerado e organizado em uma tabela na qual o t
 
 | PO²              | M²       |
 | :-------------------: | :-----------: |
-| <a href='  http://lattes.cnpq.br/0858832006050432'>Prof. Antonio Egydio São Thiago Graça</a> | <a href='http://lattes.cnpq.br/4723982029081265'>Prof.  Jean Carlos Lourenço Costa</a> |
+| <a href='http://lattes.cnpq.br/0858832006050432'>Prof. Antonio Egydio São Thiago Graça</a> | <a href='http://lattes.cnpq.br/4723982029081265'>Prof.  Jean Carlos Lourenço Costa</a> |

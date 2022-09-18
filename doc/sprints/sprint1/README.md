@@ -6,6 +6,7 @@
 
 
 
+
 <hr>
 <br>
 <p align="center">
@@ -78,9 +79,9 @@ Este chamado será automaticamente gerado e organizado em uma tabela na qual o t
 
    
 
-   | ![Laboratório com 32 computadores](/doc/sprints/sprint1/img/32comp.png) | ![Laboratório com 24 computadores](/doc/sprints/sprint1/img/24comp.png) |
+   | ![Laboratório com 32 computadores](img/idLabs/32comp.png)    | ![Laboratório com 24 computadores](img/idLabs/24comp.png)    |
    | ------------------------------------------------------------ | ------------------------------------------------------------ |
-   | ![Laboratório médio com 18 computadores](/doc/sprints/sprint1/img/18comp_medio.png) | ![Laboratório menor com 18 computadores](/doc/sprints/sprint1/img/18comp_menores.png) |
+   | ![Laboratório médio com 18 computadores](img/idLabs/18comp_medio.png) | ![Laboratório menor com 18 computadores](img/idLabs/18comp_menores.png) |
 
    | Laboratório | Quantidade | Somatório de Computadores |
    | ----------- | ---------- | ------------------------- |
@@ -151,6 +152,89 @@ Este chamado será automaticamente gerado e organizado em uma tabela na qual o t
 
    Como tarefa fundamental para atingir MVP, esta tarefa propõe-se a conectar as páginsa de abertura de chamado e de visualização de chamados utilizando o framework Flask. Feita essa conexão, os chamados abertos pelos usuários serão automaticamente enviados e preenchidos na tabela te visualizão, para que o técnico possa, assim, analisar os problemas e adotar as devidas mediadas para resolvê-lo. Neste sentido, a partir desta tarefa já é possível que o cliente teste o sistema para avaliar e identificar pontos fortes e possíveis mudanças. Em consonância com a metodologia ágil do Scrum, colocar o produto em teste logo no início aumenta as chances de, ao final do tempo de desenvolvimento, a entrega atenda as necessidades e expectativas do cliente.
 
+   
+
+   Nos testes que fizemos da aplicação, o resultado foi o seguinte:
+
+   
+
+   ![Teste do MVP](img/MVP/MVP.gif)
+
+   
+
+   ***Como executar a aplicação:***
+
+   
+
+   1. Execute o Powershell ou Terminal do Windows como <u>ADMINISTRADOR</u> 
+
+   2. Crie uma pasta para você trabalhar sua aplicação
+
+   ```
+   mkdir flask
+   ```
+
+   3. Acesse a  pasta 
+
+   ```
+   cd flask/
+   ```
+
+   4. Execute o seguinte comando para verificar se você possui o Python instalado no seu computador. Caso não possua, antes de seguir para o próximo passo, baixe o instalador no site oficial e instale na sua máquina.
+
+   ```
+   python --version
+   ```
+
+   5. Depois, crie um ambiente virtual para executar sua aplicação
+
+   ```
+   py -3 -m venv venv
+   ```
+
+   6. Agora, mude a politica de execução do seu windows para conseguir ativar o ambiente virtual
+
+   ```
+   Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine
+   ```
+
+   7. Ative o ambiente virtual com o seguinte comando
+
+   ```
+   venv\Scripts\activate
+   ```
+
+   8. Coloque os arquivos da API nesse diretorio que você criou e executar o seguinte comando para instalar as bibliotecas
+
+   ```
+   pip install -r .\requirements.txt
+   ```
+
+   9. Por fim, é so executar a aplicação executando
+
+   ```
+   python app.py
+   ```
+
+   
+
+   A seguir estão os [***requirements***](src/requirements.txt) para rodar a aplicação:
+
+   
+
+   ```
+   click==8.1.3
+   Flask==2.2.2
+   gunicorn==20.1.0
+   importlib-metadata==4.12.0
+   itsdangerous==2.1.2
+   Jinja2==3.1.2
+   MarkupSafe==2.1.1
+   tinydb==4.7.0
+   Werkzeug==2.2.2
+   zipp==3.8.1
+   ```
+
    <br>
 
 5. ### Criação, aprovação e entrega do Wireframe<a id='wireframe'></a>
@@ -159,11 +243,11 @@ Este chamado será automaticamente gerado e organizado em uma tabela na qual o t
 
    
 
-   |                       Home                       |                     Abertura de Chamado                      |                   Visualização de Chamado                    |
-   | :----------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-   | ![Home](/doc/sprints/sprint1/img/PáginaHome.png) | ![Abertura de Chamado](/doc/sprints/sprint1/img/AberturaDeChamados.png) | ![Visualização de Chamado](/doc/sprints/sprint1/img/VisualizaçãoDeChamados.png) |
+   |                 Home                  |                     Abertura de Chamado                      |                   Visualização de Chamado                    |
+   | :-----------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+   | ![Home](img/wireframe/PáginaHome.png) | ![Abertura de Chamado](img/wireframe/AberturaDeChamados.png) | ![Visualização de Chamado](img/wireframe/VisualizaçãoDeChamados.png) |
 
-   Para visualizar o *Wireframe* em PDF, acesse o <a href='/doc/sprints/sprint1/img/Wireframe.pdf'>link :link:</a>.
+   Para visualizar o *Wireframe* em PDF, acesse o [link :link:](img/wireframe/wireframe.pdf).
 
 <br>
 
@@ -253,14 +337,4 @@ Como a metodologia ágil Scrum tem como princípios a adaptabilidade e o process
 
 ## :mega: Apresentação da Sprint<a id='#apresentação'></a>
 
-
-
-
-```html
-<embed src="https://github.com/BuzzTech-API/API_ADS_2022.2_SOS/raw/main/doc/sprints/sprint1/img/Sprint1.pdf" width="500" height="375" 
- type="application/pdf">
-```
-
-[embed] https://github.com/BuzzTech-API/API_ADS_2022.2_SOS/raw/main/doc/sprints/sprint1/img/Sprint1.pdf [/embed]
-
-<iframe width="100%" height="800" src="https://github.com/BuzzTech-API/API_ADS_2022.2_SOS/raw/main/doc/sprints/sprint1/img/Sprint1.pdf ">
+Para visualizar a *Apresentação da Sprint 1* em PDF, acesse o <a href='/doc/sprints/sprint1/img/Sprint1.pdf'>link :link:</a>.

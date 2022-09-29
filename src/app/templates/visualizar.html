@@ -43,6 +43,7 @@
                 <th scope="col" class="espaço">Computador</th>
                 <th scope="col" class="espaço">Tipo de Problema</th>
                 <th scope="col" class="espaço">Descrição</th>
+                <th scope="col" class="espaço">Status</th>
                 <th scope="col" class="espaço">Ações</th>
             </tr>
         </thead>
@@ -50,14 +51,15 @@
         <!-- Aqui tem um for para conseguir colocar na tabela somente as informações da cada campo não o banco em formato de lista-->
         {% for item in tabela %}
         <tr>
-            <td>{{item["id"]}}</td>
-            <td>{{item["lab"]}}</td>
-            <td>{{item["comp"]}}</td>
-            <td>{{item["problem_type"]}}</td>
-            <td>{{item["description"]}}</td>
+            <td>{{item.id}}</td>
+            <td>{{item.lab}}</td>
+            <td>{{item.comp}}</td>
+            <td>{{item.problem}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.status}}</td>
             <!-- Por último você tem os botões com a referencia de sua respectiva função no caso o caminho que você atribui no route das funções atualizar e deletar no app.py-->
-            <td><a class="btn btn-danger" href='/deletar/{{item["id"]}}'><i class="bi bi-trash"></i>Deletar</a>
-            <a class="btn btn-secondary"href='/atualizar/{{item["id"]}}'><i class="bi bi-arrow-clockwise"></i>Atualizar</a></td>     
+            <td><a class="btn btn-danger" href='/deletar/{{item.id}}'><i class="bi bi-trash"></i>Deletar</a>
+            <a class="btn btn-secondary"href='/atualizar/{{item.id}}'><i class="bi bi-arrow-clockwise"></i>Atualizar</a></td>     
         </tr>
         {% endfor %}
         </tbody>

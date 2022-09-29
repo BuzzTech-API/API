@@ -1,10 +1,8 @@
-from flask import Flask, render_template, redirect
-from connect import Update_Call, Search_Call, Del_Call, insert, Show_All
+from app import app,db
+from flask import render_template, redirect, url_for
 from flask.globals import request
-from model import Chamado
+from app.models.model import Chamado
 
-# o app atribuimos a ele nossa aplicação flask
-app = Flask(__name__)
 
 # aqui atribuimos uma routa para essa aplicação com .route ligado a nossa aplicação flask e atribuimos um caminho como "/" que quer dizer a raiz do site e ela vai sempre executar a função que estiver em seguida dela como é caso ela executa a função home page
 @app.route("/")
@@ -25,9 +23,8 @@ def abertura_de_chamado():
 # função e rota para visualizar os chamados 
 @app.route("/visualizar")
 def visualizar():
-    #primeiro você atribui a variavel tabela a lista do banco de dados com a função criada no connect.py
-    tabela= Show_All()
     #depois você utiliza return com a fundação render_template("atribuindo a rota que você quer", além de adicionar a uma variavel tabela o valor da tabela que é lista do banco para que você possa utilizar os valores dela no seu html quando renderizar ele)
+    tabela = Chamado.query.order_by(Chamado.id).all()
     return render_template("visualizar.html", tabela=tabela)
 
 
@@ -36,12 +33,13 @@ def visualizar():
 # função e rota para cadastrar que recebe do html o dados do formulario e cria uma variavel chamado com o modelo Chamado(atribuindo os valores do formulario para cada campo) e depois redireciona você para raiz
 @app.route("/cadastrar", methods=["POST", "GET"],)
 def cadastrar():
-    lab = request.form["lab"]
-    comp = request.form["comp"]
-    problem_type = request.form["problem_type"]
+    lab = int(request.form["lab"])
+    comp = int(request.form["comp"])
+    problem = request.form["problem_type"]
     description = request.form["description"]
-    chamado = Chamado(0,lab, comp,problem_type, description)
-    insert(chamado)
+    chamado = Chamado(lab, comp,problem, description, 'Pendente')
+    db.session.add(chamado)
+    db.session.commit()
     return redirect("/")
 
 
@@ -49,40 +47,28 @@ def cadastrar():
 # rota que deleta o chamdo do id que você colocar no caminho por ex:/deletar/2 vai deletar o chamado de id 2
 @app.route('/deletar/<int:id>')
 def deletar(id):
-    # assim que entra na função ele tentar deletar o chamado com a função feita connect.py e redireciona você para pagina de visualização
-    try:
-        Del_Call(id)
-        return redirect("/visualizar")
-    
-    # caso ocorra um porblema ele entra no except redireciona você para pagina de visualização
-    except:
-        return redirect("/visualizar")
-
+    r = Chamado.query.filter_by(id=id).first()
+    db.session.delete(r)
+    db.session.commit()
+    return redirect("/visualizar")
 
 
 # função de atualizar o chamado do id informado que vai entrar em uma pagina para a pessoa preencher as modificações e assim vai pegar as informações e atualizar no banco de dados
 @app.route('/atualizar/<int:id>', methods=["POST", "GET"])    
 def atualizar(id):
-    if request.method=='POST':
-        lab = request.form["lab"]
-        comp = request.form["comp"]
-        problem_type = request.form["problem_type"]
-        description = request.form["description"]
-        chamado = Chamado(id,lab, comp,problem_type, description)
-        try:
-            Update_Call(id, chamado)
-            return redirect('/visualizar')
-        except:
-            return 'Algo deu errado', redirect('/visualizar')
+    r = Chamado.query.filter_by(id=id).first()
     
-    else:
-        chamado = Search_Call(id)
-        return render_template('atualizar.html', chamado= chamado, id = id)
+    if request.method == "POST":
+        
+        r.lab = request.form["lab"]
+        r.comp = request.form["comp"]
+        r.description = request.form["description"]
+        db.session.add(r)
+        db.session.commit()
+        #flash("Atualizado")
+        return redirect(url_for('visualizar'))
+    return render_template("atualizar.html", r=r)
 
 
-
-
-if __name__ == "__main__":
-    app.run(debug=True) 
 
 

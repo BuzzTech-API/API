@@ -12,13 +12,42 @@ class Chamado(db.Model):
     comp = db.Column(db.Integer, nullable=False)
     problem = db.Column(db.String(200),nullable=False)
     description = db.Column(db.String(400),nullable=False)
-    status = db.Column(db.String(200),nullable=False)
+    status = db.Column(db.String(50),nullable=False)
+    time_created = db.Column(db.Date,nullable=False)
     
-    
-    def __init__(self,lab, comp, problem, description, status) -> None:
+    def __init__(self,lab, comp, problem, description, status, time_created) -> None:
         self.lab = lab
         self.comp = comp
         self.problem = problem
         self.description = description
         self.status = status
+        self.time_created = time_created
 
+
+class User(db.Model):
+
+    __tablename__ = "users"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(86),nullable=False)
+    email = db.Column(db.String(100),nullable=False, unique=True)
+    password_hash = db.Column(db.String(128))
+    
+
+
+    @property
+    def password(self):
+        raise AttributeError('password is not a readable attribute!')
+
+    @password.setter
+    def password(self, password):
+        self.password_hash = generate_password_hash(password)
+
+
+    def __init__(self, name, email, password):
+        self.name = name
+        self.email = email
+        self.password = generate_password_hash(password)
+
+    def verify_password(self, pwd):
+        return check_password_hash(self.password_hash, pwd)

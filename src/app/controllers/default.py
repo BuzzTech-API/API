@@ -2,6 +2,7 @@ from app import app,db
 from flask import render_template, redirect, url_for
 from flask.globals import request
 from app.models.model import Chamado
+import datetime
 
 
 # aqui atribuimos uma routa para essa aplicação com .route ligado a nossa aplicação flask e atribuimos um caminho como "/" que quer dizer a raiz do site e ela vai sempre executar a função que estiver em seguida dela como é caso ela executa a função home page
@@ -37,7 +38,8 @@ def cadastrar():
     comp = int(request.form["comp"])
     problem = request.form["problem_type"]
     description = request.form["description"]
-    chamado = Chamado(lab, comp,problem, description, 'Pendente')
+    time_created = datetime.datetime.now()
+    chamado = Chamado(lab, comp,problem, description, 'Pendente', time_created)
     db.session.add(chamado)
     db.session.commit()
     return redirect("/")

@@ -1,7 +1,7 @@
 from app import app,db
 from flask import render_template, redirect, url_for
 from flask.globals import request
-from app.models.model import Chamado
+from app.models.model import Chamado, User
 import datetime
 
 
@@ -32,14 +32,14 @@ def visualizar():
 
 
 # função e rota para cadastrar que recebe do html o dados do formulario e cria uma variavel chamado com o modelo Chamado(atribuindo os valores do formulario para cada campo) e depois redireciona você para raiz
-@app.route("/cadastrar", methods=["POST", "GET"],)
+@app.route("/cadastrar", methods=["POST", "GET"])
 def cadastrar():
     lab = int(request.form["lab"])
     comp = int(request.form["comp"])
     problem = request.form["problem_type"]
     description = request.form["description"]
     time_created = datetime.datetime.now()
-    chamado = Chamado(lab, comp,problem, description, 'Pendente', time_created)
+    chamado = Chamado(lab, comp, problem, description, 'Pendente', time_created, 1)
     db.session.add(chamado)
     db.session.commit()
     return redirect("/")

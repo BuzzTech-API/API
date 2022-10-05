@@ -45,7 +45,9 @@
                 <th scope="col" class="espaço">Descrição</th>
                 <th scope="col" class="espaço">Status</th>
                 <th scope="col" class="espaço">Data</th>
+                {% if current_user.is_authenticated %}
                 <th scope="col" class="espaço">Ações</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -60,8 +62,10 @@
             <td>{{item.status}}</td>
             <td>{{item.time_created}}</td>
             <!-- Por último você tem os botões com a referencia de sua respectiva função no caso o caminho que você atribui no route das funções atualizar e deletar no app.py-->
+            {% if current_user.is_authenticated %}
             <td><a class="btn btn-danger" href='/deletar/{{item.id}}'><i class="bi bi-trash"></i>Deletar</a>
-            <a class="btn btn-secondary"href='/atualizar/{{item.id}}'><i class="bi bi-arrow-clockwise"></i>Atualizar</a></td>     
+            <a class="btn btn-secondary"href='/atualizar/{{item.id}}'><i class="bi bi-arrow-clockwise"></i>Atualizar</a></td> 
+            {% endif %}    
         </tr>
         {% endfor %}
         </tbody>

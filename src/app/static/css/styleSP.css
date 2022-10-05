@@ -1,0 +1,169 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.fundo {
+    background-color: #EBD5D5;
+}
+
+.centro {
+    height: 300px; width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed; 
+}
+
+.software {
+    position: absolute;
+    margin-left: -305px;
+    font-size: 45px;
+    margin-top: -27px;
+}
+.hardware {
+    position: absolute;
+    margin-left: 135px;
+    margin-top: -25px;
+    font-size: 45px;
+}
+
+.linha {
+    z-index: -1;
+    position: absolute;
+}
+
+.barrasup {
+    height: 99px; width: 100%;
+    display: flex;
+    background-image: url(../static/img/Faixa.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -2;
+}
+
+.logo {
+    height: 115px;
+    width: 115px;
+    place-self: center;
+    margin-left: 5%;
+    margin-right: -10%;
+}
+
+.techelp {
+    position: absolute;
+    place-self: center;
+    margin-left: 180px;
+    height: 30px;
+}
+
+
+.buttons {
+    height: 100px; width: 30%;
+    margin-left: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+.Txt {
+    text-align: center;
+    color: #A90405;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10mm;
+    text-decoration: none;
+    position:absolute;
+    display: flex;
+    margin-top: -170px;
+    width: 200px;
+    margin-left: 25px ;
+}
+.TxtHM {
+    text-align: center;
+    color: #A90405;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 4mm;
+    text-decoration: none;
+    position:absolute;
+    display: flex;
+    width: 40px;
+    margin-top: -52px;
+    margin-left: 18px;
+}
+.TxtRP {
+    text-align: center;
+    color: #A90405;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 3.58mm;
+    text-decoration: none;
+    position:absolute;
+    display: flex;
+    height: 77px;
+    width: 77px;
+    margin-top: -59px;
+    margin-left: 3.5px;
+    background-image: url(../static/img/RelatarBut.svg);
+    background-repeat: no-repeat;
+    background-size: 77px;
+
+}
+.TxtSF {
+    text-align: center;
+    color: #A90405;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 3.8mm;
+    text-decoration: none;
+    position:absolute;
+    display: flex;
+    width: 50px;
+    margin-top: -59px;
+    margin-left: 13.5px;
+}
+.TxtAT {
+    text-align: center;
+    color: #A90405;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 3.8mm;
+    text-decoration: none;
+    position:absolute;
+    display: flex;
+    width: 60px;
+    margin-top: -59px;
+    margin-left: 8px;
+}
+
+.hexag{
+    height: 85px; 
+    width: 85px;
+    margin-top: 5px;
+}
+.hexagHM{
+    height: 77px; 
+    width: 77px;
+    margin-top: -5.6px;
+    margin-right: -19.4px;
+}
+.hexagRP{
+    height: 77px; 
+    width: 77px;
+    margin-top: 27.5px;
+    margin-right: -19.4px;
+}
+.hexagSF{
+    height: 77px; 
+    width: 77px;
+    margin-top: -5.2px;
+    margin-right: -19.4px;
+}
+.hexagAT{
+    height: 77px; 
+    width: 77px;
+    margin-top: 27.5px;
+    margin-right: -19.4px;
+}
+
+.butao {
+    margin: 0;
+}

@@ -1,0 +1,73 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.fundo {
+    background-color: #EBD5D5;
+}
+
+.centro {
+    height: 10vw; width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35vh;
+    background-image: url(../img/Faixa.png);
+    background-repeat: repeat-x;
+    background-position: center;
+}
+
+.techelp {
+    height: 70px;
+    margin-top: 4vh;
+    text-align: center;
+}
+
+.centro-selprob {
+    height: 300px; width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15%;
+    background-position: center;
+    position: fixed; 
+}
+
+.barrasup {
+    height: 100px; width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: url(../static/img/Faixa.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logo {
+    align-self: center;
+    padding: 20%;
+    margin-left: -150px;
+    margin-right: -150px;
+}
+
+.butTxt {
+    text-align: center;
+    color: #A90405;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10mm;
+    text-decoration: none;
+    position:absolute;
+    display: flex;
+    margin-top: -170px;
+    width: 200px;
+    margin-left: 25px ;
+    
+}
+
+.hexag{
+    height: 250px; 
+    width: 250px;
+    margin-top: 6px;
+}

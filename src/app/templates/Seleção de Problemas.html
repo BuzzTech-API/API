@@ -1,50 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/styleSP.css">
+    <script defer type="text/javascript" src="../static/js/java.js"></script>
     <title>TECHELP - Seleção de Problemas</title>
 </head>
+
 <body class="fundo">
     <div class="barrasup">
-        <img class = "logo" src="../static/img/Logo.png" alt="logo">
-        <img class = "techelp" src="../static/img/techelp.png" alt="techelp">
+        <img class="logo" src="../static/img/Logo.png" alt="logo">
+        <img class="techelp" src="../static/img/techelp.png" alt="techelp">
         <div class="buttons">
             <div class="butao">
-            <a class="butao" href="/"><img class = "hexagHM" src="../static/img/Home.png" alt="hexagono"></a>
-            </div>
-            
-            <div class="butao">
-            <a href="https://www.google.com/search?q=nicolas+cage&client=opera-gx&hs=tY7&sxsrf=ALiCzsatqFE5OnsbcmMveRe6Achysc46bA:1664893526674&source=lnms&tbm=isch&sa=X&ved=2ahUKEwij8vvZ48b6AhU2BbkGHS7ICpsQ_AUoAnoECAIQBA"><img class = "hexagRP" src="../static/img/RelatarBut.svg" alt="hexagono"></a>
-            </div>
-            
-            <div class="butao">
-            <a href="https://siga.cps.sp.gov.br" target="_blank"><img class = "hexagSF" src="../static/img/SIGABut.svg" alt="hexagono"></a>
+                <a class="butao" href="/"><img class="hexagHM" src="../static/img/Home.png" alt="hexagono"></a>
             </div>
 
             <div class="butao">
-            <a href="https://www.google.com/search?q=keanu+reeves+brasileiro&client=opera-gx&hs=ylz&sxsrf=ALiCzsbIuDJiQG6ihjzGxCJUwAYYooXa-A:1664863585169&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi1vN-U9MX6AhXyILkGHcgXDj4Q_AUoAXoECAEQAw&biw=1309&bih=561&dpr=1"><img class = "hexagAT" src="../static/img/TecnicoBut.svg" alt="hexagono"></a>
+                <a
+                    href="https://www.google.com/search?q=nicolas+cage&client=opera-gx&hs=tY7&sxsrf=ALiCzsatqFE5OnsbcmMveRe6Achysc46bA:1664893526674&source=lnms&tbm=isch&sa=X&ved=2ahUKEwij8vvZ48b6AhU2BbkGHS7ICpsQ_AUoAnoECAIQBA"><img
+                        class="hexagRP" src="../static/img/RelatarBut.svg" alt="hexagono"></a>
+            </div>
+
+            <div class="butao">
+                <a href="https://siga.cps.sp.gov.br" target="_blank"><img class="hexagSF"
+                        src="../static/img/SIGABut.svg" alt="hexagono"></a>
+            </div>
+
+            <div class="butao">
+                <a
+                    href="https://www.google.com/search?q=keanu+reeves+brasileiro&client=opera-gx&hs=ylz&sxsrf=ALiCzsbIuDJiQG6ihjzGxCJUwAYYooXa-A:1664863585169&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi1vN-U9MX6AhXyILkGHcgXDj4Q_AUoAXoECAEQAw&biw=1309&bih=561&dpr=1"><img
+                        class="hexagAT" src="../static/img/TecnicoBut.svg" alt="hexagono"></a>
             </div>
         </div>
     </div>
     <div class="centro">
-        <a href="https://www.google.com/search?q=nicolas+cage&client=opera-gx&hs=ZGw&sxsrf=ALiCzsblPBXqI_w4M9vtn8IMuRJBwVkxeQ:1664452906561&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjUrvah-rn6AhUlrJUCHUwWDXcQ_AUoAnoECAMQBA"><h1 class="software"><u>Software</h1></u></a>
 
+        <!-- Botão Software -->
+        <a href="#" id="botão-software">
+            <h1 class="software" onclick="descrição()"><u>Software</h1></u>
+        </a>
         <hr class="linha" size="6" width="600px" align="left" color="#555555">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="circuloE">
-            <circle cx="15" cy="15" r="15"/>
-            </svg>
-            
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="circuloD">
-                <circle cx="15" cy="15" r="15"/>
-                </svg>
-       
-        <img class = "" src="../static/img/TipoBut.png" alt="logo" height="370px" width="350px">
-  
-        
-        <a href="https://www.google.com/search?q=nicolas+cage&client=opera-gx&hs=ZGw&sxsrf=ALiCzsblPBXqI_w4M9vtn8IMuRJBwVkxeQ:1664452906561&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjUrvah-rn6AhUlrJUCHUwWDXcQ_AUoAnoECAMQBA"><h1 class="hardware"><u>Hardware</h1></u></a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="circuloE">
+            <circle cx="15" cy="15" r="15" />
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="circuloD">
+            <circle cx="15" cy="15" r="15" />
+        </svg>
+
+        <img class="" src="../static/img/TipoBut.png" alt="logo" height="370px" width="350px">
+
+        <!-- Botão Hardware -->
+        <a href="#" id="botão-hardware">
+            <h1 class="hardware"><u>Hardware</h1></u>
+        </a>
     </div>
+    <!-- Modais -->
+    <div class="bg-modal">
+
+        <!-- Modal Descrição -->
+        <div class="modal-content-descrição">
+            <div class="close" onclick="fechar()">+</div>
+            <form>
+                <h1 class="titulo">Conte-nos sobre seu problema</h1>
+
+                <div>
+                    <!-- a função obrigado leva até o modal de obrigado -->
+                    <textarea name="" id="dedssdfsdf" class="descrição" cols="30" rows="6"
+                        placeholder="Descrição...."></textarea>
+
+                </div>
+                <div class="botão">
+                    <!-- a função obrigado leva até o modal de obrigado -->
+                    <button class=btn type="submit" onclick="obrigado()">Enviar</button>
+                </div>
+            </form>
+
+        </div>
+
+        <!-- Modal Hardware -->
+        <div class="modal-content-hardware">
+            <div class="close" onclick="fechar()">+</div>
+            <h1 class="titulo">Hardware</h1>
+            <div class="lista-botão-A">
+                <div class="lista-botão-B">
+                    <!-- a função descrição leva até o modal de descrição -->
+                    <button class="problema-botão" onclick="descrição()" type="submit">Sem cabo de rede</button>
+                    <button class="problema-botão" onclick="descrição()" type="submit">Teclado não funciona</button>
+                    <button class="problema-botão" onclick="descrição()" type="submit">Monitor não funciona</button>
+                    <button class="problema-botão" onclick="descrição()" type="submit">Sem cabo de rede</button>
+                    <button class="problema-botão" onclick="descrição()" type="submit">Computador não liga</button>
+                    <button class="problema-botão" onclick="descrição()" type="submit">Sem cabo de energia</button>
+                    <button class="problema-botão" onclick="descrição()" type="submit">Outros</button>
+
+                </div>
+            </div>'
+        </div>
+
+        <!-- Modal Obrigado -->
+        <div class="modal-content-obrigado">
+            <div>
+                <h1 class="título-obg">Obrigado!</h1>
+                <h1 class="sub-obg">Seu problema será solucionado em breve por um técnico.</h1>
+            </div>
+            <div class="botãoogb">
+                <a href="/home" class="nn" type="link">Home</a>
+                <!-- link temporário de teste, pode mudar -->
+                <a href="/seleção_problemas" class="nn2" type="menu">Laboratórios</a>
+            </div>
+        </div>
+    </div>
+
+
 </body>
+
 </html>

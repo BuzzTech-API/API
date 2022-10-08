@@ -4,30 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/styleSP.css')}}">
     <script defer type="text/javascript" src="{{url_for('static', filename='js/java.js')}}"></script>
-    <title>TECHELP - {%block title%}{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styleSP.css')}}">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+        crossorigin="anonymous"
+    />
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+        crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/Portas_Main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/Lab_Main.css')}}">
 </head>
 <body class="fundo">
     <div class="barrasup">
-        <img class = "logo" src="{{ url_for('static', filename='img/Logo.png') }}" alt="logo">
-        <img class = "techelp" src="{{ url_for('static', filename='img/techelp.png') }}" alt="techelp">
+        <img class = "logo" src="{{url_for('static', filename='img/Logo.png')}}" alt="logo">
+        <img class = "techelp" src="{{url_for('static', filename='img/techelp.png')}}" alt="techelp">
         <div class="buttons">
             <div class="butao">
-            <a class="butao" href="/"><img class = "hexagHM" src="{{ url_for('static', filename='img/Home.png') }}" alt="hexagono"></a>
+            <a class="butao" href="/"><img class = "hexagHM" src="{{url_for('static', filename='img/Home.png')}}" alt="hexagono"></a>
             </div>
             
             <div class="butao">
-            <a href="/"><img class = "hexagRP" src="{{ url_for('static', filename='img/RelatarBut.svg') }}" alt="hexagono"></a>
+            <a href="/lab"><img class = "hexagRP" src="{{url_for('static', filename='img/RelatarBut.svg')}}" alt="hexagono"></a>
             </div>
             
             <div class="butao">
-            <a href="https://siga.cps.sp.gov.br/fatec/login.aspx" target="_blank"><img class = "hexagSF" src="{{ url_for('static', filename='img/SIGABut.svg') }}" alt="hexagono"></a>
+            <a href="https://siga.cps.sp.gov.br/fatec/login.aspx" target="_blank"><img class = "hexagSF" src="{{url_for('static', filename='img/SIGABut.svg')}}" alt="hexagono"></a>
+            </div>
+
+            <!-- Modal Técnico -->
+            <div class="bg-modal">
+                <div class="modal-content-login">
+                    <div class="close" onclick="fechar()">+</div>
+                    <h1>Login Técnico</h1>
+
+                    <form action="" method="post">
+                        <label for="" class="inplogin">E-mail:</label>
+                        <br><input class="inp" type="email" name="email" placeholder="Digite seu e-mail">
+                        <br><label for="" class="inplogin">Senha:</label>
+                        <br><input class="inp" type="password" name="password" placeholder="Sua senha">
+                        <br><input class="inpsub" type="submit" value="Entrar">
+                    </form>
+
+                </div>
             </div>
 
             <div class="butao">
-            <a href="/"><img class = "hexagAT" src="{{ url_for('static', filename='img/TecnicoBut.svg') }}" alt="hexagono"></a>
+            <a href="/">
+            <img class = "hexagAT" src="{{url_for('static', filename='img/TecnicoBut.svg')}}" alt="hexagono"></a>
             </div>
+
+            
         </div>
     </div>
     <section>

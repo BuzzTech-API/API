@@ -1,29 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/styles-home.css')}}">
+    <script defer type="text/javascript" src="../static/js/java.js"></script>
     <title>TECHELP - Home</title>
 </head>
+
 <body class="fundo">
     <div class="centro">
         {% if current_user.is_authenticated %}
-        <a href="/visualizar"><img class = "hexag" src="../static/img/Hexagono.png" alt="hexagono"><h1 class="butTxt">Visualizar Problema</h1></a>
-        
+        <a href="/visualizar" id="botão-login"><img class="hexag" src="../static/img/Hexagono.png" alt="hexagono">
+            <h1 class="butTxt">Visualizar Problema</h1>
+        </a>
+
         {% else %}
-        <a href="/login"><img class = "hexag" src="../static/img/Hexagono.png" alt="hexagono"><h1 class="butTxt">Área do Técnico</h1></a>
+        <a href="#" id="botão-login" onclick="abrir()"><img class="hexag" src="../static/img/Hexagono.png"
+                alt="hexagono">
+            <h1 class="butTxt">Área do Técnico</h1>
+        </a>
         {% endif %}
 
-      
-        <img class = "logo" src="../static/img/Logo.png" alt="logo" height="370px" width="350px">
-  
-        
-        <a href="/seleção_problemas"><img class = "hexag" src="../static/img/Hexagono.png" alt="hexagono"><h1 class="butTxt">Relatar Problema</h1></a>  
+        <img class="logo" src="../static/img/Logo.png" alt="logo" height="370px" width="350px">
+
+
+        <a href="/lab"><img class="hexag" src="../static/img/Hexagono.png" alt="hexagono">
+            <h1 class="butTxt">Relatar Problema</h1>
+        </a>
     </div>
     <div class="techelp">
         <img class="techelp" src="../static/img/techelp.png" alt="techelp">
     </div>
+
+    <!-- Modal Técnico -->
+    <div class="bg-modal">
+        <div class="modal-content-login">
+            <div class="close" onclick="fechar()">+</div>
+            <h1>Login Técnico</h1>
+
+            <form action="" method="post">
+                <label for="" class="inplogin">E-mail:</label>
+                <br><input class="inp" type="email" name="email" placeholder="Digite seu e-mail">
+                <br><label for="" class="inplogin">Senha:</label>
+                <br><input class="inp" type="password" name="password" placeholder="Sua senha">
+                <br><input class="inpsub" type="submit" value="Entrar">
+            </form>
+
+        </div>
+    </div>
 </body>
+
 </html>

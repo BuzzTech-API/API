@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% block content %}
+  <body>
+    <main>
+      <section class="lab_geral">
+        <container class="local">
+          <div class="rotulo">Laboratório {{lab}}</div>
+
+          <container class="container_layout">
+            <div class="laboratorio_layout">
+              <a href="/{{lab}}/00/seleção_problemas">
+                <div class="container_prof">
+                  <card class="card_prof" id="prof">
+                    <div class="texto_prof">Prof</div>
+                  </card>
+                </div>
+              </a>
+            </div>
+
+            <!--Bancadas -->
+            <div class="Bancadas" id="bancada_2">
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/06/seleção_problemas">
+                  <card class="card" id="06">
+                    <div class="texto_abaixo">06</div>
+                  </card>
+                </a>
+              </div>
+
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/05/seleção_problemas">
+                  <card class="card" id="05">
+                    <div class="texto_abaixo">05</div>
+                  </card>
+                </a>
+              </div>
+
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/04/seleção_problemas">
+                  <card class="card" id="04">
+                    <div class="texto_abaixo">04</div>
+                  </card>
+                </a>
+              </div>
+            </div>
+            <div class="Bancadas" id="bancada_1">
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/03/seleção_problemas">
+                  <card class="card" id="03">
+                    <div class="texto_abaixo">03</div>
+                  </card>
+                </a>
+              </div>
+
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/02/seleção_problemas">
+                <card class="card" id="02">
+                  <div class="texto_abaixo">02</div>
+                </card>
+                </a>
+              </div>
+
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/01/seleção_problemas">
+                <div class="laboratorio_layout">
+                  <card class="card" id="01">
+                    <div class="texto_abaixo">01</div>
+                  </card>
+                </a>
+                </div>
+              </div>
+            </div>
+            <div class="Bancadas" id="bancada_4">
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/12/seleção_problemas">  
+                <card class="card" id="12">
+                    <div class="texto_abaixo">12</div>
+                  </card>
+                </a>
+                </div>
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/11/seleção_problemas">
+                  <card class="card" id="11">
+                    <div class="texto_abaixo">11</div>
+                  </card>
+                </a>
+              </div>
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/10/seleção_problemas">
+                  <card class="card" id="10">
+                    <div class="texto_abaixo">10</div>
+                  </card>
+                </a>
+              </div>
+            </div>
+            <div class="Bancadas" id="bancada_3">
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/09/seleção_problemas">  
+                <card class="card" id="09">
+                    <div class="texto_abaixo">09</div>
+                  </card>
+                </a>
+              </div>
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/08/seleção_problemas">
+                <card class="card" id="08">
+                    <div class="texto_abaixo">08</div>
+                </card>
+                </a>
+              </div>
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/07/seleção_problemas">
+                  <card class="card" id="07">
+                    <div class="texto_abaixo">07</div>
+                  </card>
+                </a>
+              </div>
+            </div>
+            <div class="Bancadas" id="bancada_6">
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/18/seleção_problemas">
+                  <card class="card" id="18">
+                    <div class="texto_abaixo">18</div>
+                  </card>
+                </a>
+              </div>
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/17/seleção_problemas">
+                  <card class="card" id="17">
+                    <div class="texto_abaixo">17</div>
+                  </card>
+                </a>
+              </div>
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/16/seleção_problemas">
+                  <card class="card" id="16">
+                    <div class="texto_abaixo">16</div>
+                  </card>
+                </a>
+              </div>
+            </div>
+            <div class="Bancadas" id="bancada_5">
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/15/seleção_problemas">
+                  <card class="card" id="15">
+                    <div class="texto_abaixo">15</div>
+                  </card>
+                </a>
+              </div>
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/14/seleção_problemas">
+                  <card class="card" id="14">
+                    <div class="texto_abaixo">14</div>
+                  </card>
+                </a>
+              </div>
+              <div class="laboratorio_layout">
+                <a href="/{{lab}}/13/seleção_problemas">
+                  <card class="card" id="13">
+                    <div class="texto_abaixo ">13</div>
+                  </card>
+                </a>
+              </div>
+            </div>
+          </container>
+        </container>
+      </section>
+    </main>
+  </body>
+{% endblock %}

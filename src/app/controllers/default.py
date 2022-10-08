@@ -106,7 +106,7 @@ def logout():
     return redirect(url_for('homepage'))
 
 
-# Rota de teste
+# Rota de dos problemas
 @app.route('/<int:lab>/<int:comp>/seleção_problemas', methods=["POST", "GET"])
 def seleção_problemas(lab, comp):
     
@@ -120,3 +120,13 @@ def seleção_problemas(lab, comp):
         return redirect(url_for('homepage'))
         
     return render_template('Seleção de Problemas.html',lab=lab,comp=comp)
+
+# Rota de laboratorio
+@app.route('/lab')
+def lab():
+    return render_template('Portas.html')
+
+# Rota de portas
+@app.route('/<int:lab>/')
+def comp(lab):
+    return render_template('Lab.html',lab=lab)

@@ -70,13 +70,13 @@
 
                 <div>
                     <!-- a função obrigado leva até o modal de obrigado -->
-                    <textarea name="" id="dedssdfsdf" class="descrição" cols="30" rows="6"
+                    <textarea name="description" id="dedssdfsdf" class="descrição" cols="30" rows="6"
                         placeholder="Descrição...."></textarea>
 
                 </div>
                 <div class="botão">
                     <!-- a função obrigado leva até o modal de obrigado -->
-                    <button class=btn type="submit" onclick="obrigado()">Enviar</button>
+                    <button href="/cadastrar" class=btn type="submit" onclick="obrigado()">Enviar</button>
                 </div>
             </form>
 
@@ -89,14 +89,12 @@
             <div class="lista-botão-A">
                 <div class="lista-botão-B">
                     <!-- a função descrição leva até o modal de descrição -->
-                    <button class="problema-botão" onclick="descrição()" type="submit">Sem cabo de rede</button>
-                    <button class="problema-botão" onclick="descrição()" type="submit">Teclado não funciona</button>
-                    <button class="problema-botão" onclick="descrição()" type="submit">Monitor não funciona</button>
-                    <button class="problema-botão" onclick="descrição()" type="submit">Sem cabo de rede</button>
-                    <button class="problema-botão" onclick="descrição()" type="submit">Computador não liga</button>
-                    <button class="problema-botão" onclick="descrição()" type="submit">Sem cabo de energia</button>
-                    <button class="problema-botão" onclick="descrição()" type="submit">Outros</button>
-
+                    <button name="problem" value='Sem cabo de rede' class="problema-botão" onclick="descrição()" type="submit">Sem cabo de rede</button>
+                    <button name="problem" value='Teclado não funciona' class="problema-botão" onclick="descrição()" type="submit">Teclado não funciona</button>
+                    <button name="problem" value='Monitor não funciona' class="problema-botão" onclick="descrição()" type="submit">Monitor não funciona</button>
+                    <button name="problem" value='Computador não liga' class="problema-botão" onclick="descrição()" type="submit">Computador não liga</button>
+                    <button name="problem" value='Sem cabo de energia' class="problema-botão" onclick="descrição()" type="submit">Sem cabo de energia</button>
+                    <button name="problem" value='Outros' class="problema-botão" onclick="descrição()" type="submit">Outros</button>
                 </div>
             </div>'
         </div>

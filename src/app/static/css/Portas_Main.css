@@ -58,7 +58,7 @@
 
   /*Portas-geral*/
 
-  .card {
+  card.porta {
     width: 6.5em;
     height: 10em;
     border-radius: 8px;
@@ -69,7 +69,7 @@
     background-size: 100% 100%;
   }
   
-  .card:hover {
+  card.porta:hover {
    transform: scale(1.2);
    transition: 0.1s;
    cursor: pointer;

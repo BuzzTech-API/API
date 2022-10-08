@@ -108,6 +108,16 @@ def logout():
 
 
 # Rota de teste
-@app.route('/seleção_problemas')
-def seleção_problemas():
+@app.route('/<int:lab>/<int:comp>/seleção_problemas')
+def seleção_problemas(lab, comp):
     return render_template('Seleção de Problemas.html')
+
+# Rota de portas
+@app.route('/lab')
+def lab():
+    return render_template('Portas.html')
+
+# Rota de portas
+@app.route('/<int:lab>/')
+def comp(lab):
+    return render_template('Lab.html',lab=lab)

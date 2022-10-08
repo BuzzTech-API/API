@@ -1,31 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/static/css/Portas_Main.css">
-
-    <title>portas</title>
-  </head>
+{% extends 'base.html' %}
+{% block content %}
   <body>
-    <header class="header">
-      <a href="">Logo</a>
-      <nav>
-        <ul class="Menu">
-          <li><a href="">Sobre</a></li>
-          <li><a href="">Produto</a></li>
-          <li><a href="">Contato</a></li>
-        </ul>
-      </nav>
-    </header>
-
     <main>
       <section class="container_geral">
         <container class="local">
@@ -34,50 +9,50 @@
             <!--fileiras 1-->
             <div class="fileiras" id="fileira 01">
               <div class="laboratorio_layout">
-                <a href="/Lab">
-                <card class="card" id="301">
+                <a href="/301">
+                <card class="porta" id="301">
                   <div class="texto_central">301</div>
                 </card>
                 </a>
               </div>
               <div class="laboratorio_layout">
-                <a href="/Lab">
-                <card class="card" id="302">
+                <a href="/302">
+                <card class="porta" id="302">
                   <div class="texto_central">302</div>
                 </card>
                 </a>
               </div>
               <div class="laboratorio_layout">
-                <a href="/Lab">
-                <card class="card" id="303">
+                <a href="/303">
+                <card class="porta" id="303">
                   <div class="texto_central">303</div>
                 </card>
                 </a>
               </div>
               <div class="laboratorio_layout">
-                <a href="/Lab">
-                <card class="card" id="401">
+                <a href="/401">
+                <card class="porta" id="401">
                   <div class="texto_central">401</div>
                 </card>
                 </a>
               </div>
               <div class="laboratorio_layout">
-                <a href="/Lab">
-                <card class="card" id="402">
+                <a href="/402">
+                <card class="porta" id="402">
                   <div class="texto_central">402</div>
                 </card>
                 </a>
               </div>
               <div class="laboratorio_layout">
-                <a href="/Lab">
-                <card class="card" id="403">
+                <a href="/403">
+                <card class="porta" id="403">
                   <div class="texto_central">403</div>
                 </card>
                 </a>
               </div>
-              <div class="laboratorio_layout">
-                <a href="/Lab">
-                <card class="card" id="404">
+              <div class="laboratoio_layout">
+                <a href="/404">
+                <card class="porta" id="404">
                   <div class="texto_central">404</div>
                 </card>
                 </a>
@@ -87,50 +62,50 @@
             <!--fileira 2 -->
             <div class="fileiras" id="fileira 02">
               <div class="laboratorio_layout">
-                <a href="/Lab">
-                <card class="card" id="405">
+                <a href="/405">
+                <card class="porta" id="405">
                   <div class="texto_central">405</div>
                 </card>
                 </a>
               </div>
               <div class="laboratorio_layout">
-                <a href="/Lab">
-                <card class="card" id="406">
+                <a href="/406">
+                <card class="porta" id="406">
                   <div class="texto_central">406</div>
                 </card>
                 </a>
               </div>
               <div class="laboratorio_layout">
-                <a href="/Lab">
-                <card class="card" id="407">
+                <a href="/407">
+                <card class="porta" id="407">
                   <div class="texto_central">407</div>
                 </card>
                 </a>
               </div>
               <div class="laboratorio_layout">
-                <a href="/Lab">
-                <card class="card" id="408">
+                <a href="/408">
+                <card class="porta" id="408">
                   <div class="texto_central">408</div>
                 </card>
                 </a>
               </div>
               <div class="laboratorio_layout">
-                <a href="/Lab">
-                <card class="card" id="409">
+                <a href="/409">
+                <card class="porta" id="409">
                   <div class="texto_central">409</div>
                 </card>
                 </a>
               </div>
               <div class="laboratorio_layout">
-                <a href="/Lab">
-                <card class="card" id="411">
+                <a href="/411">
+                <card class="porta" id="411">
                   <div class="texto_central">411</div>
                 </card>
                 </a>
               </div>
               <div class="laboratorio_layout">
-                <a href="/Lab">
-                <card class="card" id="412">
+                <a href="/412">
+                <card class="porta" id="412">
                   <div class="texto_central">412</div>
                 </card>
                 </a>
@@ -141,4 +116,5 @@
       </section>
     </main>
   </body>
-</html>
+
+{% endblock %}

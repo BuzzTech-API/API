@@ -28,6 +28,12 @@
     color: #555555;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.esconde{
+    visibility: hidden;
+}
+.radio{
+    background-color: #555555;
+}
 
 .hardware {
     position: absolute;
@@ -36,6 +42,16 @@
     font-size: 45px;
     color: #555555;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+}
+
+.hardware:hover, .software:hover, .paodebatata:hover{
+    cursor: pointer;
+}
+
+
+a:link, a:visited, a:hover,a:active {
+    text-decoration: none;
 }
 
 .linha {
@@ -80,12 +96,7 @@
     height: 2vw;
 }
 .buttons {
-<<<<<<< HEAD
-    height: 100px;
-    width: 30%;
-=======
     height: 5vw; width: 30%;
->>>>>>> 32a9b7c2b9d00cc9b0f0aefd3d5f4d7dfbf5ea00
     margin-left: 60%;
     display: flex;
     flex-direction: row;

@@ -1,3 +1,4 @@
+import time
 from app import app, db
 from flask import render_template, redirect, url_for, request
 from app.models.model import Chamado, User
@@ -27,18 +28,16 @@ def visualizar():
 
 
 # função e rota para cadastrar que recebe do html o dados do formulario e cria uma variavel chamado com o modelo Chamado(atribuindo os valores do formulario para cada campo) e depois redireciona você para raiz
-@app.route("/cadastrar", methods=["POST", "GET"])
-def cadastrar():
-    lab = int(request.form["lab"])
-    comp = int(request.form["comp"])
-    problem = request.form["problem_type"]
+@app.route("/<int:lab>/<int:comp>/cadastrar", methods=["POST", "GET"])
+def cadastrar(lab, comp):
+    problem = request.form["problem"]
     description = request.form["description"]
     time_created = datetime.datetime.now()
     chamado = Chamado(lab, comp, problem, description,
                       'Pendente', time_created, 1)
     db.session.add(chamado)
     db.session.commit()
-    return redirect("/")
+    return redirect(url_for('cadastrar_l'))
 
 
 # rota que deleta o chamdo do id que você colocar no caminho por ex:/deletar/2 vai deletar o chamado de id 2
@@ -49,12 +48,6 @@ def deletar(id):
     db.session.commit()
     return redirect("/visualizar")
 
-<<<<<<< HEAD
-=======
-@app.route("/problemas")
-def tipos_de_problema():
-    return render_template("Seleção de Problemas.html")
->>>>>>> 32a9b7c2b9d00cc9b0f0aefd3d5f4d7dfbf5ea00
 
 # função de atualizar o chamado do id informado que vai entrar em uma pagina para a pessoa preencher as modificações e assim vai pegar as informações e atualizar no banco de dados
 @app.route('/atualizar/<int:id>', methods=["POST", "GET"])
@@ -114,6 +107,16 @@ def logout():
 
 
 # Rota de teste
-@app.route('/seleção_problemas')
-def seleção_problemas():
-    return render_template('Seleção de Problemas.html')
+@app.route('/<int:lab>/<int:comp>/seleção_problemas', methods=["POST", "GET"])
+def seleção_problemas(lab, comp):
+    
+    if request.method == "POST":    
+        problem = request.form["problem"]
+        description = request.form["description"]
+        time_created = datetime.datetime.now()
+        chamado = Chamado(lab, comp, problem, description,'Pendente', time_created, 1)
+        db.session.add(chamado)
+        db.session.commit()
+        return redirect(url_for('homepage'))
+        
+    return render_template('Seleção de Problemas.html',lab=lab,comp=comp)

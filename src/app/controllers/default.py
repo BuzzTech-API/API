@@ -13,20 +13,17 @@ def homepage():
     return render_template("home.html")
 
 
-
 @app.route("/abertura")
 def abertura_de_chamado():
     return render_template("abertura-de-chamado.html")
 
 
-
-# função e rota para visualizar os chamados 
+# função e rota para visualizar os chamados
 @app.route("/visualizar")
 def visualizar():
-    #depois você utiliza return com a fundação render_template("atribuindo a rota que você quer", além de adicionar a uma variavel tabela o valor da tabela que é lista do banco para que você possa utilizar os valores dela no seu html quando renderizar ele)
+    # depois você utiliza return com a fundação render_template("atribuindo a rota que você quer", além de adicionar a uma variavel tabela o valor da tabela que é lista do banco para que você possa utilizar os valores dela no seu html quando renderizar ele)
     tabela = Chamado.query.order_by(Chamado.id).all()
     return render_template("visualizar.html", tabela=tabela)
-
 
 
 # função e rota para cadastrar que recebe do html o dados do formulario e cria uma variavel chamado com o modelo Chamado(atribuindo os valores do formulario para cada campo) e depois redireciona você para raiz
@@ -37,11 +34,11 @@ def cadastrar():
     problem = request.form["problem_type"]
     description = request.form["description"]
     time_created = datetime.datetime.now()
-    chamado = Chamado(lab, comp, problem, description, 'Pendente', time_created, 1)
+    chamado = Chamado(lab, comp, problem, description,
+                      'Pendente', time_created, 1)
     db.session.add(chamado)
     db.session.commit()
     return redirect("/")
-
 
 
 # rota que deleta o chamdo do id que você colocar no caminho por ex:/deletar/2 vai deletar o chamado de id 2
@@ -52,29 +49,31 @@ def deletar(id):
     db.session.commit()
     return redirect("/visualizar")
 
+<<<<<<< HEAD
+=======
 @app.route("/problemas")
 def tipos_de_problema():
     return render_template("Seleção de Problemas.html")
+>>>>>>> 32a9b7c2b9d00cc9b0f0aefd3d5f4d7dfbf5ea00
 
 # função de atualizar o chamado do id informado que vai entrar em uma pagina para a pessoa preencher as modificações e assim vai pegar as informações e atualizar no banco de dados
-@app.route('/atualizar/<int:id>', methods=["POST", "GET"])    
+@app.route('/atualizar/<int:id>', methods=["POST", "GET"])
 def atualizar(id):
     r = Chamado.query.filter_by(id=id).first()
-    
+
     if request.method == "POST":
-        
+
         r.lab = request.form["lab"]
         r.comp = request.form["comp"]
         r.description = request.form["description"]
         db.session.add(r)
         db.session.commit()
-        #flash("Atualizado")
+        # flash("Atualizado")
         return redirect(url_for('visualizar'))
     return render_template("atualizar.html", r=r)
 
 
-
-@app.route('/cadastrar_login', methods=['GET','POST'])
+@app.route('/cadastrar_login', methods=['GET', 'POST'])
 def cadastrar_login():
     if request.method == 'POST':
         name = request.form['name']
@@ -89,7 +88,6 @@ def cadastrar_login():
     return render_template('cadastrar.html')
 
 
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -102,16 +100,20 @@ def login():
             print(user.verify_password(password))
             login_user(user)
             return redirect(url_for('visualizar'))
-        
-        
+
         print("Usuário não existe")
         return redirect(url_for('homepage'))
 
     return render_template('login.html')
 
 
-
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('homepage'))
+
+
+# Rota de teste
+@app.route('/seleção_problemas')
+def seleção_problemas():
+    return render_template('Seleção de Problemas.html')

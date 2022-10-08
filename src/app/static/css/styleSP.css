@@ -66,8 +66,8 @@
 }
 
 .logo {
-    height: 115px;
-    width: 115px;
+    height: 9vw;
+    width: 9vw;
     place-self: center;
     margin-left: 5%;
     margin-right: -10%;
@@ -76,10 +76,9 @@
 .techelp {
     position: absolute;
     place-self: center;
-    margin-left: 180px;
-    height: 30px;
+    margin-left: 14vw;
+    height: 2vw;
 }
-
 
 .buttons {
     height: 100px;

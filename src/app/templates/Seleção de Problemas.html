@@ -1,49 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/styleSP.css">
-    <script defer type="text/javascript" src="../static/js/java.js"></script>
-    <title>TECHELP - Seleção de Problemas</title>
-</head>
-
+{% extends 'base.html' %}
+{% block content %}
 <body class="fundo">
-    <div class="barrasup">
-        <img class="logo" src="../static/img/Logo.png" alt="logo">
-        <img class="techelp" src="../static/img/techelp.png" alt="techelp">
-        <div class="buttons">
-            <div class="butao">
-                <a class="butao" href="/"><img class="hexagHM" src="../static/img/Home.png" alt="hexagono"></a>
-            </div>
-
-            <div class="butao">
-                <a
-                    href="https://www.google.com/search?q=nicolas+cage&client=opera-gx&hs=tY7&sxsrf=ALiCzsatqFE5OnsbcmMveRe6Achysc46bA:1664893526674&source=lnms&tbm=isch&sa=X&ved=2ahUKEwij8vvZ48b6AhU2BbkGHS7ICpsQ_AUoAnoECAIQBA"><img
-                        class="hexagRP" src="../static/img/RelatarBut.svg" alt="hexagono"></a>
-            </div>
-
-            <div class="butao">
-                <a href="https://siga.cps.sp.gov.br" target="_blank"><img class="hexagSF"
-                        src="../static/img/SIGABut.svg" alt="hexagono"></a>
-            </div>
-
-            <div class="butao">
-                <a
-                    href="https://www.google.com/search?q=keanu+reeves+brasileiro&client=opera-gx&hs=ylz&sxsrf=ALiCzsbIuDJiQG6ihjzGxCJUwAYYooXa-A:1664863585169&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi1vN-U9MX6AhXyILkGHcgXDj4Q_AUoAXoECAEQAw&biw=1309&bih=561&dpr=1"><img
-                        class="hexagAT" src="../static/img/TecnicoBut.svg" alt="hexagono"></a>
-            </div>
-        </div>
-    </div>
     <div class="centro">
 
         <!-- Botão Software -->
         <a href="#" id="botão-software">
             <h1 class="software" onclick="descrição()"><u>Software</h1></u>
         </a>
-        <hr class="linha" size="6" width="600px" align="left" color="#555555">
+        <hr class="linha" size="6" width="600px" color="#555555">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="circuloE">
             <circle cx="15" cy="15" r="15" />
         </svg>
@@ -70,13 +34,13 @@
 
                 <div>
                     <!-- a função obrigado leva até o modal de obrigado -->
-                    <textarea name="" id="dedssdfsdf" class="descrição" cols="30" rows="6"
+                    <textarea name="description" id="dedssdfsdf" class="descrição" cols="30" rows="6"
                         placeholder="Descrição...."></textarea>
 
                 </div>
                 <div class="botão">
                     <!-- a função obrigado leva até o modal de obrigado -->
-                    <button class=btn type="submit" onclick="obrigado()">Enviar</button>
+                    <button href="/cadastrar" class=btn type="submit" onclick="obrigado()">Enviar</button>
                 </div>
             </form>
 
@@ -89,16 +53,14 @@
             <div class="lista-botão-A">
                 <div class="lista-botão-B">
                     <!-- a função descrição leva até o modal de descrição -->
-                    <button class="problema-botão" onclick="descrição()" type="submit">Sem cabo de rede</button>
-                    <button class="problema-botão" onclick="descrição()" type="submit">Teclado não funciona</button>
-                    <button class="problema-botão" onclick="descrição()" type="submit">Monitor não funciona</button>
-                    <button class="problema-botão" onclick="descrição()" type="submit">Sem cabo de rede</button>
-                    <button class="problema-botão" onclick="descrição()" type="submit">Computador não liga</button>
-                    <button class="problema-botão" onclick="descrição()" type="submit">Sem cabo de energia</button>
-                    <button class="problema-botão" onclick="descrição()" type="submit">Outros</button>
-
+                    <button name="problem" value='Sem cabo de rede' class="problema-botão" onclick="descrição()" type="submit">Sem cabo de rede</button>
+                    <button name="problem" value='Teclado não funciona' class="problema-botão" onclick="descrição()" type="submit">Teclado não funciona</button>
+                    <button name="problem" value='Monitor não funciona' class="problema-botão" onclick="descrição()" type="submit">Monitor não funciona</button>
+                    <button name="problem" value='Computador não liga' class="problema-botão" onclick="descrição()" type="submit">Computador não liga</button>
+                    <button name="problem" value='Sem cabo de energia' class="problema-botão" onclick="descrição()" type="submit">Sem cabo de energia</button>
+                    <button name="problem" value='Outros' class="problema-botão" onclick="descrição()" type="submit">Outros</button>
                 </div>
-            </div>'
+            </div>
         </div>
 
         <!-- Modal Obrigado -->
@@ -117,5 +79,4 @@
 
 
 </body>
-
-</html>
+{% endblock %}

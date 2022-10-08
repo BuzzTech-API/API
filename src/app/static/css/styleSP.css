@@ -81,8 +81,17 @@
 }
 
 .buttons {
+<<<<<<< HEAD
     height: 100px;
     width: 30%;
+=======
+<<<<<<< HEAD
+    height: 100px;
+    width: 30%;
+=======
+    height: 5vw; width: 30%;
+>>>>>>> 32a9b7c2b9d00cc9b0f0aefd3d5f4d7dfbf5ea00
+>>>>>>> 5d6bfc496dbf58f86f93e43db7ba7671284a4a2f
     margin-left: 60%;
     display: flex;
     flex-direction: row;

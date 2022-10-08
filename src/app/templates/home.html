@@ -9,7 +9,12 @@
 </head>
 <body class="fundo">
     <div class="centro">
+        {% if current_user.is_authenticated %}
+        <a href="/visualizar"><img class = "hexag" src="../static/img/Hexagono.png" alt="hexagono"><h1 class="butTxt">Visualizar Problema</h1></a>
+        
+        {% else %}
         <a href="/login"><img class = "hexag" src="../static/img/Hexagono.png" alt="hexagono"><h1 class="butTxt">Área do Técnico</h1></a>
+        {% endif %}
 
       
         <img class = "logo" src="../static/img/Logo.png" alt="logo" height="370px" width="350px">

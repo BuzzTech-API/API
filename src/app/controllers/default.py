@@ -49,12 +49,6 @@ def deletar(id):
     db.session.commit()
     return redirect("/visualizar")
 
-<<<<<<< HEAD
-=======
-@app.route("/problemas")
-def tipos_de_problema():
-    return render_template("Seleção de Problemas.html")
->>>>>>> 32a9b7c2b9d00cc9b0f0aefd3d5f4d7dfbf5ea00
 
 # função de atualizar o chamado do id informado que vai entrar em uma pagina para a pessoa preencher as modificações e assim vai pegar as informações e atualizar no banco de dados
 @app.route('/atualizar/<int:id>', methods=["POST", "GET"])

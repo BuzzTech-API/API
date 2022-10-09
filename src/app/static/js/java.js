@@ -24,22 +24,13 @@ function abrir() {
     document.querySelector('.bg-modal').style.display = 'flex';
 }
 
-
-
 // Mudar para Modal descrição
 function descrição() {
     document.querySelector('.modal-content-hardware').style.display = 'none'
     document.querySelector('.modal-content-descrição').style.display = 'block'
-    document.querySelector('.modal-content-obrigado').style.display = 'none'
+    document.querySelector('.modal-content-login').style.display = 'none'
 }
 
-
-// Mudar para Modal Obrigado
-function obrigado() {
-    document.querySelector('.modal-content-hardware').style.display = 'none'
-    document.querySelector('.modal-content-descrição').style.display = 'none'
-    document.querySelector('.modal-content-obrigado').style.display = 'block'
-}
 
 
 // Fechar modais
@@ -47,5 +38,6 @@ function fechar() {
     document.querySelector('.bg-modal').style.display = 'none';
     document.querySelector('.modal-content-hardware').style.display = 'none'
     document.querySelector('.modal-content-descrição').style.display = 'none'
+    document.querySelector('.modal-content-login').style.display = 'none'
 }
 

@@ -28,10 +28,12 @@
     color: #555555;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.esconde{
+
+.esconde {
     visibility: hidden;
 }
-.radio{
+
+.radio {
     background-color: #555555;
 }
 
@@ -45,12 +47,17 @@
     text-decoration: none;
 }
 
-.hardware:hover, .software:hover, .paodebatata:hover{
+.hardware:hover,
+.software:hover,
+.paodebatata:hover {
     cursor: pointer;
 }
 
 
-a:link, a:visited, a:hover,a:active {
+a:link,
+a:visited,
+a:hover,
+a:active {
     text-decoration: none;
 }
 
@@ -95,8 +102,10 @@ a:link, a:visited, a:hover,a:active {
     margin-left: 14vw;
     height: 2vw;
 }
+
 .buttons {
-    height: 5vw; width: 30%;
+    height: 5vw;
+    width: 30%;
     margin-left: 60%;
     display: flex;
     flex-direction: row;
@@ -418,6 +427,7 @@ a:link, a:visited, a:hover,a:active {
 }
 
 
+/* Modal Login */
 .modal-content-login {
     width: 40vw;
     height: 31vw;
@@ -427,6 +437,7 @@ a:link, a:visited, a:hover,a:active {
     position: relative;
     border-radius: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: none;
 }
 
 .inplogin {

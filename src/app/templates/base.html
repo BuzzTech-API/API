@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,41 +8,42 @@
     <script defer type="text/javascript" src="{{url_for('static', filename='js/java.js')}}"></script>
     <link rel="stylesheet" href="{{url_for('static', filename='css/styleSP.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-        crossorigin="anonymous"
-    />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{url_for('static', filename='css/Portas_Main.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/Lab_Main.css')}}">
 </head>
+
 <body class="fundo">
     <div class="barrasup">
-        <img class = "logo" src="{{url_for('static', filename='img/Logo.png')}}" alt="logo">
-        <img class = "techelp" src="{{url_for('static', filename='img/techelp.png')}}" alt="techelp">
+        <img class="logo" src="{{url_for('static', filename='img/Logo.png')}}" alt="logo">
+        <img class="techelp" src="{{url_for('static', filename='img/techelp.png')}}" alt="techelp">
         <div class="buttons">
             <div class="butao">
-            <a class="butao" href="/"><img class = "hexagHM" src="{{url_for('static', filename='img/Home.png')}}" alt="hexagono"></a>
-            </div>
-            
-            <div class="butao">
-            <a href="/lab"><img class = "hexagRP" src="{{url_for('static', filename='img/RelatarBut.svg')}}" alt="hexagono"></a>
-            </div>
-            
-            <div class="butao">
-            <a href="https://siga.cps.sp.gov.br/fatec/login.aspx" target="_blank"><img class = "hexagSF" src="{{url_for('static', filename='img/SIGABut.svg')}}" alt="hexagono"></a>
+                <a class="butao" href="/"><img class="hexagHM" src="{{url_for('static', filename='img/Home.png')}}"
+                        alt="hexagono"></a>
             </div>
 
-           
-
             <div class="butao">
-            <a href="#" id="botão-login" onclick="abrir()">
-            <img class = "hexagAT" src="{{url_for('static', filename='img/TecnicoBut.svg')}}" alt="hexagono"></a>
+                <a href="/lab"><img class="hexagRP" src="{{url_for('static', filename='img/RelatarBut.svg')}}"
+                        alt="hexagono"></a>
             </div>
 
-            
+            <div class="butao">
+                <a href="https://siga.cps.sp.gov.br/fatec/login.aspx" target="_blank"><img class="hexagSF"
+                        src="{{url_for('static', filename='img/SIGABut.svg')}}" alt="hexagono"></a>
+            </div>
+
+
+
+            <div class="butao">
+                <a href="#" id="botão-login" onclick="abrir(), login()">
+                    <img class="hexagAT" src="{{url_for('static', filename='img/TecnicoBut.svg')}}" alt="hexagono"></a>
+            </div>
+
+
         </div>
     </div>
     <section>
@@ -49,8 +51,8 @@
         {% endblock %}
     </section>
 
-     <!-- Modal Técnico -->
-     <div class="bg-modal">
+    <!-- Modal Técnico -->
+    <div class="bg-modal">
         <div class="modal-content-login">
             <div class="close" onclick="fechar()">+</div>
             <h1>Login Técnico</h1>
@@ -66,4 +68,5 @@
         </div>
     </div>
 </body>
+
 </html>

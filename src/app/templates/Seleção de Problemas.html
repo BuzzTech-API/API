@@ -1,101 +1,112 @@
 {% extends 'base.html'%}
 {%block title%}Seleção de Problemas{% endblock %}
 {% block content %}
-    <div class="centro">
+<div class="centro">
 
-        <!-- Botão Software -->
-        <a href="#" id="botão-software">
-            <label for="problem1" ><h1 class="software">Software</h1></label>
-                            <input id="problem1" class="software" name="problem" style="visibility: hidden;" value='Software' class="esconde" onclick="descrição()" type="radio" form="form2">
-        </a>
-        <hr class="linha" size="6" width="600px" align="left" color="#555555">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="circuloE">
-            <circle cx="15" cy="15" r="15" />
-        </svg>
+    <!-- Botão Software -->
+    <a href="#" id="botão-software">
+        <label for="problem1">
+            <h1 class="software">Software</h1>
+        </label>
+        <input id="problem1" class="software" name="problem" style="visibility: hidden;" value='Software'
+            class="esconde" onclick="descrição()" type="radio" form="form2">
+    </a>
+    <hr class="linha" size="6" width="600px" align="left" color="#555555">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="circuloE">
+        <circle cx="15" cy="15" r="15" />
+    </svg>
 
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="circuloD">
-            <circle cx="15" cy="15" r="15" />
-        </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="circuloD">
+        <circle cx="15" cy="15" r="15" />
+    </svg>
 
-        <img class="" src="{{ url_for('static', filename='img/TipoBut.png') }}" alt="logo" height="370px" width="350px">
+    <img class="" src="{{ url_for('static', filename='img/TipoBut.png') }}" alt="logo" height="370px" width="350px">
 
-        <!-- Botão Hardware -->
-        <a href="#" id="botão-hardware">
-            <h1 class="hardware">Hardware</h1>
-        </a>
-    </div>
-    <!-- Modais -->
-    <div class="bg-modal">
+    <!-- Botão Hardware -->
+    <a href="#" id="botão-hardware">
+        <h1 class="hardware">Hardware</h1>
+    </a>
+</div>
+<!-- Modais -->
+<div class="bg-modal">
 
-        
-        <!-- Modal Hardware -->
-        <div class="modal-content-hardware">
-            <div class="close" onclick="fechar()">+</div>
-            <h1 class="titulo">Hardware</h1>
-            <div class="lista-botão-A">
-                <div class="lista-botão-B">
-                    <!-- a função descrição leva até o modal de descrição -->
-                    <form action="seleção_problemas" method="POST"  id="form2">
-                        <div class="problema-botão">
-                            <input id="problem1" name="problem" value='Sem cabo de rede' class="esconde" onclick="descrição()" type="radio">
-                            <label for="problem1" class="paodebatata">Sem cabo de rede</label><br>
-                        </div>
-                        <div class="problema-botão">
-                            <input id="problem2" name="problem" value='Teclado não funciona' class="esconde" onclick="descrição()" type="radio">
-                            <label for="problem2" class="paodebatata">Teclado não funciona</label><br>
-                        </div>
-                        <div class="problema-botão">
-                            <input id="problem3" name="problem" value='Monitor não funciona' class="esconde" onclick="descrição()" type="radio">
-                            <label for="problem3" class="paodebatata">Monitor não funciona</label><br>
-                        </div>
-                        <div class="problema-botão">
-                            <input id="problem4" name="problem" value='Computador não liga' class="esconde" onclick="descrição()" type="radio">
-                            <label for="problem4" class="paodebatata">Computador não liga</label><br>
-                        </div>
-                        <div class="problema-botão">
-                            <input id="problem5" name="problem" value='Sem cabo de energia' class="esconde" onclick="descrição()" type="radio">
-                            <label for="problem5" class="paodebatata">Sem cabo de energia</label><br>
-                        </div>
-                        <div class="problema-botão">
-                            <input id="problem6" name="problem" value='Outros' class="esconde" onclick="descrição()" type="radio">
-                            <label for="problem6" class="paodebatata">Outros</label><br>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
 
-        <!-- Modal Descrição -->
-        <div class="modal-content-descrição">
-            <div class="close" onclick="fechar()">+</div>
-            
-                <h1 class="titulo">Conte-nos sobre seu problema</h1>
-
-                <div>
-                    <!-- a função obrigado leva até o modal de obrigado -->
-                    <textarea name="description" id="dedssdfsdf" class="descrição" cols="30" rows="6"
-                        placeholder="Descrição...." form="form2"></textarea>
-
-                </div>
-                <div class="botão">
-                    <!-- a função obrigado leva até o modal de obrigado -->
-                    <button  class='btnn' form="form2" type="submit"  onclick="obrigado()">Enviar</button>
-                </div>
-
-        </div>
-
-        <!-- Modal Obrigado -->
-        <div class="modal-content-obrigado">
-            <div>
-                <h1 class="título-obg">Obrigado!</h1>
-                <h1 class="sub-obg">Seu problema será solucionado em breve por um técnico.</h1>
-            </div>
-            <div class="botãoogb">
-                <a href="/home" class="nn" type="link">Home</a>
-                <!-- link temporário de teste, pode mudar -->
-                <a href="/seleção_problemas" class="nn2" type="menu">Laboratórios</a>
+    <!-- Modal Hardware -->
+    <div class="modal-content-hardware">
+        <div class="close" onclick="fechar()">+</div>
+        <h1 class="titulo">Hardware</h1>
+        <div class="lista-botão-A">
+            <div class="lista-botão-B">
+                <!-- a função descrição leva até o modal de descrição -->
+                <form action="seleção_problemas" method="POST" id="form2">
+                    <div class="problema-botão">
+                        <input id="problem1" name="problem" value='Sem cabo de rede' class="esconde"
+                            onclick="descrição()" type="radio">
+                        <label for="problem1" class="paodebatata">Sem cabo de rede</label><br>
+                    </div>
+                    <div class="problema-botão">
+                        <input id="problem2" name="problem" value='Teclado não funciona' class="esconde"
+                            onclick="descrição()" type="radio">
+                        <label for="problem2" class="paodebatata">Teclado não funciona</label><br>
+                    </div>
+                    <div class="problema-botão">
+                        <input id="problem3" name="problem" value='Monitor não funciona' class="esconde"
+                            onclick="descrição()" type="radio">
+                        <label for="problem3" class="paodebatata">Monitor não funciona</label><br>
+                    </div>
+                    <div class="problema-botão">
+                        <input id="problem4" name="problem" value='Computador não liga' class="esconde"
+                            onclick="descrição()" type="radio">
+                        <label for="problem4" class="paodebatata">Computador não liga</label><br>
+                    </div>
+                    <div class="problema-botão">
+                        <input id="problem5" name="problem" value='Sem cabo de energia' class="esconde"
+                            onclick="descrição()" type="radio">
+                        <label for="problem5" class="paodebatata">Sem cabo de energia</label><br>
+                    </div>
+                    <div class="problema-botão">
+                        <input id="problem6" name="problem" value='Outros' class="esconde" onclick="descrição()"
+                            type="radio">
+                        <label for="problem6" class="paodebatata">Outros</label><br>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+
+    <!-- Modal Descrição -->
+    <div class="modal-content-descrição">
+        <div class="close" onclick="fechar()">+</div>
+
+        <h1 class="titulo">Conte-nos sobre seu problema</h1>
+
+        <div>
+            <!-- a função obrigado leva até o modal de obrigado -->
+            <textarea name="description" id="dedssdfsdf" class="descrição" cols="30" rows="6"
+                placeholder="Descrição...." form="form2"></textarea>
+
+        </div>
+        <div class="botão">
+            <!-- a função obrigado leva até o modal de obrigado -->
+            <button class='btnn' form="form2" type="submit" onclick="obrigado()">Enviar</button>
+        </div>
+
+    </div>
+
+    <!-- Modal - Login -->
+    <div class="modal-content-login">
+        <div class="close" onclick="fechar()">+</div>
+        <h1>Login Técnico</h1>
+
+        <form action="login" method="post">
+            <label for="" class="inplogin">E-mail:</label>
+            <br><input class="inp" type="email" name="email" placeholder="Digite seu e-mail">
+            <br><label for="" class="inplogin">Senha:</label>
+            <br><input class="inp" type="password" name="password" placeholder="Sua senha">
+            <br><input class="inpsub" type="submit" value="Entrar">
+        </form>
+
+    </div>
+</div>
 
 {% endblock %}

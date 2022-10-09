@@ -58,7 +58,7 @@ def atualizar(id):
         db.session.commit()
         # flash("Atualizado")
         return redirect(url_for('visualizar'))
-    return render_template("atualizar.html", r=r)
+    return render_template("atualizar.html", chamado=r)
 
 
 @app.route('/cadastrar_login', methods=['GET', 'POST'])

@@ -14,13 +14,8 @@ def homepage():
     return render_template("home.html")
 
 
-@app.route("/abertura")
-def abertura_de_chamado():
-    return render_template("abertura-de-chamado.html")
-
-
 # função e rota para visualizar os chamados
-@app.route("/visualizar")
+@app.route("/visualizar", methods=["POST", "GET"])
 def visualizar():
     # depois você utiliza return com a fundação render_template("atribuindo a rota que você quer", além de adicionar a uma variavel tabela o valor da tabela que é lista do banco para que você possa utilizar os valores dela no seu html quando renderizar ele)
     tabela = Chamado.query.order_by(Chamado.id).all()
@@ -122,11 +117,11 @@ def seleção_problemas(lab, comp):
     return render_template('Seleção de Problemas.html',lab=lab,comp=comp)
 
 # Rota de laboratorio
-@app.route('/lab')
+@app.route('/lab', methods=["POST", "GET"])
 def lab():
     return render_template('Portas.html')
 
 # Rota de portas
-@app.route('/<int:lab>/')
+@app.route('/<int:lab>/', methods=["POST", "GET"])
 def comp(lab):
     return render_template('Lab.html',lab=lab)

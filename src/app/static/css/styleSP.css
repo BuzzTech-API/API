@@ -95,12 +95,8 @@ a:link, a:visited, a:hover,a:active {
     margin-left: 14vw;
     height: 2vw;
 }
-
 .buttons {
-    height: 100px;
-    width: 30%;
-    height: 100px;
-    width: 30%;
+    height: 5vw; width: 30%;
     margin-left: 60%;
     display: flex;
     flex-direction: row;
@@ -237,9 +233,9 @@ a:link, a:visited, a:hover,a:active {
     height: 31vw;
     background-color: white;
     text-align: center;
-    padding: 20px;
+    padding: 1vw;
     position: relative;
-    border-radius: 20px;
+    border-radius: 1vw;
     display: none;
 }
 
@@ -266,9 +262,9 @@ a:link, a:visited, a:hover,a:active {
 }
 
 .problema-botão {
-    border-radius: 30px;
-    padding: 12px;
-    width: 500px;
+    border-radius: 2vw;
+    padding: 0.55vw;
+    width: 35vw;
     font-family: 'Trebuchet MS';
     font-size: 1.6vw;
     cursor: pointer;
@@ -304,9 +300,9 @@ a:link, a:visited, a:hover,a:active {
     text-decoration-color: rgb(212, 212, 212);
 }
 
-.btn {
+.btnn {
     width: 10vw;
-    height: 40px;
+    height: 4vh;
     border-radius: 100px;
     border: none;
     background-color: rgb(212, 212, 212);
@@ -318,16 +314,17 @@ a:link, a:visited, a:hover,a:active {
 
 .descrição {
     resize: none;
-    padding: 10px;
-    border-radius: 20px;
+    padding: 1vw;
+    border-radius: 2vw;
     text-align: justify;
     font-family: 'Trebuchet MS';
     font-size: 2vw;
     border: none;
     width: 46vw;
-    height: 20vw;
+    height: 19vw;
     background-color: rgb(212, 212, 212);
-    margin-top: 5px
+    margin-top: 0.5vw;
+    margin-bottom: -2vw;
 }
 
 /* Modal Obrigado */
@@ -418,4 +415,47 @@ a:link, a:visited, a:hover,a:active {
     transform: rotate(45deg);
     font-weight: bolder;
     cursor: pointer;
+}
+
+
+.modal-content-login {
+    width: 40vw;
+    height: 31vw;
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    border-radius: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.inplogin {
+    font-size: 1.75vw;
+    margin-bottom: 0vw;
+    margin-top: 1vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.inp {
+    width: 34vw;
+    height: 1vw;
+    margin-top: 1vw;
+    border-radius: 1vw;
+    padding: 1vw;
+    font-size: 1.25vw;
+    margin-bottom: 0.5vw;
+    background-color: #E4E1E1;
+    border-style: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.inpsub {
+    width: 10vw;
+    height: 4vw;
+    margin-top: 5vw;
+    border-radius: 1vw;
+    font-size: 1.25vw;
+    background-color: #E4E1E1;
+    border-style: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

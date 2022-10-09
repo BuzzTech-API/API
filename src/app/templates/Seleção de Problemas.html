@@ -8,7 +8,7 @@
             <label for="problem1" ><h1 class="software">Software</h1></label>
                             <input id="problem1" class="software" name="problem" style="visibility: hidden;" value='Software' class="esconde" onclick="descrição()" type="radio" form="form2">
         </a>
-        <hr class="linha" size="6" width="600px" color="#555555">
+        <hr class="linha" size="6" width="600px" align="left" color="#555555">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="circuloE">
             <circle cx="15" cy="15" r="15" />
         </svg>
@@ -17,7 +17,7 @@
             <circle cx="15" cy="15" r="15" />
         </svg>
 
-        <img class="" src="{{url_for('static', filename='img/TipoBut.png')}}" alt="TipoBut" height="370px" width="350px">
+        <img class="" src="{{ url_for('static', filename='img/TipoBut.png') }}" alt="logo" height="370px" width="350px">
 
         <!-- Botão Hardware -->
         <a href="#" id="botão-hardware">
@@ -79,26 +79,9 @@
                 </div>
                 <div class="botão">
                     <!-- a função obrigado leva até o modal de obrigado -->
-                    <button  class='btn' form="form2" type="submit"  onclick="obrigado()">Enviar</button>
+                    <button  class='btnn' form="form2" type="submit"  onclick="obrigado()">Enviar</button>
                 </div>
 
-        </div>
-
-        <!-- Modal Hardware -->
-        <div class="modal-content-hardware">
-            <div class="close" onclick="fechar()">+</div>
-            <h1 class="titulo">Hardware</h1>
-            <div class="lista-botão-A">
-                <div class="lista-botão-B">
-                    <!-- a função descrição leva até o modal de descrição -->
-                    <button name="problem" value='Sem cabo de rede' class="problema-botão" onclick="descrição()" type="submit">Sem cabo de rede</button>
-                    <button name="problem" value='Teclado não funciona' class="problema-botão" onclick="descrição()" type="submit">Teclado não funciona</button>
-                    <button name="problem" value='Monitor não funciona' class="problema-botão" onclick="descrição()" type="submit">Monitor não funciona</button>
-                    <button name="problem" value='Computador não liga' class="problema-botão" onclick="descrição()" type="submit">Computador não liga</button>
-                    <button name="problem" value='Sem cabo de energia' class="problema-botão" onclick="descrição()" type="submit">Sem cabo de energia</button>
-                    <button name="problem" value='Outros' class="problema-botão" onclick="descrição()" type="submit">Outros</button>
-                </div>
-            </div>
         </div>
 
         <!-- Modal Obrigado -->

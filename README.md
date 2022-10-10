@@ -34,7 +34,9 @@
  <a href="https://getbootstrap.com/docs/4.1/getting-started/introduction/"><img src = "https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white"/></a>
  <a href="https://flask.palletsprojects.com/en/2.2.x/"><img src = "https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white"/></a>
  <a href="https://docs.github.com/pt"><img src = "https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/></a>
+ <a href="https://dev.mysql.com/doc/"><img src = "https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white"/></a>
 </h4>
+
 
 
 <br>
@@ -43,6 +45,12 @@
 > Status do Projeto: Em construção :construction:
 
 <br>
+
+
+
+![Teste do MVP](doc/sprints/sprint2/img/teste.gif)
+
+
 
 ## :medal_sports: Desafio <a id="desafio"></a>
 
@@ -91,6 +99,8 @@ Para embasar a tomada de decisão e priorizar as tarefas com maior entrega de va
 
 <br>
 
+
+
 ## 🚀 MVP <a id="mvp"></a>
 
 
@@ -109,8 +119,6 @@ Este chamado será automaticamente gerado e organizado em uma tabela na qual o t
 
 A seguir um teste do MVP com a automatização dos dados sendo preenchidos, atualizados e apagados:
 
-![Teste do MVP](doc/sprints/sprint1/img/MVP/MVP.gif)
-
 As instruções de como instalar e rodar a aplicação estão na [documentação detalhada da Sprint 1](doc/sprints/sprint1).
 
 <br>
@@ -119,11 +127,11 @@ As instruções de como instalar e rodar a aplicação estão na [documentação
 
 
 
-🔖 SPRINT 1 ([Link da Pasta](doc/sprints/sprint1)):  Em construção :construction:
+🔖 SPRINT 1 ([Link da Pasta](doc/sprints/sprint1)):  Concluído :white_check_mark:
 
-🔖 SPRINT 2 ([Link da Pasta](doc/sprints/sprint2)):  Aguardando ::stop_sign:
+🔖 SPRINT 2 ([Link da Pasta](doc/sprints/sprint2)):  Concluído :white_check_mark:
 
-🔖 SPRINT 3 ([Link da Pasta](doc/sprints/sprint3)):  Aguardando ::stop_sign:
+🔖 SPRINT 3 ([Link da Pasta](doc/sprints/sprint3)):  Em construção::construction:
 
 🔖 SPRINT 4 ([Link da Pasta](doc/sprints/sprint4)):  Aguardando ::stop_sign:
 
@@ -140,11 +148,16 @@ As instruções de como instalar e rodar a aplicação estão na [documentação
 |         Página de visualização dos chamados em HTML          | Prototipagem e criação da página de visualização de chamados em HTML. Tópicos da página: Chamados abertos; Data dos chamados; Botão de conclusão dos chamados |              <a href='#us04'>US04</a>              |    Alta    |   1    |          20h          | :white_check_mark: |
 |                Conexão  das páginas no Flask                 | Conectar a página de abertura de chamado e de visualização de chamados utilizando o framework Flask. |              <a href='#us05'>US05</a>              |    Alta    |   1    |          10h          | :white_check_mark: |
 |          Criação, aprovação e entrega do Wireframe           | Criação do protótipo das páginas de abertura de chamado e visualização de chamado com base na identidade visual do cliente. |              <a href='#us06'>US06</a>              |   Média    |   1    |          3h           | :white_check_mark: |
-|          Levantamento e listagem dos tipos de danos          | Listagem dos hardware integrantes das máquinas dos laboratórios passíveis de erros e  mau funcionamento . |              <a href='#us07'>US07</a>              |   Baixa    |   2    |          3h           |   :construction:   |
-|      Criação da Modelagem Conceitual do Banco de Dados       | Modelagem que descreva como os dados serão armazenados no banco e também seus  relacionamentos. Esse modelo adota alguma tecnologia, pode ser: relacional,  orientado a objetos, orientado a colunas, entre outros. |              <a href='#us08'>US08</a>              |    Alta    |   2    |          8h           |   :construction:   |
-| Criação do Esquema Conceitual através do Diagrama Estrutural de Entidade Relacionamento (DEER) | Elaboração do modelo de mais alto nível, ou seja, que esta mais próximo da realidade dos  usuários. O nível conceitual é desenvolvido com alto nível de abstração, a  partir dos requisitos do sistema, extraídos na fase de levantamento de  requisitos. |              <a href='#us08'>US08</a>              |    Alta    |   2    |          1h           |    :stop_sign:     |
-|             Início da Criação do Banco de Dados              | Criação do Banco de Dados funcional baseado no esquema aprovado. |              <a href='#us08'>US08</a>              |    Alta    |   2    |          13h          |    :stop_sign:     |
-| Criação da área do Técnico para diferenciar a interface dependendo de quem está utilizando | Criar uma área para o técnico administrar esses chamados recebidos com a entrada em  ordem cronológica |              <a href='#us09'>US09</a>              |    Alta    |   2    |          12h          |    :stop_sign:     |
+|          Levantamento e listagem dos tipos de danos          | Listagem dos hardware integrantes das máquinas dos laboratórios passíveis de erros e  mau funcionamento . |              <a href='#us07'>US07</a>              |   Baixa    |   2    |          3h           | :white_check_mark: |
+| Inserção dos principais tipos de danos de hardware no sistema | Inserção dos principais tipos de danos no sistema contendo os problemas de hardware com maior probabilidade de ocorrência. |              <a href='#us07'>US07</a>              |            |        |                       |                    |
+|      Criação da Modelagem Conceitual do Banco de Dados       | Modelagem que descreva como os dados serão armazenados no banco e também seus  relacionamentos. Esse modelo adota alguma tecnologia, pode ser: relacional,  orientado a objetos, orientado a colunas, entre outros. |              <a href='#us08'>US08</a>              |    Alta    |   2    |          8h           | :white_check_mark: |
+| Criação do Esquema Conceitual através do Diagrama Estrutural de Entidade Relacionamento (DEER) | Elaboração do modelo de mais alto nível, ou seja, que esta mais próximo da realidade dos  usuários. O nível conceitual é desenvolvido com alto nível de abstração, a  partir dos requisitos do sistema, extraídos na fase de levantamento de  requisitos. |              <a href='#us08'>US08</a>              |    Alta    |   2    |          1h           | :white_check_mark: |
+| Criação do Esquema Conceitual através do Diagrama Estrutural de Entidade Relacional (DEER) | Criação de um modelo de mais alto nível, ou seja, que esta mais próximo da realidade dos usuários. Esse modelo pode é elaborado por meio Diagrama Estrutural de Entidade e Relacionamento (DEER). |              <a href='#us08'>US08</a>              |    Alta    |   2    |          1h           | :white_check_mark: |
+|                  Criação do Banco de Dados                   | Criação do Banco de Dados funcional baseado no esquema aprovado. |              <a href='#us20'>US20</a>              |    Alta    |   2    |          13h          | :white_check_mark: |
+|     Funções de ligação da aplicação com o banco de dados     | Criação de funções em Python que levem os dados preenchidos pelos usuários nos campos de abertura de chamado até o banco de dados, e assim salvem esses dados de uma maneira persistida. |              <a href='#us21'>US21</a>              |    Alta    |   2    |          12h          | :white_check_mark: |
+|                  Criação da área do Técnico                  | Criar uma área para o técnico administrar esses chamados recebidos com a entrada em ordem cronológica |              <a href='#us09'>US09</a>              |    Alta    |   2    |          12h          | :white_check_mark: |
+| Login simplificado para o técnico e diferenciação da interface dependendo de quem está utilizando | Possibilidade de criar usuários para o sistema de ordem de serviço para que os técnicos tenham uma maneira segura e privada de visualizar, deletar, procurar, filtrar e atualizar os chamados criados pelos usuários. |              <a href='#us09'>US09</a>              |    Alta    |   2    |          9h           | :white_check_mark: |
+|               Implementar facilitações visuais               | Utilização de cores, ícones e outras soluções gráficas que facilitem o entendimento das informações dos sistemas para os usuários que desejem utilizá-lo. |              <a href='#us17'>US17</a>              |   Baixa    |   2    |          3h           | :white_check_mark: |
 | Conectar o Banco de Dados com área do técnico e abertura de chamados | Fazer com que a área do técnico também converse com o Banco de Dados criado. |              <a href='#us10'>US10</a>              |    Alta    |   3    |          20h          |    :stop_sign:     |
 |      Botão de conclusão de chamados na área do técnico       | Botão de "concluído" para que o técnico tenha controle dos chamados que  já foram resolvidos, mantendo uma área de trabalho *clean*. |              <a href='#us11'>US11</a>              |   Média    |   3    |          3h           |    :stop_sign:     |
 |             Confirmação de 'solicitação enviada'             | Sinalizar ao usuário solicitante da abertura do chamado quando esse chamado tiver sido  recebido pelo sistema. |              <a href='#us12'>US12</a>              |    Alta    |   3    |          7h           |    :stop_sign:     |
@@ -212,6 +225,8 @@ As instruções de como instalar e rodar a aplicação estão na [documentação
 | US17<a id='us17'></a> | Por ser mais velha, Andréia pode ter dificuldade de entender o que está escrito ou mesmo ao que se refere cada parte da solicitação de informações. Por isso, deverá ser criada identificações visuais, facilitando a comunicação e entendimento do usuário. |
 | US18<a id='us18'></a> | Natália pode sentir a necessidade de saber quais serviços ela pode solicitar na  página. Logo, eles estarão descritos melhor na página home. Andréia pode não conseguir expressar seu problema por escrito ou não ter seu problema resolvido, logo, uma página de contato poderá ser útil para que ela  tenha notícias sobre a sua solicitação. |
 | US19<a id='us19'></a> | Pedro, Andréia e Natália precisam de uma  identidade visual que transmita confiança, autoridade e conforto. |
+| US20<a id='us20'></a> | Pedro precisa de um ambiente o qual os dados das ordens de serviço fiquem armazenados mesmo depois que sua sessão acabar. |
+| US21<a id='us21'></a> | Pedro precisa de uma maneira de conectar o sistema web ao o banco de dados e, a partir dessa conexão, poder inserir, deletar, procurar, filtrar e atualizar os dados registrados nesse banco de dados. |
 
 <br>
 

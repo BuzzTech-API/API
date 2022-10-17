@@ -52,10 +52,5 @@ class User(db.Model, UserMixin):
     def password(self, password):
         self.password_hash = generate_password_hash(password)
 
-    #def __init__(self, name, email, password):
-        #self.name = name
-        #self.email = email
-        #self.password_hash = generate_password_hash(password)
-
     def verify_password(self, password):
         return check_password_hash(self.password_hash, password)

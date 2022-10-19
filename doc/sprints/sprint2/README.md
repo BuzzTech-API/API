@@ -1,4 +1,4 @@
-# Sprint 2 - Banco de Dados
+# Sprint 2 - Banco de Dados & Layout
 <p align="center">
       <img src="/doc/frontend/logo-BuzzTech.png" alt="logo da Buzz Tech" width="200">
       <h2 align="center"> Buzz Tech</h2>
@@ -41,15 +41,23 @@
 
 <br>
 
-Na segunda sprint buscou-se aprimorar o produto através da criação e consolidação de um banco de dados relacional utilizando-se MySQL e Flask-SQLAlchemy. Para atingir um maior valor do produto, foram adicionadas diversas funcionalidades no produto na perspectiva da utilização do técnico. A versão sintética e funcional do um sistema foi acrescida primeiro da modelagem de um banco de dados relacional com duas entidades, relacionando as Ordens de Serviço aos  Usuários cadastrados pelos técnicos que atenderão cada ordem. Através dessa atualização, o técnico será cadastrados com de usuário e senha e terá uma visão diferenciada dos chamados, podendo atualizar e deletar os registros de ordens de serviço criados no banco de dados.
-
-![Burndown](img/teste.gif)
-
-
+Na segunda sprint buscou-se aprimorar o produto através da criação e consolidação de um banco de dados relacional utilizando-se MySQL e Flask-SQLAlchemy. Para atingir um maior valor do produto, foram adicionadas diversas funcionalidades no produto na perspectiva da utilização do técnico. A versão sintética e funcional do um sistema foi acrescida primeiro da modelagem de um banco de dados relacional com duas entidades, relacionando as Ordens de Serviço aos  Usuários cadastrados, ou seja, os técnicos que atenderão cada ordem. Através dessa atualização, o técnico será cadastrados com usuário e senha e terá uma visão diferenciada dos chamados, podendo atualizar e deletar os registros de ordens de serviço criados no banco de dados.
 
 Outra mudança que vale destacar é a implementação e atualização de soluções visuais que visam facilitar a utilização do sistema pelos usuários que desejarem abrir uma ordem de serviço de reclamação de problemas. O wireframe foi pensando para criar um uso mais fluido e intuitivo para os usuários. Para isso, foram utilizados  ícones, paletas de cores, bem como botões para preenchimento de algumas informações, ao invés dos formulários por escrito.
 
 Para visualizar o *Wireframe* em PDF, acesse o [link :link:](img/wireframe.pdf).
+
+### :bust_in_silhouette: Cadastro do técnico
+
+![Cadastro do técnico](img/teste/gif/cadastrar.gif)
+
+### :telephone_receiver: Abertura de chamado
+
+![Abertura de chamado](img/teste/gif/chamado.gif)
+
+### 	:eyes: Visualização do chamado
+
+![Visualização de chamados](img/teste/gif/visualizar.gif)
 
 
 

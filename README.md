@@ -48,7 +48,17 @@
 
 
 
-![Teste do MVP](doc/sprints/sprint2/img/teste.gif)
+### :bust_in_silhouette: Cadastro do técnico
+
+![Cadastro do técnico](C:\Users\gm_bi\Documents\GitHub\API_ADS_2022.2_SOS\doc\sprints\sprint2\img\teste\gif\cadastrar.gif)
+
+### :telephone_receiver: Abertura de chamado
+
+![Abertura de chamado](C:\Users\gm_bi\Documents\GitHub\API_ADS_2022.2_SOS\doc\sprints\sprint2\img\teste\gif\chamado.gif)
+
+### 	:eyes: Visualização do chamado
+
+![Visualização de chamados](C:\Users\gm_bi\Documents\GitHub\API_ADS_2022.2_SOS\doc\sprints\sprint2\img\teste\gif\visualizar.gif)
 
 
 

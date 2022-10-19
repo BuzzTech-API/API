@@ -10,6 +10,7 @@
 <br>
 <p align="center">
   <a href ="#backlog"> Backlog da Sprint </a>  | 
+  <a href ="#tarefas"> Tarefas </a>  | 
   <a href ="#burndown"> Burndown </a>  |
   <a href ="#evolução"> Evolução do Backlog </a>  |
   <a href ="#hitoria"> Histórias de Usuários </a>
@@ -69,23 +70,107 @@ Para visualizar o *Wireframe* em PDF, acesse o [link :link:](img/wireframe.pdf).
 
 |                            Tarefa                            |                          Descrição                           |  Histórias de Usuários   | Prioridade | Sprint | Estimativa de Esforço |       Status       |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------: | :--------: | :----: | :-------------------: | :----------------: |
-|               Levantamento dos tipos de danos                | Listagem dos hardware integrantes das máquinas dos laboratórios passíveis de erros e má funcionamento . | <a href='#us07'>US07</a> |   Baixa    |   2    |          3h           | :white_check_mark: |
-| Inserção dos principais tipos de danos de hardware no sistema | Inserção dos principais tipos de danos no sistema contendo os problemas de hardware com maior probabilidade de ocorrência. | <a href='#us07'>US07</a> |    Alta    |   2    |          9h           | :white_check_mark: |
-|      Criação da Modelagem Conceitual do Banco de Dados       | Criação da Modelagem Conceitual através da descrição de como os dados serão armazenados no banco e também seus relacionamentos. | <a href='#us08'>US08</a> |    Alta    |   2    |          8h           | :white_check_mark: |
-| Criação do Esquema Conceitual através do Diagrama Estrutural de Entidade Relacional (DEER) | Criação de um modelo de mais alto nível, ou seja, que esta mais próximo da realidade dos usuários. Esse modelo pode é elaborado por meio Diagrama Estrutural de Entidade e Relacionamento (DEER). | <a href='#us08'>US08</a> |    Alta    |   2    |          1h           | :white_check_mark: |
-|                Criação do Banco de Dados SQL                 | Criação do Banco de Dados relacional e funcional baseado na modelagem e no esquema aprovados. | <a href='#us20'>US20</a> |    Alta    |   2    |          13h          | :white_check_mark: |
-|     Funções de ligação da aplicação com o banco de dados     | Criação de funções em Python que levem os dados preenchidos pelos usuários nos campos de abertura de chamado até o banco de dados, e assim salvem esses dados de uma maneira persistida. | <a href='#us21'>US21</a> |    Alta    |   2    |          12h          | :white_check_mark: |
-|                  Criação da área do Técnico                  | Criar uma área para o técnico administrar esses chamados recebidos com a entrada em ordem cronológica | <a href='#us09'>US09</a> |    Alta    |   2    |          12h          | :white_check_mark: |
-| Login simplificado para o técnico e diferenciação da interface dependendo de  quem está utilizando | Possibilidade de criar usuários para o sistema de ordem de serviço para que os técnicos tenham uma maneira segura e privada de visualizar, deletar, procurar, filtrar e atualizar os chamados criados pelos usuários. | <a href='#us09'>US09</a> |    Alta    |   2    |          9h           | :white_check_mark: |
-|               Implementar facilitações visuais               | Utilização de cores, ícones e outras soluções gráficas que facilitem o entendimento das informações dos sistemas para os usuários que desejem utilizá-lo. | <a href='#us17'>US17</a> |   Baixa    |   2    |          3h           | :white_check_mark: |
+| <a href='#levantamento'>Levantamento dos tipos de danos</a>  | Listagem dos hardware integrantes das máquinas dos laboratórios passíveis de erros e má funcionamento. | <a href='#us07'>US07</a> |   Baixa    |   2    |          3h           | :white_check_mark: |
+| <a href='#insercao'>Inserção dos principais tipos de danos de hardware no sistema</a> | Inserção dos principais tipos de danos no sistema contendo os problemas de hardware com maior probabilidade de ocorrência. | <a href='#us07'>US07</a> |    Alta    |   2    |          9h           | :white_check_mark: |
+| <a href='#modelagem'>Criação da Modelagem Conceitual do Banco de Dados</a> | Criação da Modelagem Conceitual através da descrição de como os dados serão armazenados no banco e também seus relacionamentos. | <a href='#us08'>US08</a> |    Alta    |   2    |          8h           | :white_check_mark: |
+| <a href='#deer'>Criação do Esquema Conceitual através do Diagrama Estrutural de Entidade Relacional (DEER)</a> | Criação de um modelo de mais alto nível, ou seja, que esta mais próximo da realidade dos usuários. Esse modelo pode é elaborado por meio Diagrama Estrutural de Entidade e Relacionamento (DEER). | <a href='#us08'>US08</a> |    Alta    |   2    |          1h           | :white_check_mark: |
+|       <a href='#sql'>Criação do Banco de Dados SQL</a>       | Criação do Banco de Dados relacional e funcional baseado na modelagem e no esquema aprovados. | <a href='#us20'>US20</a> |    Alta    |   2    |          13h          | :white_check_mark: |
+| <a href='#funcoes'>Funções de ligação da aplicação com o banco de dados</a> | Criação de funções em Python que levem os dados preenchidos pelos usuários nos campos de abertura de chamado até o banco de dados, e assim salvem esses dados de uma maneira persistida. | <a href='#us21'>US21</a> |    Alta    |   2    |          12h          | :white_check_mark: |
+|      <a href='#tecnico'>Criação da área do Técnico</a>       | Criar uma área para o técnico administrar esses chamados recebidos com a entrada em ordem cronológica. | <a href='#us09'>US09</a> |    Alta    |   2    |          12h          | :white_check_mark: |
+| <a href='#login'>Login simplificado para o técnico e diferenciação da interface dependendo de  quem está utilizando</a> | Possibilidade de criar usuários para o sistema de ordem de serviço para que os técnicos tenham uma maneira segura e privada de visualizar, deletar, procurar, filtrar e atualizar os chamados criados pelos usuários. | <a href='#us09'>US09</a> |    Alta    |   2    |          9h           | :white_check_mark: |
+|   <a href='#visuais'>Implementar facilitações visuais</a>    | Utilização de cores, ícones e outras soluções gráficas que facilitem o entendimento das informações dos sistemas para os usuários que desejem utilizá-lo. | <a href='#us17'>US17</a> |   Baixa    |   2    |          3h           | :white_check_mark: |
+
+<br>
+
+## :checkered_flag: Tarefas<a id="tarefas"></a>
 
 
+
+1. ### Levantamento dos principais tipos de danos de hardware<a id='levantamento'></a>
+
+   A partir de pesquisa com funcionários responsáveis pela manutenção dos computadores e visita aos laboratórios, foi feita uma listagem dos hardware integrantes das máquinas dos laboratórios passíveis de erros e má funcionamento. Essa tarefa teve como saída a lista de problemas de hardware que deu insumo para a tarefa seguinte, de inserção dos principais problemas no sistema.
+
+   
+
+2. ### Inserção dos principais tipos de danos de hardware no sistema<a id='insercao'></a>
+
+   Para esta etapa, foram utilizadas as informações coletadas na tarefa de levantamento dos tipos de dano para, então, inseri-los no sistema. Criou-se uma listagem de botões com opções previamente preenchidas contendo os problemas de hardware com maior probabilidade de ocorrência. Assim, os usuários têm maior facilidade ao cadastrar um desses problemas mais recorrentes. A listagem de botões contendo os danos de hardware mais comuns ficou como mostra a imagem a seguir:
+
+![Lista de danos](img/lista-de-danos.jpg)
+
+ 
+
+3. ### Criação da Modelagem Conceitual do Banco de Dados<a id='modelagem'></a>
+
+   Através da descrição de como os dados serão armazenados no banco e também seus relacionamentos, bem como com diversas discussões com o cliente sobre as suas necessidades, foi feita a criação da modelagem conceitual do banco de dados relacional. Chegou-se à conclusão que, para essa atual etapa do projeto, eram necessárias apenas duas tabelas: uma para os chamados, outra para os usuários. Essa tabelas teriam cardinalidade de 1 para N, com a chave primária da tabela de usuários sendo usada como a chave estrangeira na tabela de chamados. A partir desse conceito foi esboçado o Diagrama Estrutural de Entidade Relacional que pode ser visto na próxima tarefa.
+
+   
+
+4. ### Criação do Diagrama Estrutural de Entidade Relacional (DEER)<a id='deer'></a>
+
+   Com as informações levantadas na tarefa anterior, começou-se a criação de um modelo de mais alto nível, ou seja, que esta mais próximo da realidade dos usuários. Esse modelo pode é elaborado por meio Diagrama Estrutural de Entidade e Relacionamento (DEER) e tem como objetivo estruturar de maneira visual como ficará o Esquema do Banco de Dados quando este estiver implementado na linguagem escolhida, no nosso caso, o MySQL. A seguir, como ficou o DEER após criado na ferramenta Workbench do MySQL:
+
+   
+
+   <img src="img/banco-de-dados/BuzzTechAPI.png" alt="Diagrama Estrutural de Entidade e Relacionamento" style="zoom: 150%;" />
+
+   
+
+5. ### Criação do Banco de Dados SQL<a id='sql'></a>
+
+   Após a modelagem conceitual e a criação do DEER, o passo seguinte foi a criação do Banco de Dados relacional e funcional baseado na modelagem e no esquema aprovados. Para tanto, foi utilizado a linguagem MySQL para seguir o planejamento das tabelas de usuários e chamados. Vale ressaltar que etapa foi imensamente facilitada e ganhou em eficiência por contar com as informações bem fundamentadas das duas tarefas anteriores.
+
+   
+
+6. ### Funções de ligação da aplicação com o banco de dados<a id='funcoes'></a>
+
+   Nesta tarefa foram criadas as funções em linguagem Python para conectar o frontend ao banco de dados. Através dessas funçõesos, os dados preenchidos pelos usuários nos campos de abertura de chamado são traduzidos para comandos que persistem essas informações na tabela de chamados do banco de dados. O mesmo foi feito para a criação de login e para a área do técnico, onde ao alterar os dados interface gráfica do sistema, o mesmo é alterado no banco de dados.
+
+   
+
+7. ### Criação da área do Técnico<a id='tecnico'></a>
+
+   Com as funções para conectar a interface gráfica com o banco de dados, foi possível criar uma área para o técnico na qual ele possa administrar os chamados recebidos, visualizando eles em ordem cronológica, bem como interagindo com esses dados. Dois botões permitem que o técnico ou edite as informações de um chamado, ou exclua o registro se assim desejar. A seguir, uma imagem de como ficou essa área após implementada:
+
+![Área do técnico](img/area-tecnico.jpg)
+
+
+
+8. ### Login para o técnico e diferenciação da interface <a id='login'></a>
+
+   Com a criação de uma tabela de usuários no nosso banco de dados, ficou possível criar usuários para o sistema de ordem de serviço para que os técnicos tenham uma maneira segura e privada de visualizar, deletar, procurar, filtrar e atualizar os chamados criados pelos usuários. Logo, uma das tarefas foi criar uma tela simplificada para criação dos usuários, bem como para o login. Para este, foi criado um modal que, a partir de qualquer página do sistema, é possível realizar o login. A seguir, como ficaram essas duas telas:
+
+![Criação do usuário](img/cadastro.jpg)
+
+![Login do usuário](img/login.jpg)
+
+
+
+9. ### Implementar facilitações visuais <a id='visuais'></a>
+
+   Como requisito do produto, é necessário a utilização de cores, ícones e outras soluções gráficas que facilitem o entendimento das informações dos sistemas para os usuários que desejem utilizá-lo. Neste sentido, nós criamos ícones que tornam a utilização mais intuitiva tanto para o técnico, quanto para quem for abrir um chamado no sistema. Na parte do técnico, utilizamos divisórias nas tabelas que facilitam a leitura dos registros, bem como dois ícones com cores e ícones intuitivos, sendo o verde com um uma seta circular para editar, e o vermelho com uma lixeira para apagar o registro. 
+
+   
+
+   ![Facilitações visuais para o técnico](img/visual-tecnico.jpg)
+
+   
+
+   Já nas páginas de abertura de chamado, foram feitas implementações gráficas desde o começo do processo. Com a escolha dos laboratórios e computadores através de ícones em formatos de portas, até a escolha dos computadores com ícones em formato de monitores.
+
+   
+
+   ![Escolha dos laboratórios](img/visual-portas.jpg)
+
+   ![Escolha dos computadores](img/visual-computador.jpg)
+
+   
 
 <br>
 
 ## :fire: Burndown<a id='burndown'></a>
 
-![Burndown](img/burndown.png)
+<img src="img/burndown.png" alt="Burndown" style="zoom: 150%;" />
 
 
 

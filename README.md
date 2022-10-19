@@ -183,7 +183,7 @@ As instruções de como instalar e rodar a aplicação estão na [documentação
 
 
 
-![Roadmap - Backlog do Produto](doc/frontend/roadmap.png)
+![Roadmap - Backlog do Produto](doc/frontend/roadmap2.png)
 
 <br>
 

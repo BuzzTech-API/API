@@ -48,7 +48,17 @@
 
 
 
-![Teste do MVP](doc/sprints/sprint2/img/teste.gif)
+### :bust_in_silhouette: Cadastro do técnico
+
+![Cadastro do técnico](doc/sprints/sprint2/img/teste/gif/cadastrar.gif)
+
+### :telephone_receiver: Abertura de chamado
+
+![Abertura de chamado](doc/sprints/sprint2/img/teste/gif/chamado.gif)
+
+### 	:eyes: Visualização do chamado
+
+![Visualização de chamados](doc/sprints/sprint2/img/teste/gif/visualizar.gif)
 
 
 
@@ -173,7 +183,7 @@ As instruções de como instalar e rodar a aplicação estão na [documentação
 
 
 
-![Roadmap - Backlog do Produto](doc/frontend/roadmap.png)
+![Roadmap - Backlog do Produto](doc/frontend/roadmap2.png)
 
 <br>
 

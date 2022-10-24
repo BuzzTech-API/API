@@ -2,23 +2,25 @@ from app import db
 from app.models.model import Chamado, User
 from flask import render_template, redirect, url_for, request
 from flask_login import login_user
+from datetime import datetime
 
 
-
-
-# Função de inserção de chamado no banco
-def Insert_call(lab, comp, problem, description,time_created, status, user_id):
-    chamado = Chamado(lab, comp, problem, description,time_created, status, user_id)
-    db.session.add(chamado)
+# Função de inserção de tupla no banco
+def insert(Model, params):
+    """Função para inserir em uma tabela uma tupla no banco de dados"""
+    if Model == User:
+        model= Model(name=params.get('name'), email=params.get('email'), password=params.get('password'))
+    else:
+        model = Model(params)
+    db.session.add(model)
     db.session.commit()
-    return print('inserido')
+    return
 
 
-
-
-# Função de deletar de chamado no banco
-def Dell_call(id):
-    r = Chamado.query.filter_by(id=id).first()
+# Função de deletar de tupla no banco
+def dell(Model,id):
+    '''Função de deletar de tupla no banco'''
+    r = Model.query.filter_by(id=id).first()
     db.session.delete(r)
     db.session.commit()
     return redirect("/visualizar")
@@ -27,9 +29,11 @@ def Dell_call(id):
 
 
 # Função de atualizar de chamado no banco
-def Update_call(chamado):
+def update_call(chamado):
+    '''Função de atualizar os chamado no banco'''
     chamado.lab = request.form["lab"]
     chamado.comp = request.form["comp"]
+    chamado.problem = request.form["problem"]
     chamado.description = request.form["description"]
     db.session.add(chamado)
     db.session.commit()
@@ -39,7 +43,8 @@ def Update_call(chamado):
 
 
 # Função de logar usuario
-def User_login(email, password):
+def user_login(email, password):
+    '''Função de logar usuario'''
     user = User.query.filter_by(email=email).first()
 
     if user and user.verify_password(password):
@@ -47,14 +52,3 @@ def User_login(email, password):
         login_user(user)
         return redirect(url_for('visualizar'))
     return "Usuário não existe"
-
-
-
-
-
-# Função de cadastrar login
-def Insert_login(name,email,password):
-    user = User(name=name, email=email, password=password)
-    db.session.add(user)
-    db.session.commit()
-    return 'Inserido usuário'

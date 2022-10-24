@@ -5,18 +5,17 @@ from app.models.model import Chamado, User
 from flask_login import logout_user
 import datetime
 # Funções de interação com o banco de dados está fora do arquivo para melhor a legibilidade do código
-from app.controllers.conection import Insert_call, Dell_call, Update_call, User_login, Insert_login
+from app.controllers.conection import dell, update_call, user_login, insert
 
 
 
 
 
 
-# aqui atribuimos uma routa para essa aplicação com .route ligado a nossa aplicação flask e atribuimos um caminho como "/" que quer dizer a raiz do site e ela vai sempre executar a função que estiver em seguida dela como é caso ela executa a função home page
 @app.route("/index")
 @app.route("/")
 def homepage():
-    # na função home page você utiliza uma função da biblioteca padrão do flask a render_template() para você renderizar uma pagina html e não ter que poluir seu condigo com tags de html e todos os arquivos htmls devem ficar em uma pasta chamada templates com essa escrita e ficando no mesmo diretorio do arquivo.py que está sua aplicação flask
+    """Função e rota da página home"""
     return render_template("home.html")
 
 
@@ -24,25 +23,17 @@ def homepage():
 # função e rota para visualizar os chamados
 @app.route("/visualizar", methods=["POST", "GET"])
 def visualizar():
-    # depois você utiliza return com a fundação render_template("atribuindo a rota que você quer", além de adicionar a uma variavel tabela o valor da tabela que é lista do banco para que você possa utilizar os valores dela no seu html quando renderizar ele)
+    """Função e rota de visualização dos chamados"""
     tabela = Chamado.query.order_by(Chamado.id).all()
     return render_template("visualizar.html", tabela=tabela)
-
-
-
-# função e rota para cadastrar que recebe do html o dados do formulario e cria uma variavel chamado com o modelo Chamado(atribuindo os valores do formulario para cada campo) e depois redireciona você para raiz
-@app.route("/<int:lab>/<int:comp>/cadastrar", methods=["POST", "GET"])
-def cadastrar(lab, comp):
-    if request.method == "POST":
-        Insert_call(lab, comp, request.form["problem"], request.form["description"],'Pendente', datetime.datetime.now(), 1)
-    return redirect(url_for('cadastrar_l'))
 
 
 
 # rota que deleta o chamdo do id que você colocar no caminho por ex:/deletar/2 vai deletar o chamado de id 2
 @app.route('/deletar/<int:id>')
 def deletar(id):
-    Dell_call(id)
+    """Função que deleta chamado"""
+    dell(Chamado,id)
     return redirect("/visualizar")
 
 
@@ -52,7 +43,7 @@ def deletar(id):
 def atualizar(id):
     r = Chamado.query.filter_by(id=id).first()
     if request.method == "POST":
-        Update_call(r)
+        update_call(r)
         # flash("Atualizado")
         return redirect(url_for('visualizar'))
     return render_template("atualizar.html", chamado=r)
@@ -62,7 +53,12 @@ def atualizar(id):
 @app.route('/cadastrar_login', methods=['GET', 'POST'])
 def cadastrar_login():
     if request.method == 'POST':
-        Insert_login(request.form['name'], request.form['email'], request.form['password'])
+        params={
+        'name': request.form['name'],
+        'email': request.form['email'],
+        'password': request.form['password']
+        }
+        insert(User, params)
         return redirect(url_for('login'))
     return render_template('cadastrar.html')
 
@@ -71,7 +67,7 @@ def cadastrar_login():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        User_login(request.form['email'], request.form['password'])
+        user_login(request.form['email'], request.form['password'])
         return redirect(url_for('homepage'))
     return render_template('login.html')
 
@@ -84,13 +80,11 @@ def logout():
 
 
 
-# Rota de dos problemas
-@app.route('/<int:lab>/<int:comp>/seleção_problemas', methods=["POST", "GET"])
-def seleção_problemas(lab, comp):
-    if request.method == "POST":    
-        Insert_call(lab, comp, request.form["problem"], request.form["description"],'Pendente', datetime.datetime.now(), 1)
-        return redirect(url_for('homepage'))
-    return render_template('Seleção de Problemas.html',lab=lab,comp=comp)
+# Rota de portas
+@app.route('/<int:lab>/', methods=["POST", "GET"])
+def comp(lab):
+    return render_template('Lab.html',lab=lab)
+
 
 
 
@@ -101,7 +95,27 @@ def lab():
 
 
 
-# Rota de portas
-@app.route('/<int:lab>/', methods=["POST", "GET"])
-def comp(lab):
-    return render_template('Lab.html',lab=lab)
+
+# Rota de dos problemas
+@app.route('/<int:lab>/<int:comp>/seleção_problemas', methods=["POST", "GET"])
+def seleção_problemas(lab, comp):
+    """Rota de selecionar os chamados e finalizar o cadastro do chamado"""
+    if request.method == "POST": 
+        params={
+        "lab":lab,
+        "comp":comp,
+        "problem": request.form["problem"],
+        "description": request.form["description"],
+        "status": 'Pendente',
+        "time_created":datetime.datetime.now(),
+        "user_id":1
+        }
+        insert(Chamado, params)   
+        return redirect(url_for('homepage'))
+
+    return render_template('Seleção de Problemas.html',lab=lab,comp=comp)
+
+
+
+
+

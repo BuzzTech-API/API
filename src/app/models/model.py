@@ -18,14 +18,22 @@ class Chamado(db.Model):
     time_created = db.Column(db.Date,nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     
-    def __init__(self,lab, comp, problem, description, status, time_created,user_id):
+    """def __init__(self,lab, comp, problem, description, status, time_created,user_id):
         self.lab = lab
         self.comp = comp
         self.problem = problem
         self.description = description
         self.status = status
         self.time_created = time_created
-        self.user_id = user_id
+        self.user_id = user_id"""
+    def __init__(self, params):
+        self.lab = params.get('lab')
+        self.comp = params.get('comp')
+        self.problem = params.get('problem')
+        self.description = params.get('description')
+        self.status = params.get('status')
+        self.time_created = params.get('time_created')
+        self.user_id = params.get('user_id')
 
 
 

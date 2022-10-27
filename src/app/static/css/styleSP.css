@@ -146,6 +146,38 @@ a:active {
     margin-bottom: 1vw;
 }
 
+.EsNome{
+    border:1px solid black;
+
+}
+
+.EsLocal{
+    margin-left: 15.9vw;
+    margin-top: -2vw;
+    border:1px solid black;
+
+}
+
+.EsSo{
+    margin-left: 7.8vw;
+    margin-top: 1vw;
+    border:1px solid black;
+
+}
+
+.EsProcessador{
+    margin-top: 1.5vw;
+    border:1px solid black;
+
+}
+
+.EsRam{
+    margin-left: 15.9vw;
+    margin-top: -2vw;
+    border:1px solid black;
+
+}
+
 .Txt {
     text-align: center;
     color: #A90405;

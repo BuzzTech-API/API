@@ -1,6 +1,21 @@
 {% extends 'base.html'%}
 {%block title%}Seleção de Problemas{% endblock %}
 {% block content %}
+<!-- Caso esteja logado, podendo editar -->
+{% if current_user.is_authenticated %}
+<form action="" class = 'dados'>
+    <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
+    <input type="text" value="Nome" class="inputNome inputBase">
+    <input type="text" value="Local" class="inputLocal inputBase">
+    <br>
+    <input type="text" value="Processador" class="inputProcessador inputBase">
+    <input type="text" value="RAM" class="inputRam inputBase">
+    <input type="text" value="S.O." class="inputSo inputBase">
+</form>
+{% else %}
+<!-- Caso não esteja logado ** PARTE DA JOYCE **-->
+
+{% endif %} 
 <div class="centro">
 
     <!-- Botão Software -->

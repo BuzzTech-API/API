@@ -33,6 +33,18 @@
     visibility: hidden;
 }
 
+.dados {
+    text-align: center;
+    margin: 2vw;
+    margin-bottom: -4vw;
+
+}
+
+.computador {
+    height: 10vw;
+    width: 10vw;
+}
+
 .radio {
     background-color: #555555;
 }
@@ -89,8 +101,8 @@ a:active {
 }
 
 .logo {
-    height: 9vw;
-    width: 9vw;
+    height: 6.25vw;
+    width: 6.25vw;
     place-self: center;
     margin-left: 5%;
     margin-right: -10%;
@@ -110,6 +122,16 @@ a:active {
     display: flex;
     flex-direction: row;
     justify-content: end;
+}
+
+.inputBase {
+    background-color: #E4E1E1;
+    border-radius: 25px;
+    text-align: center;
+    border-width: 0.5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 15vw;
+    height: 2vw;
 }
 
 .Txt {

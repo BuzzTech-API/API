@@ -3,15 +3,22 @@
 {% block content %}
 <!-- Caso esteja logado, podendo editar -->
 {% if current_user.is_authenticated %}
-<form action="" class = 'dados'>
-    <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
-    <input type="text" value="Nome" class="inputNome inputBase">
-    <input type="text" value="Local" class="inputLocal inputBase">
-    <br>
-    <input type="text" value="Processador" class="inputProcessador inputBase">
-    <input type="text" value="RAM" class="inputRam inputBase">
-    <input type="text" value="S.O." class="inputSo inputBase">
-</form>
+<section>
+    <div class="compos">
+        <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
+    </div>  
+    <div>
+    <form action="" class = 'dados'>  
+        <input type="text" value="Nome" class="inputNome inputBase">
+        <input type="text" value="Local" class="inputLocal inputBase">
+        <br>
+        <input type="text" value="S.O." class="inputSo inputBase">
+        <br>
+        <input type="text" value="Processador" class="inputProcessador inputBase">
+        <input type="text" value="RAM" class="inputRam inputBase">
+    </form>
+    </div>
+</section>
 {% else %}
 <!-- Caso não esteja logado ** PARTE DA JOYCE **-->
 

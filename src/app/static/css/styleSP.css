@@ -34,8 +34,8 @@
 }
 
 .dados {
-    text-align: center;
-    margin: 2vw;
+    margin-left: 41vw;
+    margin-top: 2vw;
     margin-bottom: -4vw;
 
 }
@@ -43,6 +43,12 @@
 .computador {
     height: 10vw;
     width: 10vw;
+}
+
+.compos {
+    position: absolute;
+    margin-left: 29vw;
+    margin-top: -1vw;
 }
 
 .radio {
@@ -101,8 +107,8 @@ a:active {
 }
 
 .logo {
-    height: 6.25vw;
-    width: 6.25vw;
+    height: 8.82vw;
+    width: 8.82vw;
     place-self: center;
     margin-left: 5%;
     margin-right: -10%;
@@ -132,6 +138,12 @@ a:active {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: 15vw;
     height: 2vw;
+}
+
+.inputSo {
+    margin-left: 7.8vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
 }
 
 .Txt {

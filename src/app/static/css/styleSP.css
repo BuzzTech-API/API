@@ -107,8 +107,8 @@ a:active {
 }
 
 .logo {
-    height: 8.82vw;
-    width: 8.82vw;
+    height: 6.30vw;
+    width: 6.30vw;
     place-self: center;
     margin-left: 5%;
     margin-right: -10%;
@@ -128,6 +128,19 @@ a:active {
     display: flex;
     flex-direction: row;
     justify-content: end;
+}
+
+.butTxt {
+    text-align: center;
+    color: #A90405;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10mm;
+    text-decoration: none;
+    position: absolute;
+    display: flex;
+    margin-top: -170px;
+    width: 200px;
+    margin-left: 25px;
 }
 
 .inputBase {

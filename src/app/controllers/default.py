@@ -124,14 +124,14 @@ def seleção_problemas(lab, comp):
 
 
 @app.route('/editar', methods = ['POST', 'GET'])
-def teste():
+def editar():
     l = Object.query.order_by(Object.Object_lab)
     labs=[]
     for item in l:
-        if item.Layout_lab not in labs:
-            labs.append(item.Layout_lab)
+        if item.Object_lab not in labs:
+            labs.append(item.Object_lab)
 
-    return render_template('edit.html', labs=lab)
+    return render_template('edit.html', labs=labs)
 
 @app.route('/edited', methods = ['POST', 'GET'])
 def edited():

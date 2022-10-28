@@ -3,37 +3,25 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash,check_password_hash
 
 
-#A estrutura de informações que tem em um chamado
-
 
 class Chamado(db.Model):
-    
+    """Tabela de chamados"""
     __tablename__ = "calls"
     id = db.Column(db.Integer, primary_key=True)
-    lab = db.Column(db.Integer, nullable=False)
-    comp = db.Column(db.Integer, nullable=False)
-    problem = db.Column(db.String(60),nullable=False)
-    description = db.Column(db.String(400),nullable=False)
-    status = db.Column(db.String(60),nullable=False)
-    time_created = db.Column(db.Date,nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    
-    """def __init__(self,lab, comp, problem, description, status, time_created,user_id):
-        self.lab = lab
-        self.comp = comp
-        self.problem = problem
-        self.description = description
-        self.status = status
-        self.time_created = time_created
-        self.user_id = user_id"""
+    Object_id = db.Column(db.Integer, db.ForeignKey('object.id'), nullable=False)
+    Problem = db.Column(db.String(60))
+    Description = db.Column(db.String(400))
+    Status = db.Column(db.String(60))
+    Time_created = db.Column(db.Date)
+    User_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)
+
     def __init__(self, params):
-        self.lab = params.get('lab')
-        self.comp = params.get('comp')
-        self.problem = params.get('problem')
-        self.description = params.get('description')
-        self.status = params.get('status')
-        self.time_created = params.get('time_created')
-        self.user_id = params.get('user_id')
+        self.Object_id = params.get('Object_id')
+        self.Problem = params.get('Problem')
+        self.Description = params.get('Description')
+        self.Status = params.get('Status')
+        self.Time_created = params.get('Time_created')
+        self.User_id = int(params.get('User_id'))
 
 
 
@@ -44,6 +32,7 @@ def get_user(user_id):
 
 
 class User(db.Model, UserMixin):
+    """Tabela de Usuarios"""
     __tablename__ = 'users'
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.String(200),nullable=False)
@@ -62,3 +51,24 @@ class User(db.Model, UserMixin):
 
     def verify_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+
+class Object(db.Model):
+    """Tabela de Object"""
+    __tablename__ = 'object'
+    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    Object_lab = db.Column(db.String(45))
+    Object_div= db.Column(db.String(300))
+    Object_compname = db.Column(db.String(45))
+    Object_comp_processor = db.Column(db.String(45))
+    Object_comp_RAM = db.Column(db.String(45))
+    Object_comp_operational_system = db.Column(db.String(45))
+    computer = db.relationship('Chamado', backref='object')
+
+    def __init__(self, params):
+        self.Object_lab = params.get('Object_lab')
+        self.Object_div= params.get('Object_div')
+        self.Object_compname = params.get('Object_compname')
+        self.Object_comp_processor = params.get('Object_comp_processor')
+        self.Object_comp_RAM = params.get('Object_comp_RAM')
+        self.Object_comp_operational_system = params.get('Object_comp_operational_system')

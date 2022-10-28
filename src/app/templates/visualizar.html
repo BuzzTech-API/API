@@ -28,7 +28,9 @@
         </thead>
         <tbody>
         <!-- Aqui tem um for para conseguir colocar na tabela somente as informações da cada campo não o banco em formato de lista-->
+        {% set i = 0 %}
         {% for item in tabela %}
+        
         <tr>
             {% if current_user.is_authenticated %}
             <td style="background-color: #E4E1E1;">
@@ -36,12 +38,12 @@
             </td>
             {% endif %}
             <td class='dados'>{{item.id}}</td>
-            <td>{{item.time_created}}</td>
-            <td>{{item.lab}}</td>
-            <td>{{item.comp}}</td>
-            <td>{{item.problem}}</td>
-            <td>{{item.description}}</td>
-            <td>{{item.status}}</td>
+            <td>{{item.Time_created}}</td>
+            <td>{{lab[i]}}</td>
+            <td>{{comp[i]}}</td>
+            <td>{{item.Problem}}</td>
+            <td>{{item.Description}}</td>
+            <td>{{item.Status}}</td>
             <!-- Por último você tem os botões com a referencia de sua respectiva função no caso o caminho que você atribui no route das funções atualizar e deletar no app.py-->
             {% if current_user.is_authenticated %}
             <td style="background-color: #E4E1E1;">
@@ -51,6 +53,7 @@
             </td> 
             {% endif %}    
         </tr>
+        {% set i = i+1 %}
         {% endfor %}
         </tbody>
         </table>

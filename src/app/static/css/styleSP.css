@@ -33,6 +33,24 @@
     visibility: hidden;
 }
 
+.dados {
+    margin-left: 41vw;
+    margin-top: 2vw;
+    margin-bottom: -4vw;
+
+}
+
+.computador {
+    height: 10vw;
+    width: 10vw;
+}
+
+.compos {
+    position: absolute;
+    margin-left: 29vw;
+    margin-top: -1vw;
+}
+
 .radio {
     background-color: #555555;
 }
@@ -89,8 +107,8 @@ a:active {
 }
 
 .logo {
-    height: 9vw;
-    width: 9vw;
+    height: 6.30vw;
+    width: 6.30vw;
     place-self: center;
     margin-left: 5%;
     margin-right: -10%;
@@ -110,6 +128,67 @@ a:active {
     display: flex;
     flex-direction: row;
     justify-content: end;
+}
+
+.butTxt {
+    text-align: center;
+    color: #A90405;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10mm;
+    text-decoration: none;
+    position: absolute;
+    display: flex;
+    margin-top: -170px;
+    width: 200px;
+    margin-left: 25px;
+}
+
+.inputBase {
+    background-color: #E4E1E1;
+    border-radius: 25px;
+    text-align: center;
+    border-width: 0.5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 15vw;
+    height: 2vw;
+}
+
+.inputSo {
+    margin-left: 7.8vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.EsNome{
+    border:1px solid black;
+
+}
+
+.EsLocal{
+    margin-left: 15.9vw;
+    margin-top: -2vw;
+    border:1px solid black;
+
+}
+
+.EsSo{
+    margin-left: 7.8vw;
+    margin-top: 1vw;
+    border:1px solid black;
+
+}
+
+.EsProcessador{
+    margin-top: 1.5vw;
+    border:1px solid black;
+
+}
+
+.EsRam{
+    margin-left: 15.9vw;
+    margin-top: -2vw;
+    border:1px solid black;
+
 }
 
 .Txt {

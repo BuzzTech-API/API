@@ -1,6 +1,52 @@
 {% extends 'base.html'%}
 {%block title%}Seleção de Problemas{% endblock %}
 {% block content %}
+<!-- Caso esteja logado, podendo editar -->
+{% if current_user.is_authenticated %}
+<section>
+    <div class="compos">
+        <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
+    </div>  
+    <div>
+    <form action="" class = 'dados'>  
+        <input type="text" value="Nome" class="inputNome inputBase">
+        <input type="text" value="Local" class="inputLocal inputBase">
+        <br>
+        <input type="text" value="S.O." class="inputSo inputBase">
+        <br>
+        <input type="text" value="Processador" class="inputProcessador inputBase">
+        <input type="text" value="RAM" class="inputRam inputBase">
+    </form>
+    </div>
+</section>
+{% else %}
+<!-- Caso não esteja logado ** PARTE DA JOICE **-->
+<section>
+    <div class="compos">
+        <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
+    </div>  
+    <div class = 'dados'>
+
+        <div class="EsNome inputBase">
+            <p>Nome:</p>
+         </div>
+         <div class="EsLocal inputBase"> 
+            <p>Local:</p>
+        </div>
+        <div class="EsSo inputBase">
+            <p> S.O.:</p>
+        </div>
+        <div class="EsProcessador inputBase">
+             <p>Processador:</p>
+        </div>
+        <div class="EsRam inputBase">
+              <p>RAM:</p>
+        </div>
+    
+    </div>
+</section>
+
+{% endif %} 
 <div class="centro">
 
     <!-- Botão Software -->

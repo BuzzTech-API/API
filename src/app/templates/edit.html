@@ -19,6 +19,18 @@
 <input type="hidden" id="elementcontent" name="elementcontent">
 <input type="hidden" id="totalcontent" name="totalcontent">
 <input type="hidden" id="selectedvalue" name="selectedvalue">
+
+
+<section class="lab_geral">
+<div class="local">
+<div class="rotulo">Laboratório</div>
+<center>
+<div class="editarea"><div class="pctablemaster">{% for row in elmnts %}{{row |safe}}{% endfor %}</div>
+</center>
+</div>
+</section>
+
+
 <div class="editclass">
 	<span class="admin">admin</span><span class="edittxt">&nbsp;</span>
     <input class="txtnew" type="text" id="txtnew" name="txtnew"><span class="edittxt"></span>
@@ -36,17 +48,6 @@
     <span class="salvar">salvar</span><span class="edittxt">&nbsp;&nbsp;&nbsp;</span>
     <span class="deletar">deletar</span>
 </div>
-
-
-<center>
-    <div class="editarea">
-        <div class="pctablemaster">
-            {% for row in elmnts %}
-                {{row |safe}}
-            {% endfor %}
-        </div>
-    </div>
-</center>
 
 
 
@@ -210,13 +211,13 @@
 	//FUNCOES DOS ELEMENTOS
     function addPC(yvalue, xvalue, ysize, xsize, texto) {
         total++;
-        document.querySelector(".pctablemaster").innerHTML += '<div id="obj' + total + '" class="pc" style="top: ' + yvalue + 'px; left: ' + xvalue + 'px; height: ' + ysize + 'px; width: ' + xsize + 'px;"><div class="innertext">' + texto + '</div></div>';
+        document.querySelector(".pctablemaster").innerHTML += '<div id="obj' + total + '" class="pc" style="top: ' + yvalue + 'px; left: ' + xvalue + 'px; height: ' + ysize + 'px; width: ' + xsize + 'px;"><div class="innertext">' + texto + '</div></div>\n';
         elements.push("obj" + total)
         elements.forEach(defineElement);
     }
     function addMesa(yvalue, xvalue, ysize, xsize) {
         total++;
-        document.querySelector(".pctablemaster").innerHTML += '<div id="obj' + total + '" class="mesa" style="top: ' + yvalue + 'px; left: ' + xvalue + 'px; height: ' + ysize + 'px; width: ' + xsize + 'px;"></div>';
+        document.querySelector(".pctablemaster").innerHTML += '<div id="obj' + total + '" class="mesa" style="top: ' + yvalue + 'px; left: ' + xvalue + 'px; height: ' + ysize + 'px; width: ' + xsize + 'px;"></div>\n';
         elements.push("obj" + total)
         elements.forEach(defineElement);  
     }

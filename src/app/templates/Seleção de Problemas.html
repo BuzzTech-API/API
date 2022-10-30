@@ -9,13 +9,13 @@
     </div>  
     <div>
     <form action="" class = 'dados'>  
-        <input type="text" value="Nome" class="inputNome inputBase">
-        <input type="text" value="Local" class="inputLocal inputBase">
+        <input type="text" value="{{comp.Object_compname}}" class="inputNome inputBase">
+        <input type="text" value="{{comp.Object_lab}}" class="inputLocal inputBase">
         <br>
-        <input type="text" value="S.O." class="inputSo inputBase">
+        <input type="text" value="{{comp.Object_comp_operational_system}}" class="inputSo inputBase">
         <br>
-        <input type="text" value="Processador" class="inputProcessador inputBase">
-        <input type="text" value="RAM" class="inputRam inputBase">
+        <input type="text" value="{{comp.Object_comp_processor}}" class="inputProcessador inputBase">
+        <input type="text" value="{{comp.Object_comp_RAM}}" class="inputRam inputBase">
     </form>
     </div>
 </section>
@@ -28,19 +28,19 @@
     <div class = 'dados'>
 
         <div class="EsNome inputBase">
-            <p>Nome:</p>
+            <p>{{comp.Object_compname}}</p>
          </div>
          <div class="EsLocal inputBase"> 
-            <p>Local:</p>
+            <p>{{comp.Object_lab}}</p>
         </div>
         <div class="EsSo inputBase">
-            <p> S.O.:</p>
+            <p>{{comp.Object_comp_operational_system}}</p>
         </div>
         <div class="EsProcessador inputBase">
-             <p>Processador:</p>
+             <p>{{comp.Object_comp_processor}}</p>
         </div>
         <div class="EsRam inputBase">
-              <p>RAM:</p>
+              <p>{{comp.Object_comp_RAM}}</p>
         </div>
     
     </div>

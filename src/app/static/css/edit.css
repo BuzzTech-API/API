@@ -11,6 +11,25 @@
     	cursor: -webkit-grabbing; cursor: grabbing;
     }
     .pc {
+        background-image: url("{{ url_for('static', filename='/img/PC_21.png') }}");
+    }
+    .porta1{
+        background-image: url("{{ url_for('static', filename='/img/door-open-fill.svg') }}");
+    }
+    .porta1 {
+        position: absolute;
+        border: 1px solid #DDDDDD;
+        z-index: 2;
+        background-repeat: no-repeat;
+        background-size: contain;
+        cursor: -webkit-grab; cursor: grab;
+        resize: none;
+        overflow: auto;
+	}
+    .porta1:active {
+    	cursor: -webkit-grabbing; cursor: grabbing;
+    }
+    .pc {
         font-family: "Monaco", monospace;
         font-weight: 750;
     	position: absolute;
@@ -40,7 +59,7 @@
     .editclass {
         
         margin-top: 1vh;
-        margin-bottom: 1vh;
+        margin-bottom: 0vh;
         left: 0px;
         width: 100%;
         text-align: center;
@@ -53,27 +72,28 @@
         user-select: none;
     }
     .edittxt {
+        margin-top: 0;
         font-family: "Lucida Grande", monospace;
         font-size: 2vh;
         font-weight: 750;
         padding-left: 1vw;
         user-select: none;
     }
-    .pcbutton, .mesabutton, .resize, .delete, .edit, .clone, .adicionar, .carregar, .salvar, .deletar, .admin {
+    .pcbutton, .portabutton, .mesabutton, .resize, .delete, .edit, .clone, .adicionar, .carregar, .salvar, .deletar, .admin {
         font-family: "Lucida Grande", monospace;
         font-size: 2.5vh;
         font-weight: 1000;
         user-select: none;
         color: #000000;
     }
-    .pcbutton:hover, .mesabutton:hover, .resize:hover, .delete:hover, .copy:hover, .clone:hover, .adicionar:hover, .carregar:hover, .salvar:hover, .deletar:hover, .admin:hover, .edit:hover {
+    .pcbutton:hover,.portabutton:hover, .mesabutton:hover, .resize:hover, .delete:hover, .copy:hover, .clone:hover, .adicionar:hover, .carregar:hover, .salvar:hover, .deletar:hover, .admin:hover, .edit:hover {
         color: #666666;
 		cursor: pointer;
     }
-    .pcbutton:active, .mesabutton:active, .resize:active, .delete:active, .copy:active, .clone:active, .adicionar:active, .carregar:active, .salvar:active, .deletar:active, .admin:active, .edit:active {
+    .pcbutton:active, .mesabutton:active,.portabutton:active, .resize:active, .delete:active, .copy:active, .clone:active, .adicionar:active, .carregar:active, .salvar:active, .deletar:active, .admin:active, .edit:active {
         color: #BBBBBB;
     }
-    .txtx0, .txty0, .txtx1, .txty1 {
+    .txtx0, .txty0, .txtx1, .txtrotate,  .txty1 {
         width: 5vw;
         font-family: "Lucida Grande", monospace;
         font-size: 2vh;
@@ -118,7 +138,7 @@
     .editarea {
         margin-top: 1vh;
         width: 90vw;
-        height: 90vh;
+        height: 120vh;
         background-color: #ffffff;
         border: 3px solid #000000;
         overflow: hidden;

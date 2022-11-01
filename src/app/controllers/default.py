@@ -49,11 +49,12 @@ def deletar(id):
 @app.route('/atualizar/<int:id>', methods=["POST", "GET"])
 def atualizar(id):
     r = Chamado.query.filter_by(id=id).first()
+    l = Object.query.filter_by(id=r.Object_id).first()
     if request.method == "POST":
         update_call(r)
         # flash("Atualizado")
         return redirect(url_for('visualizar'))
-    return render_template("atualizar.html", chamado=r)
+    return render_template("atualizar.html", chamado=r, comp=l)
 
 
 
@@ -190,9 +191,15 @@ def edited():
             total = request.form['totalcontent']
             elements=request.form['elementcontent']   
             elements = elements.split('\n')
-
+            lay = Object.query.filter_by(Object_lab=nome).all()
+            for item in elements:
+                index = item.find('id="')
+                for item2 in lay:
+                    if item[index:index+15] in item2.Object_div:
+                        print('está dentro')
+                
             
-                    
+            
             msg = "Sala modificada com sucesso"
             
 

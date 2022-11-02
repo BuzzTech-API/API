@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles_visualizar.css')}}">
+</head>
+    
+    <!-- Aqui temos a tabela de visualização-->
+    <div class='central'>
+        <h1>Problemas relatados</h1>
+        <table class="table" style="margin-bottom: 0%;">
+        <thead>
+            <tr>
+                <!-- Aqui fica a parte de identificação das colunas -->
+                {% if current_user.is_authenticated %}
+                <th style="background-color: #E4E1E1;" scope="col" class="espaço"></th>
+                {% endif %}
+                <th scope="col" class="espaço">ID</th>
+                <th scope="col" class="espaço">Data</th>
+                <th scope="col" class="espaço">Laboratório</th>
+                <th scope="col" class="espaço">Computador</th>
+                <th scope="col" class="espaço">Problema</th>
+                <th scope="col" class="espaço">Descrição</th>
+                <th scope="col" class="espaço">Status</th>
+                {% if current_user.is_authenticated %}
+                <th style="background-color: #E4E1E1;" scope="col" class="espaço"></th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+        <!-- Aqui tem um for para conseguir colocar na tabela somente as informações da cada campo não o banco em formato de lista-->
+        {% set i = 0 %}
+        {% for i in range(len) %}
+        
+        <tr>
+            {% if current_user.is_authenticated %}
+            <td style="background-color: #E4E1E1;">
+                <a class="btn updt btn-secondary"href='/atualizar/{{tabela[i].id}}'><i class="bi bi-arrow-clockwise"></i></a>
+            </td>
+            {% endif %}
+            <td class='dados'>{{tabela[i].id}}</td>
+            <td>{{tabela[i].Time_created}}</td>
+            <td>{{lab[i]}}</td>
+            <td>{{comp[i]}}</td>
+            <td>{{tabela[i].Problem}}</td>
+            <td>{{tabela[i].Description}}</td>
+            <td>{{tabela[i].Status}}</td>
+            <!-- Por último você tem os botões com a referencia de sua respectiva função no caso o caminho que você atribui no route das funções atualizar e deletar no app.py-->
+            {% if current_user.is_authenticated %}
+            <td style="background-color: #E4E1E1;">
+                <a class="btn del btn-danger" href='/deletar/{{tabela[i].id}}'>
+                    <i class="bi bi-trash"></i>
+                </a>
+            </td> 
+            {% endif %}    
+        </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    </div>
+{% endblock %}

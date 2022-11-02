@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <title>Cadastrar Técnico</title>
+</head>
+
+<body class="bodylogin">
+    <div class="bordacadastro">
+        <h1>Você é um técnico autorizado? Cadastre-se aqui</h1>
+        <form action="" method="post">
+            <label for="" class="inpcadastro">Seu nome:</label>
+            <br><input class="inp type="text" name="name" placeholder="Digite seu nome">
+
+            <br><label for="" class="inpcadastro">E-mail:</label>
+            <br><input class="inp" type="email" name="email" placeholder="Digite seu e-mail">
+
+            <br><label for="" class="inpcadastro">Senha:</label>
+            <br><input class="inp" type="password" name="password" placeholder="Sua senha"> 
+            
+            <br><input class="inpsub" type="submit" value="Cadastrar">
+        </form>
+    </div>
+
+</body>
+
+</html>

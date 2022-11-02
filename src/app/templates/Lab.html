@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+  <body>
+    <main>
+      
+      <section class="lab_geral">
+        <container class="local">
+          <div class="rotulo">Laboratório {{lab}}</div>
+          <center>
+            <div class="editarea">
+              <div class="pctablemaster">
+                {% for row in elmnts %}
+                {% if 'class="pc"' in row.Object_div %}
+                  <a class="nomePc" href="/{{row.Object_lab}}/{{row.id}}/seleção_problemas"><p>{{row.Object_div |safe}}</p></a>
+                {% else %}
+                  <p>{{row.Object_div |safe}}</p>
+                {% endif %}
+                {% endfor %}
+                </div>
+            </div>
+            </center>
+          </container>
+          
+      </section>
+    </main>
+  </body>
+{% endblock %}

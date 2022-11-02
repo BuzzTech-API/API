@@ -49,11 +49,12 @@ def deletar(id):
 @app.route('/atualizar/<int:id>', methods=["POST", "GET"])
 def atualizar(id):
     r = Chamado.query.filter_by(id=id).first()
+    l = Object.query.filter_by(id=r.Object_id).first()
     if request.method == "POST":
         update_call(r)
         # flash("Atualizado")
         return redirect(url_for('visualizar'))
-    return render_template("atualizar.html", chamado=r)
+    return render_template("atualizar.html", chamado=r, comp=l)
 
 
 
@@ -108,6 +109,7 @@ def lab():
 @app.route('/<lab>/<comp>/seleção_problemas', methods=["POST", "GET"])
 def seleção_problemas(lab, comp):
     """Rota de selecionar os chamados e finalizar o cadastro do chamado"""
+    l = Object.query.filter_by(id=comp).first()
     if request.method == "POST": 
         params={
         "Object_id":comp,
@@ -120,7 +122,7 @@ def seleção_problemas(lab, comp):
         insert(Chamado, params)   
         return redirect(url_for('homepage'))
 
-    return render_template('Seleção de Problemas.html',lab=lab,comp=comp)
+    return render_template('Seleção de Problemas.html',lab=lab,comp=l)
 
 
 @app.route('/editar', methods = ['POST', 'GET'])
@@ -143,20 +145,15 @@ def edited():
          if (request.form['actiontype'] == "add"):
             nome = request.form['txtnew']
             elements = request.form['elementcontent']
-            elements = elements.split('</div>')
-            element=[]
+            elements = elements.split('\n')
             for item in elements:
-                if 'class' in item:
-                    element.append(item)
-            for item in element:
-                if '</div>' in item:
-                    continue
-                elif 'class="pc"' in item:
+                if 'class="pc"' in item:
                     index=item.find('innertext')
+                    index2=item.find('</div>')
                     params={
                         'Object_lab': nome,
-                        'Object_div': item+'</div></div>',
-                        'Object_compname':item[index+11:],
+                        'Object_div': item+'\n',
+                        'Object_compname':item[index+11:index2],
                         'Object_comp_processor':"",
                         'Object_comp_RAM': '',
                         'Object_comp_operational_system':''
@@ -166,7 +163,7 @@ def edited():
                 elif 'class="':
                     params={
                         'Object_lab': nome,
-                        'Object_div': item + '</div>',
+                        'Object_div': item + '\n',
                         'Object_compname':'',
                         'Object_comp_processor':"",
                         'Object_comp_RAM': '',
@@ -193,14 +190,16 @@ def edited():
             nome = request.form['salalist']
             total = request.form['totalcontent']
             elements=request.form['elementcontent']   
-            elements = elements.split('</div>')
-            element=[]
+            elements = elements.split('\n')
+            lay = Object.query.filter_by(Object_lab=nome).all()
             for item in elements:
-                if 'class' in item:
-                    element.append(item)
-
+                index = item.find('id="')
+                for item2 in lay:
+                    if item[index:index+15] in item2.Object_div:
+                        print('está dentro')
+                
             
-                    
+            
             msg = "Sala modificada com sucesso"
             
 

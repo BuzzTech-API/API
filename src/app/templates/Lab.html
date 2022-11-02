@@ -7,10 +7,14 @@
         <container class="local">
           <div class="rotulo">Laboratório {{lab}}</div>
           <center>
-            <div class="">
+            <div class="editarea">
               <div class="pctablemaster">
                 {% for row in elmnts %}
-                  <a href="/{{row.Object_lab}}/{{row.id}}/seleção_problemas">{{row.Object_div |safe}}
+                {% if 'class="pc"' in row.Object_div %}
+                  <a class="nomePc" href="/{{row.Object_lab}}/{{row.id}}/seleção_problemas"><p>{{row.Object_div |safe}}</p></a>
+                {% else %}
+                  <p>{{row.Object_div |safe}}</p>
+                {% endif %}
                 {% endfor %}
                 </div>
             </div>

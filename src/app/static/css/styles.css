@@ -27,4 +27,87 @@ a.butao {
 }
 .espaço{
     margin-left: 2%;
+<<<<<<< Updated upstream
+=======
+}
+
+
+div.borda{
+    border-radius: 1vw;
+    background-color: white;
+    margin: 10vw;
+    margin-left: 29vw;
+    padding: 0.5vw;
+    text-align: center;
+    width: 40vw;
+    height: 23vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.inp{
+    width: 20vw;
+    height: 1vw;
+    margin: 0vw;
+    margin-top: 1vw;
+    border-radius: 1vw;
+    padding: 1vw;
+    font-size: 1.25vw;
+    margin-bottom: 0.5vw;
+    background-color: #E4E1E1;
+    border-style: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.inpsub{
+    width: 10vw;
+    height: 2vw;
+    margin: 0vw;
+    margin-top: 1.5vw;
+    border-radius: 1vw;
+    font-size: 1.25vw;
+    background-color: #E4E1E1; 
+    border-style: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.bodylogin{
+    background-color: #EBD5D5;
+}
+
+label.inplogin{
+    font-size: 1.75vw; 
+    margin-bottom: 0vw;
+    margin-top: 1vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.bordacadastro{
+    border-radius: 1vw;
+    background-color: white;
+    margin: 5vw;
+    margin-left: 29vw;
+    padding: 0.5vw;
+    text-align: center;
+    width: 40vw;
+    height: 34vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.inpcadastro{
+    font-size: 1.75vw;
+    margin-bottom: 0.5vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1.obrigado{
+    margin-top: 3vw;
+    text-decoration:underline;
+}
+
+p.obrigado{
+    margin-top: 2vw;
+    font-size: 170%;
+    text-align: center;
+>>>>>>> Stashed changes
 }

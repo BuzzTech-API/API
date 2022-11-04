@@ -19,6 +19,12 @@ def homepage():
 
 
 
+@app.route("obrigado")
+def obrigado():
+    return render_template("obrigado.html")
+
+    
+
 # função e rota para visualizar os chamados
 @app.route("/visualizar", methods=["POST", "GET"])
 def visualizar():

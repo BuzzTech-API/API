@@ -125,7 +125,7 @@ def seleção_problemas(lab, comp):
         "User_id":1
         }
         insert(Chamado, params)   
-        return redirect(url_for('homepage'))
+        return redirect(url_for('obrigado'))
 
     return render_template('Seleção de Problemas.html',lab=lab,comp=l)
 

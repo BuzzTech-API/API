@@ -2,14 +2,19 @@
 {%block title%}Atualizar Chamado{% endblock %}
 {% block content %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/edit.css') }}">
 <style>
-.pc {
-	background-image: url("{{ url_for('static', filename='/img/PC_21.png') }}");
-}
+    .pc {
+        background-image: url("{{ url_for('static', filename='/img/PC_21.png') }}");
+        }
+    .porta1{
+        background-image: url("{{ url_for('static', filename='/img/door.png') }}");
+        }
+    .server{
+        background-image: url("{{ url_for('static', filename='/img/server2.png') }}");
+        }
 </style>
     
-
 
 <div class="editobj">
     
@@ -25,54 +30,67 @@
 <div class="local">
 <div class="rotulo">Laboratório</div>
 <center>
-<div class="editarea"><div class="pctablemaster">{% for row in elmnts %}{{row |safe}}{% endfor %}</div>
+<div class="editarea"><div class="pctablemaster">{% for row in elmnts %}{{row |safe}}{% endfor %}</div></div>
 </center>
 </div>
 </section>
 
-
+<div class="fundo1">
 <div class="editclass">
-	<span class="admin">admin</span><span class="edittxt">&nbsp;</span>
-    <input class="txtnew" type="text" id="txtnew" name="txtnew"><span class="edittxt"></span>
-    <span class="adicionar">adicionar</span><span class="edittxt">&nbsp;</span>
-    <select class="salalist" name="salalist" id="salalist">
-        {% for lab in labs %}
-            {% if selected == lab: %}
-                <option value="{{lab}}" selected> {{lab}} </option>
-            {% else %}
-                <option value="{{lab}}"> {{lab}} </option>
-            {% endif %}
-        {% endfor %}
-    </select><span class="edittxt">&nbsp;</span>
-    <span class="carregar">carregar </span><span class="edittxt">&nbsp;</span>
-    <span class="salvar">salvar</span><span class="edittxt">&nbsp;&nbsp;&nbsp;</span>
-    <span class="deletar">deletar</span>
+    <div class="botão1">
+        <span class="adicionar">Adicionar Laboratório</span><span class="edittxt"></span>
+        <input class="txtnew" type="text" id="txtnew" name="txtnew"><span class="edittxt"></span>
+    </div>
+    <div class="botão1">
+        <span class="carregar">Carregar Laboratório</span><span class="edittxt"></span>
+        <select class="salalist" name="salalist" id="salalist">
+            {% for lab in labs %}
+                {% if selected == lab: %}
+                    <option value="{{lab}}" selected> {{lab}} </option>
+                {% else %}
+                    <option value="{{lab}}"> {{lab}} </option>
+                {% endif %}
+            {% endfor %}
+    
+        </select><span class="edittxt"></span>
+    </div>
+    
+    <div class="botão1"><span class="salvar">Salvar Alterações</span><span class="edittxt"></span></div>
+    <div class="botão1"><span class="deletar">Deletar Laboratório</span></div>
 </div>
 
 
 
 
 <div class="editsize">
-	<span class="edittxt">&nbsp;x: </span><input class="txtx0" type="text" id="xpos" name="xpos"><span class="edittxt">&nbsp;largura: </span><input class="txtx1" type="text" id="xsize" name="xsize">
-    <span class="edittxt">&nbsp;name: </span><input class="txtname" type="text" id="txtname" name="txtname"><span class="edittxt">&nbsp;</span>
-    <span class="pcbutton">novo PC&nbsp;&nbsp;</span><span class="edittxt">&nbsp;</span>
-    <span class="edit">edit&nbsp;</span><span class="edittxt">&nbsp;</span>
-    <span class="resize">redimensionar</span>
-    <br>
-    <span class="edittxt">&nbsp;y: </span><input class="txty0" type="text" id="ypos" name="ypos"><span class="edittxt">&nbsp;&nbsp;altura: </span><input class="txty1" type="text" id="ysize" name="ysize">
-    <span class="edittxt">&nbsp;&nbsp;&nbsp;id: </span><input class="txtid" type="text" id="txtid" name="txtid" disabled><span class="edittxt">&nbsp;</span>
-    <span class="mesabutton">nova mesa</span><span class="edittxt">&nbsp;</span>
-    <span class="clone">clone</span><span class="edittxt">&nbsp;</span>
-    <span class="delete">deletar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <div class="conteudo1">
+        <span class="edittxt">rotate: </span><input class="txtrotate" type="text" id="rotate" name="rotate">
+        <span class="edittxt">x: </span><input class="txtx0" type="text" id="xpos" name="xpos">
+        <span class="edittxt">y: </span><input class="txty0" type="text" id="ypos" name="ypos">
+        <span class="edittxt">largura: </span><input class="txtx1" type="text" id="xsize" name="xsize">
+        <span class="edittxt">altura: </span><input class="txty1" type="text" id="ysize" name="ysize">
+        <span class="edittxt">name: </span><input class="txtname" type="text" id="txtname" name="txtname">
+        <span class="edittxt">id: </span><input class="txtid" type="text" id="txtid" name="txtid" disabled><span class="edittxt"></span>
+        
+        <br>
+        <div class="botão1"><span class="pcbutton">Novo PC</span><span class="edittxt"></span></div>
+        <div class="botão1"><span class="portabutton">Novo Porta</span><span class="edittxt"></span></div>
+        <div class="botão1"><span class="quadrobutton">Novo Quadro Branco</span><span class="edittxt"></span></div>
+        <div class="botão1"><span class="serverbutton">Novo server</span><span class="edittxt"></span></div>
+        <div class="botão1"><span class="mesabutton">Nova Mesa</span><span class="edittxt"></span></div>
+        <div class="botão1"><span class="resize"> Redimensionar </span></div>
+        <div class="botão1"><span class="clone">Clonar</span><span class="edittxt"></span></div>
+        <div class="botão1"><span class="delete">Deletar</span></div>
+        <span class="edit" ></span><span class="edittxt"></span>
+    </div>
 </div>
 </form>
+</div>
 
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 <script>
-
 
             
             
@@ -139,6 +157,7 @@
             document.getElementById("ypos").value = elmnt.offsetTop;
             document.getElementById("txtid").value = elmnt.id;
             document.getElementById("txtname").value = elmnt.textContent;
+            document.getElementById("rotate").value = elmnt.style.transform;
 
             if (elmnt.classList.value.includes("pc")) {
                 document.getElementById("ysize").disabled = true;
@@ -146,6 +165,21 @@
                 document.getElementById("ysize").disabled = false;
             }
             if (elmnt.classList.value.includes("mesa")) {
+                document.getElementById("txtname").disabled = true;
+            } else {
+                document.getElementById("txtname").disabled = false;
+            }
+            if (elmnt.classList.value.includes("porta1")) {
+                document.getElementById("txtname").disabled = true;
+            } else {
+                document.getElementById("txtname").disabled = false;
+            }
+            if (elmnt.classList.value.includes("quadrobranco")) {
+                document.getElementById("txtname").disabled = true;
+            } else {
+                document.getElementById("txtname").disabled = false;
+            }
+            if (elmnt.classList.value.includes("server")) {
                 document.getElementById("txtname").disabled = true;
             } else {
                 document.getElementById("txtname").disabled = false;
@@ -192,6 +226,7 @@
             document.getElementById("ysize").value = document.getElementById("xsize").value;
         }
     });
+    
     document.querySelector('.txty1').addEventListener('input', function (event) {
         lastelement.style.width = document.getElementById("xsize").value + "px";
         lastelement.style.height = document.getElementById("ysize").value + "px";
@@ -200,24 +235,52 @@
     document.querySelector('.txtx0').addEventListener('input', function (event) {
         lastelement.style.left = document.getElementById("xpos").value + "px";
     });
+    
     document.querySelector('.txty0').addEventListener('input', function (event) {
         lastelement.style.top = document.getElementById("ypos").value + "px";
+    });
+
+    document.querySelector('.txtrotate').addEventListener('input', function (event) {
+        lastelement.style.transform = document.getElementById('rotate').value;
     });
 
     document.querySelector('.txtname').addEventListener('input', function (event) {
         lastelement.innerHTML = '<div class="innertext">' + document.getElementById("txtname").value + '</div>';
     });
+    
 
 	//FUNCOES DOS ELEMENTOS
-    function addPC(yvalue, xvalue, ysize, xsize, texto) {
+    function addPC(yvalue, xvalue, ysize, xsize, texto, rotate) {
         total++;
-        document.querySelector(".pctablemaster").innerHTML += '<div id="obj' + total + '" class="pc" style="top: ' + yvalue + 'px; left: ' + xvalue + 'px; height: ' + ysize + 'px; width: ' + xsize + 'px;"><div class="innertext">' + texto + '</div></div>\n';
+        document.querySelector(".pctablemaster").innerHTML += '<div id="obj' + total + '" class="pc" style="top: ' + yvalue + 'px; left: ' + xvalue + 'px; height: ' + ysize + 'px; width: ' + xsize + 'px; transform: rotate('+ rotate +'deg); "><div class="innertext">' + texto + '</div></div>\n';
         elements.push("obj" + total)
         elements.forEach(defineElement);
     }
-    function addMesa(yvalue, xvalue, ysize, xsize) {
+    
+    function addMesa(yvalue, xvalue, ysize, xsize, rotate) {
         total++;
-        document.querySelector(".pctablemaster").innerHTML += '<div id="obj' + total + '" class="mesa" style="top: ' + yvalue + 'px; left: ' + xvalue + 'px; height: ' + ysize + 'px; width: ' + xsize + 'px;"></div>\n';
+        document.querySelector(".pctablemaster").innerHTML += '<div id="obj' + total + '" class="mesa" style="top: ' + yvalue + 'px; left: ' + xvalue + 'px; height: ' + ysize + 'px; width: ' + xsize + 'px; transform: rotate('+ rotate +'deg); "></div>\n';
+        elements.push("obj" + total)
+        elements.forEach(defineElement);  
+    }
+    
+    function addPorta(yvalue, xvalue, ysize, xsize, rotate) {
+        total++;
+        document.querySelector(".pctablemaster").innerHTML += '<div id="obj' + total + '" class="porta1" style="top: ' + yvalue + 'px; left: ' + xvalue + 'px; height: ' + ysize + 'px; width: ' + xsize + 'px; transform: rotate('+ rotate +'deg); "></div>\n';
+        elements.push("obj" + total)
+        elements.forEach(defineElement);  
+    }
+    
+    function addQuadroBranco(yvalue, xvalue, ysize, xsize, rotate) {
+        total++;
+        document.querySelector(".pctablemaster").innerHTML += '<div id="obj' + total + '" class="quadrobranco" style="top: ' + yvalue + 'px; left: ' + xvalue + 'px; height: ' + ysize + 'px; width: ' + xsize + 'px; transform: rotate('+ rotate +'deg); ">Quadro Branco</div>\n';
+        elements.push("obj" + total)
+        elements.forEach(defineElement);  
+    }
+    
+    function addServer(yvalue, xvalue, ysize, xsize, rotate) {
+        total++;
+        document.querySelector(".pctablemaster").innerHTML += '<div id="obj' + total + '" class="server" style="top: ' + yvalue + 'px; left: ' + xvalue + 'px; height: ' + ysize + 'px; width: ' + xsize + 'px; transform: rotate('+ rotate +'deg); "></div>\n';
         elements.push("obj" + total)
         elements.forEach(defineElement);  
     }
@@ -228,9 +291,15 @@
 
     function cloneObj(){
          if (lastelement.classList.value.includes("pc")) {
-            addPC(lastelement.offsetTop, lastelement.offsetLeft, lastelement.clientHeight, lastelement.clientWidth, lastelement.textContent);
+            addPC(lastelement.offsetTop, lastelement.offsetLeft, lastelement.clientHeight, lastelement.clientWidth, lastelement.textContent, lastelement.style.transform);
         } else if (lastelement.classList.value.includes("mesa")) {
-            addMesa(lastelement.offsetTop, lastelement.offsetLeft, lastelement.clientHeight, lastelement.clientWidth);
+            addMesa(lastelement.offsetTop, lastelement.offsetLeft, lastelement.clientHeight, lastelement.clientWidth, lastelement.style.transform);
+        } else if (lastelement.classList.value.includes("porta1")) {
+            addPorta(lastelement.offsetTop, lastelement.offsetLeft, lastelement.clientHeight, lastelement.clientWidth, lastelement.style.transform);
+        } else if (lastelement.classList.value.includes("quadrobranco")) {
+            addQuadroBranco(lastelement.offsetTop, lastelement.offsetLeft, lastelement.clientHeight, lastelement.clientWidth, lastelement.style.transform);
+        } else if (lastelement.classList.value.includes("server")) {
+            addServer(lastelement.offsetTop, lastelement.offsetLeft, lastelement.clientHeight, lastelement.clientWidth, lastelement.style.transform);
         }
     }
     function pasteObj(){
@@ -238,10 +307,19 @@
         pastey = cursory - $('.editarea').offset().top - Math.round(cloneelement.clientHeight/2);
         //console.log(pastex + " " + pastey);
         if (cloneelement.classList.value.includes("pc")) {
-            addPC(pastey, pastex, cloneelement.clientHeight, cloneelement.clientWidth, cloneelement.textContent);
+            addPC(pastey, pastex, cloneelement.clientHeight, cloneelement.clientWidth, cloneelement.textContent, cloneelement.style.transform);
             cloneelement = document.getElementById("obj"+total);
         } else if (cloneelement.classList.value.includes("mesa")) {
-            addMesa(pastey, pastex, cloneelement.clientHeight, cloneelement.clientWidth);
+            addMesa(pastey, pastex, cloneelement.clientHeight, cloneelement.clientWidth, cloneelement.style.transform);
+            cloneelement = document.getElementById("obj"+total);
+        } else if (cloneelement.classList.value.includes("porta")) {
+            addPorta(pastey, pastex, cloneelement.clientHeight, cloneelement.clientWidth, cloneelement.style.transform);
+            cloneelement = document.getElementById("obj"+total);
+        } else if(cloneelement.classList.value.includes("quadrobranco")) {
+            addQuadroBranco(pastey, pastex, cloneelement.clientHeight, cloneelement.clientWidth, cloneelement.style.transform);
+            cloneelement = document.getElementById("obj"+total);
+        } else if(cloneelement.classList.value.includes("server")) {
+            addServer(pastey, pastex, cloneelement.clientHeight, cloneelement.clientWidth, cloneelement.style.transform);
             cloneelement = document.getElementById("obj"+total);
         }
     }
@@ -259,10 +337,21 @@
 
 	//EVENTOS DOS BOTOES
     document.querySelector(".pcbutton").addEventListener("click", function (event) {
-        addPC(194, 204, 80, 80, "");
+        addPC(600, 600, 80, 80, "", 0);
     });
     document.querySelector(".mesabutton").addEventListener("click", function (event) {
-        addMesa(194, 204, 100, 100, "");
+        addMesa(600, 600, 100, 100, 0);
+    });
+    document.querySelector(".portabutton").addEventListener("click", function (event) {
+        addPorta(600, 600, 100, 100, 0);
+    });
+
+    document.querySelector(".quadrobutton").addEventListener("click", function (event) {
+        addQuadroBranco(600, 600, 50, 400, 270);
+    });
+
+    document.querySelector(".serverbutton").addEventListener("click", function (event) {
+        addServer(600, 600, 100, 100, 270);
     });
 
     document.querySelector(".delete").addEventListener("click", function (event) {
@@ -312,9 +401,7 @@
 	document.querySelector(".salalist").addEventListener("click", function (event) {
 		setSelected();
     });
-	document.querySelector(".admin").addEventListener("click", function (event) {
-		window.location.href = "{{ url_for('homepage') }}";
-	});
+
 
 
 	//EVENTOS DO TECLADO
@@ -391,6 +478,7 @@
 		alert(msg);
 	}
 </script>
+
 
 
 {% endblock %}

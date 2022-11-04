@@ -33,24 +33,6 @@
     visibility: hidden;
 }
 
-.dados {
-    margin-left: 41vw;
-    margin-top: 2vw;
-    margin-bottom: -4vw;
-
-}
-
-.computador {
-    height: 10vw;
-    width: 10vw;
-}
-
-.compos {
-    position: absolute;
-    margin-left: 29vw;
-    margin-top: -1vw;
-}
-
 .radio {
     background-color: #555555;
 }
@@ -84,6 +66,19 @@ a:active {
     position: absolute;
 }
 
+.dados {
+    text-align: center;
+    margin-top: 1.03vw;
+    margin-bottom: -8vw;
+    display: flex;
+}
+
+.computador {
+    height: 10vw;
+    width: 10vw;
+    margin-left: 25vw;
+}
+
 .barrasup {
     height: 99px;
     width: 100%;
@@ -107,11 +102,110 @@ a:active {
 }
 
 .logo {
-    height: 6.30vw;
-    width: 6.30vw;
+    height: 6.25vw;
+    width: 6.25vw;
     place-self: center;
     margin-left: 5%;
     margin-right: -10%;
+}
+
+.inputBase {
+    background-color: #E4E1E1;
+    border-radius: 25px;
+    text-align: center;
+    border-width: 0.5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 15vw;
+    height: 2vw;
+}
+.inputNome {
+    margin-right: 1vw;
+}
+.inputProcessador {
+    margin-right: 1vw;
+}
+
+.inputBase2{
+    background-color: #E4E1E1;
+    border-radius: 25px;
+    text-align: center;
+    border-width: 0.5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 15vw;
+    height: 2vw;
+}
+
+.nome{
+    margin-left: 41vw;
+    margin-top: -9.5vw; 
+}
+.EsNome{
+    border:1px solid black;
+    margin-left: 0.5vw;
+    margin-top: -9.5vw;
+
+}
+
+.l{
+    margin-left: 1vw;
+    margin-top: -9.5vw;
+}
+.EsLocal{
+    margin-left: 0.5vw;
+    margin-top: -9.5vw;
+    border:1px solid black;
+
+}
+
+.so{
+    margin-left: -28vw;
+    margin-top: -6.5vw;
+}
+.EsSo{
+    margin-left: 0.5vw;
+    margin-top: -6.5vw;
+    border:1px solid black;
+
+}
+
+.processador{
+    margin-left: -34vw;
+    margin-top: -3.5vw;
+}
+.EsProcessador{
+    margin-left: 1vw;
+    margin-top: -3.5vw;
+    border:1px solid black;
+
+}
+
+.ram{
+    margin-left: 1vw;
+    margin-top: -3.5vw;
+}
+.EsRam{
+    margin-left: 0.5vw;
+    margin-top: -3.5vw;
+    border:1px solid black;
+
+}
+
+
+.pos1 {
+    display: flex;
+    margin-top: -10vw;
+    margin-left: 39vw;
+}
+.pos2 {
+    display: flex;
+    margin-left: -28vw;
+    margin-top: -7vw;
+    
+}
+.pos3 {
+    display: flex;
+    margin-left: -32.2vw;
+    margin-top: -4vw;
 }
 
 .techelp {
@@ -128,67 +222,6 @@ a:active {
     display: flex;
     flex-direction: row;
     justify-content: end;
-}
-
-.butTxt {
-    text-align: center;
-    color: #A90405;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 10mm;
-    text-decoration: none;
-    position: absolute;
-    display: flex;
-    margin-top: -170px;
-    width: 200px;
-    margin-left: 25px;
-}
-
-.inputBase {
-    background-color: #E4E1E1;
-    border-radius: 25px;
-    text-align: center;
-    border-width: 0.5px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    width: 15vw;
-    height: 2vw;
-}
-
-.inputSo {
-    margin-left: 7.8vw;
-    margin-top: 1vw;
-    margin-bottom: 1vw;
-}
-
-.EsNome{
-    border:1px solid black;
-
-}
-
-.EsLocal{
-    margin-left: 15.9vw;
-    margin-top: -2vw;
-    border:1px solid black;
-
-}
-
-.EsSo{
-    margin-left: 7.8vw;
-    margin-top: 1vw;
-    border:1px solid black;
-
-}
-
-.EsProcessador{
-    margin-top: 1.5vw;
-    border:1px solid black;
-
-}
-
-.EsRam{
-    margin-left: 15.9vw;
-    margin-top: -2vw;
-    border:1px solid black;
-
 }
 
 .Txt {

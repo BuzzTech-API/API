@@ -14,12 +14,18 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{url_for('static', filename='css/Portas_Main.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/Lab_Main.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit.css') }}">
 	<style>
-	.pc {
-		background-image: url("{{ url_for('static', filename='/img/PC_21.png') }}");
-	}
-	</style>
+        .pc {
+            background-image: url("{{ url_for('static', filename='/img/PC_21.png') }}");
+            }
+        .porta1{
+            background-image: url("{{ url_for('static', filename='/img/door.png') }}");
+            }
+        .server{
+            background-image: url("{{ url_for('static', filename='/img/server2.png') }}");
+            }
+    </style>
 </head>
 
 <body class="fundo">
@@ -61,7 +67,7 @@
             </div>
             
             <div class="butao">
-                <a href="#" id="botão-login" onclick="abrir(), login()">
+                <a href="/login" id="botão-login">
                     <img class="hexagAT" src="{{url_for('static', filename='img/TecnicoBut.svg')}}" alt="hexagono"></a>
             </div>
         </div>

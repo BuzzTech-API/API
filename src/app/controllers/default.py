@@ -105,7 +105,7 @@ def lab():
 
 
 
-# Rota de dos problemas
+# Rota de seleção dos problemas
 @app.route('/<lab>/<comp>/seleção_problemas', methods=["POST", "GET"])
 def seleção_problemas(lab, comp):
     """Rota de selecionar os chamados e finalizar o cadastro do chamado"""

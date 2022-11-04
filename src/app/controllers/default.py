@@ -1,4 +1,3 @@
-import time
 from app import app, db
 from flask import render_template, redirect, url_for, request
 from app.models.model import Chamado, User, Object

@@ -27,6 +27,8 @@ a.butao {
 }
 .espaço{
     margin-left: 2%;
+<<<<<<< Updated upstream
+=======
 }
 
 
@@ -96,4 +98,16 @@ label.inplogin{
     font-size: 1.75vw;
     margin-bottom: 0.5vw;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1.obrigado{
+    margin-top: 3vw;
+    text-decoration:underline;
+}
+
+p.obrigado{
+    margin-top: 2vw;
+    font-size: 170%;
+    text-align: center;
+>>>>>>> Stashed changes
 }

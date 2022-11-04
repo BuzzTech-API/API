@@ -20,13 +20,36 @@
         <p>RAM: <input type="text" value="RAM" class="inputRam inputBase"></p>
     </section>
 </form>
-{% else %}
 <!-- Caso não esteja logado ** PARTE DA JOYCE **-->
+{% else %}
+<section>
+    <div class="compos">
+        <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
+    </div>
+    <div class='dados'>
 
-{% endif %} 
-<div class="centro">
+        <div class="EsNome inputBase">
+            <p>{{comp.Object_compname}}</p>
+        </div>
+        <div class="EsLocal inputBase">
+            <p>{{comp.Object_lab}}</p>
+        </div>
+        <div class="EsSo inputBase">
+            <p>{{comp.Object_comp_operational_system}}</p>
+        </div>
+        <div class="EsProcessador inputBase">
+            <p>{{comp.Object_comp_processor}}</p>
+        </div>
+        <div class="EsRam inputBase">
+            <p>{{comp.Object_comp_RAM}}</p>
+        </div>
+
+    </div>
+</section>
+{% endif %}
 
     <!-- Botão Software -->
+<div class="centro">
     <a href="#" id="botão-software">
         <label for="problem1">
             <h1 class="software">Software</h1>
@@ -44,7 +67,7 @@
     </svg>
 
     <img class="" src="{{ url_for('static', filename='img/TipoBut.png') }}" alt="logo" height="370px" width="350px">
-
+ 
     <!-- Botão Hardware -->
     <a href="#" id="botão-hardware">
         <h1 class="hardware">Hardware</h1>

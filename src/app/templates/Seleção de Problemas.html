@@ -1,6 +1,7 @@
 {% extends 'base.html'%}
 {%block title%}Seleção de Problemas{% endblock %}
 {% block content %}
+<<<<<<< HEAD
 <!-- Caso esteja logado, podendo editar -->
 {% if current_user.is_authenticated %}
 <section>
@@ -19,37 +20,57 @@
     </form>
     </div>
 </section>
+=======
+
+<!-- Caso esteja logado, podendo editar -->
+{% if current_user.is_authenticated %}
+<img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
+<form action="" class = 'dados'>
+    <section class="pos1">
+        <p>Nome: <input type="text" value="Nome" class="inputNome inputBase"></p>
+        <p>Local: <input type="text" value="Local" class="inputLocal inputBase"></p>
+    </section>
+    
+    <section class="pos2">
+        <p>S.O.: <input type="text" value="S.O." class="inputSo inputBase"></p>
+    </section>
+    
+    <section class="pos3">
+        <p>Processador: <input type="text" value="Processador" class="inputProcessador inputBase"></p>
+        <p>RAM: <input type="text" value="RAM" class="inputRam inputBase"></p>
+    </section>
+</form>
+<!-- Caso não esteja logado ** PARTE DA JOYCE **-->
+>>>>>>> f72db6f04752eb86bd1e49605bac1ab801f01a9e
 {% else %}
-<!-- Caso não esteja logado ** PARTE DA JOICE **-->
 <section>
     <div class="compos">
         <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
-    </div>  
-    <div class = 'dados'>
+    </div>
+    <div class='dados'>
 
         <div class="EsNome inputBase">
             <p>{{comp.Object_compname}}</p>
-         </div>
-         <div class="EsLocal inputBase"> 
+        </div>
+        <div class="EsLocal inputBase">
             <p>{{comp.Object_lab}}</p>
         </div>
         <div class="EsSo inputBase">
             <p>{{comp.Object_comp_operational_system}}</p>
         </div>
         <div class="EsProcessador inputBase">
-             <p>{{comp.Object_comp_processor}}</p>
+            <p>{{comp.Object_comp_processor}}</p>
         </div>
         <div class="EsRam inputBase">
-              <p>{{comp.Object_comp_RAM}}</p>
+            <p>{{comp.Object_comp_RAM}}</p>
         </div>
-    
+
     </div>
 </section>
-
-{% endif %} 
-<div class="centro">
+{% endif %}
 
     <!-- Botão Software -->
+<div class="centro">
     <a href="#" id="botão-software">
         <label for="problem1">
             <h1 class="software">Software</h1>
@@ -67,7 +88,7 @@
     </svg>
 
     <img class="" src="{{ url_for('static', filename='img/TipoBut.png') }}" alt="logo" height="370px" width="350px">
-
+ 
     <!-- Botão Hardware -->
     <a href="#" id="botão-hardware">
         <h1 class="hardware">Hardware</h1>

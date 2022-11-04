@@ -48,19 +48,23 @@
         <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
     </div>
     <div class='dados'>
-
+            <p class="nome">Nome:</p>
         <div class="EsNome inputBase">
             <p>{{comp.Object_compname}}</p>
         </div>
+            <p class="l">Local:</p>
         <div class="EsLocal inputBase">
             <p>{{comp.Object_lab}}</p>
         </div>
+             <p class="so">S.O.:</p>
         <div class="EsSo inputBase">
             <p>{{comp.Object_comp_operational_system}}</p>
         </div>
+            <p class="processador">Processador:</p>
         <div class="EsProcessador inputBase">
             <p>{{comp.Object_comp_processor}}</p>
         </div>
+            <p class="ram">RAM:</p>
         <div class="EsRam inputBase">
             <p>{{comp.Object_comp_RAM}}</p>
         </div>

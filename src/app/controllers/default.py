@@ -19,6 +19,12 @@ def homepage():
 
 
 
+@app.route("obrigado")
+def obrigado():
+    return render_template("obrigado.html")
+
+    
+
 # função e rota para visualizar os chamados
 @app.route("/visualizar", methods=["POST", "GET"])
 def visualizar():
@@ -119,7 +125,7 @@ def seleção_problemas(lab, comp):
         "User_id":1
         }
         insert(Chamado, params)   
-        return redirect(url_for('homepage'))
+        return redirect(url_for('obrigado'))
 
     return render_template('Seleção de Problemas.html',lab=lab,comp=l)
 

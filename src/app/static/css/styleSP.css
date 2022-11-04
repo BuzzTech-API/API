@@ -125,6 +125,72 @@ a:active {
     margin-right: 1vw;
 }
 
+.inputBase2{
+    background-color: #E4E1E1;
+    border-radius: 25px;
+    text-align: center;
+    border-width: 0.5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 15vw;
+    height: 2vw;
+}
+
+.nome{
+    margin-left: 41vw;
+    margin-top: -9.5vw; 
+}
+.EsNome{
+    border:1px solid black;
+    margin-left: 0.5vw;
+    margin-top: -9.5vw;
+
+}
+
+.l{
+    margin-left: 1vw;
+    margin-top: -9.5vw;
+}
+.EsLocal{
+    margin-left: 0.5vw;
+    margin-top: -9.5vw;
+    border:1px solid black;
+
+}
+
+.so{
+    margin-left: -28vw;
+    margin-top: -6.5vw;
+}
+.EsSo{
+    margin-left: 0.5vw;
+    margin-top: -6.5vw;
+    border:1px solid black;
+
+}
+
+.processador{
+    margin-left: -34vw;
+    margin-top: -3.5vw;
+}
+.EsProcessador{
+    margin-left: 1vw;
+    margin-top: -3.5vw;
+    border:1px solid black;
+
+}
+
+.ram{
+    margin-left: 1vw;
+    margin-top: -3.5vw;
+}
+.EsRam{
+    margin-left: 0.5vw;
+    margin-top: -3.5vw;
+    border:1px solid black;
+
+}
+
+
 .pos1 {
     display: flex;
     margin-top: -10vw;

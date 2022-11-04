@@ -1,132 +1,3 @@
-<<<<<<< HEAD
-{% extends 'base.html'%}
-{%block title%}Seleção de Problemas{% endblock %}
-{% block content %}
-
-<!-- Caso esteja logado, podendo editar -->
-{% if current_user.is_authenticated %}
-<form action="" class = 'dados'>
-    <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
-    <input type="text" value="Nome" class="inputNome inputBase">
-    <input type="text" value="Local" class="inputLocal inputBase">
-    <br>
-    <input type="text" value="Processador" class="inputProcessador inputBase">
-    <input type="text" value="RAM" class="inputRam inputBase">
-    <input type="text" value="S.O." class="inputSo inputBase">
-</form>
-{% else %}
-<!-- Caso não esteja logado ** PARTE DA JOYCE **-->
-
-{% endif %} 
-<div class="centro">
-
-    <!-- Botão Software -->
-    <a href="#" id="botão-software">
-        <label for="problem1">
-            <h1 class="software">Software</h1>
-        </label>
-        <input id="problem1" class="software" name="problem" style="visibility: hidden;" value='Software'
-            class="esconde" onclick="descrição()" type="radio" form="form2">
-    </a>
-    <hr class="linha" size="6" width="600px" align="left" color="#555555">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="circuloE">
-        <circle cx="15" cy="15" r="15" />
-    </svg>
-
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="circuloD">
-        <circle cx="15" cy="15" r="15" />
-    </svg>
-
-    <img class="" src="{{ url_for('static', filename='img/TipoBut.png') }}" alt="logo" height="370px" width="350px">
-
-    <!-- Botão Hardware -->
-    <a href="#" id="botão-hardware">
-        <h1 class="hardware">Hardware</h1>
-    </a>
-</div>
-<!-- Modais -->
-<div class="bg-modal">
-
-
-    <!-- Modal Hardware -->
-    <div class="modal-content-hardware">
-        <div class="close" onclick="fechar()">+</div>
-        <h1 class="titulo">Hardware</h1>
-        <div class="lista-botão-A">
-            <div class="lista-botão-B">
-                <!-- a função descrição leva até o modal de descrição -->
-                <form action="seleção_problemas" method="POST" id="form2">
-                    <div class="problema-botão">
-                        <input id="problem1" name="problem" value='Sem cabo de rede' class="esconde"
-                            onclick="descrição()" type="radio">
-                        <label for="problem1" class="paodebatata">Sem cabo de rede</label><br>
-                    </div>
-                    <div class="problema-botão">
-                        <input id="problem2" name="problem" value='Teclado não funciona' class="esconde"
-                            onclick="descrição()" type="radio">
-                        <label for="problem2" class="paodebatata">Teclado não funciona</label><br>
-                    </div>
-                    <div class="problema-botão">
-                        <input id="problem3" name="problem" value='Monitor não funciona' class="esconde"
-                            onclick="descrição()" type="radio">
-                        <label for="problem3" class="paodebatata">Monitor não funciona</label><br>
-                    </div>
-                    <div class="problema-botão">
-                        <input id="problem4" name="problem" value='Computador não liga' class="esconde"
-                            onclick="descrição()" type="radio">
-                        <label for="problem4" class="paodebatata">Computador não liga</label><br>
-                    </div>
-                    <div class="problema-botão">
-                        <input id="problem5" name="problem" value='Sem cabo de energia' class="esconde"
-                            onclick="descrição()" type="radio">
-                        <label for="problem5" class="paodebatata">Sem cabo de energia</label><br>
-                    </div>
-                    <div class="problema-botão">
-                        <input id="problem6" name="problem" value='Outros' class="esconde" onclick="descrição()"
-                            type="radio">
-                        <label for="problem6" class="paodebatata">Outros</label><br>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Descrição -->
-    <div class="modal-content-descrição">
-        <div class="close" onclick="fechar()">+</div>
-
-        <h1 class="titulo">Conte-nos sobre seu problema</h1>
-
-        <div>
-            <!-- a função obrigado leva até o modal de obrigado -->
-            <textarea name="description" id="dedssdfsdf" class="descrição" cols="30" rows="6"
-                placeholder="Descrição...." form="form2"></textarea>
-
-        </div>
-        <div class="botão">
-            <!-- a função obrigado leva até o modal de obrigado -->
-            <button class='btnn' form="form2" type="submit" onclick="obrigado()">Enviar</button>
-        </div>
-
-    </div>
-
-    <!-- Modal - Login -->
-    <div class="modal-content-login">
-        <div class="close" onclick="fechar()">+</div>
-        <h1>Login Técnico</h1>
-
-        <form action="login" method="post">
-            <label for="" class="inplogin">E-mail:</label>
-            <br><input class="inp" type="email" name="email" placeholder="Digite seu e-mail">
-            <br><label for="" class="inplogin">Senha:</label>
-            <br><input class="inp" type="password" name="password" placeholder="Sua senha">
-            <br><input class="inpsub" type="submit" value="Entrar">
-        </form>
-
-    </div>
-</div>
-
-=======
 {% extends 'base.html'%}
 {%block title%}Seleção de Problemas{% endblock %}
 {% block content %}
@@ -135,17 +6,17 @@
 <section>
     <div class="compos">
         <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
-    </div>  
+    </div>
     <div>
-    <form action="" class = 'dados'>  
-        <input type="text" value="{{comp.Object_compname}}" class="inputNome inputBase">
-        <input type="text" value="{{comp.Object_lab}}" class="inputLocal inputBase">
-        <br>
-        <input type="text" value="{{comp.Object_comp_operational_system}}" class="inputSo inputBase">
-        <br>
-        <input type="text" value="{{comp.Object_comp_processor}}" class="inputProcessador inputBase">
-        <input type="text" value="{{comp.Object_comp_RAM}}" class="inputRam inputBase">
-    </form>
+        <form action="" class='dados'>
+            <input type="text" value="{{comp.Object_compname}}" class="inputNome inputBase">
+            <input type="text" value="{{comp.Object_lab}}" class="inputLocal inputBase">
+            <br>
+            <input type="text" value="{{comp.Object_comp_operational_system}}" class="inputSo inputBase">
+            <br>
+            <input type="text" value="{{comp.Object_comp_processor}}" class="inputProcessador inputBase">
+            <input type="text" value="{{comp.Object_comp_RAM}}" class="inputRam inputBase">
+        </form>
     </div>
 </section>
 {% else %}
@@ -153,29 +24,29 @@
 <section>
     <div class="compos">
         <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
-    </div>  
-    <div class = 'dados'>
+    </div>
+    <div class='dados'>
 
         <div class="EsNome inputBase">
             <p>{{comp.Object_compname}}</p>
-         </div>
-         <div class="EsLocal inputBase"> 
+        </div>
+        <div class="EsLocal inputBase">
             <p>{{comp.Object_lab}}</p>
         </div>
         <div class="EsSo inputBase">
             <p>{{comp.Object_comp_operational_system}}</p>
         </div>
         <div class="EsProcessador inputBase">
-             <p>{{comp.Object_comp_processor}}</p>
+            <p>{{comp.Object_comp_processor}}</p>
         </div>
         <div class="EsRam inputBase">
-              <p>{{comp.Object_comp_RAM}}</p>
+            <p>{{comp.Object_comp_RAM}}</p>
         </div>
-    
+
     </div>
 </section>
 
-{% endif %} 
+{% endif %}
 <div class="centro">
 
     <!-- Botão Software -->
@@ -284,5 +155,4 @@
     </div>
 </div>
 
->>>>>>> main
 {% endblock %}

@@ -1,47 +1,27 @@
 {% extends 'base.html'%}
 {%block title%}Seleção de Problemas{% endblock %}
 {% block content %}
-<<<<<<< HEAD
-<!-- Caso esteja logado, podendo editar -->
-{% if current_user.is_authenticated %}
-<section>
-    <div class="compos">
-        <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
-    </div>  
-    <div>
-    <form action="" class = 'dados'>  
-        <input type="text" value="{{comp.Object_compname}}" class="inputNome inputBase">
-        <input type="text" value="{{comp.Object_lab}}" class="inputLocal inputBase">
-        <br>
-        <input type="text" value="{{comp.Object_comp_operational_system}}" class="inputSo inputBase">
-        <br>
-        <input type="text" value="{{comp.Object_comp_processor}}" class="inputProcessador inputBase">
-        <input type="text" value="{{comp.Object_comp_RAM}}" class="inputRam inputBase">
-    </form>
-    </div>
-</section>
-=======
 
 <!-- Caso esteja logado, podendo editar -->
 {% if current_user.is_authenticated %}
 <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
-<form action="" class = 'dados'>
+<form action="" class = 'dados' method="post">
     <section class="pos1">
-        <p>Nome: <input type="text" value="Nome" class="inputNome inputBase"></p>
-        <p>Local: <input type="text" value="Local" class="inputLocal inputBase"></p>
+        <p>Nome: <input type="text" value="{{comp.Object_compname}}" class="inputNome inputBase"></p>
+        <p>Local: <input type="text" value="{{comp.Object_lab}}" class="inputLocal inputBase"></p>
     </section>
     
     <section class="pos2">
-        <p>S.O.: <input type="text" value="S.O." class="inputSo inputBase"></p>
+        <p>S.O.: <input type="text" value="{{comp.Object_comp_operational_system}}" class="inputSo inputBase"></p>
     </section>
     
     <section class="pos3">
-        <p>Processador: <input type="text" value="Processador" class="inputProcessador inputBase"></p>
-        <p>RAM: <input type="text" value="RAM" class="inputRam inputBase"></p>
+        <p>Processador: <input type="text" value="{{comp.Object_comp_processor}}" class="inputProcessador inputBase"></p>
+        <p>RAM: <input type="text" value="{{comp.Object_comp_RAM}}" class="inputRam inputBase"></p>
+        <input type="submit">
     </section>
 </form>
 <!-- Caso não esteja logado ** PARTE DA JOYCE **-->
->>>>>>> f72db6f04752eb86bd1e49605bac1ab801f01a9e
 {% else %}
 <section>
     <div class="compos">

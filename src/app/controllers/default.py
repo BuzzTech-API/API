@@ -19,7 +19,7 @@ def homepage():
 
 
 
-@app.route("obrigado")
+@app.route("/obrigado")
 def obrigado():
     return render_template("obrigado.html")
 

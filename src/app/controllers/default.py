@@ -1,11 +1,10 @@
-import time
 from app import app, db
 from flask import render_template, redirect, url_for, request
 from app.models.model import Chamado, User, Object
 from flask_login import logout_user
 import datetime
 # Funções de interação com o banco de dados está fora do arquivo para melhor a legibilidade do código
-from app.controllers.conection import dell, update_call, user_login, insert
+from app.controllers.conection import dell, update_call, user_login, insert, pao
 
 
 
@@ -19,6 +18,12 @@ def homepage():
     return render_template("home.html")
 
 
+
+@app.route("obrigado")
+def obrigado():
+    return render_template("obrigado.html")
+
+    
 
 # função e rota para visualizar os chamados
 @app.route("/visualizar", methods=["POST", "GET"])
@@ -120,7 +125,7 @@ def seleção_problemas(lab, comp):
         "User_id":1
         }
         insert(Chamado, params)   
-        return redirect(url_for('homepage'))
+        return redirect(url_for('obrigado'))
 
     return render_template('Seleção de Problemas.html',lab=lab,comp=l)
 
@@ -171,7 +176,6 @@ def edited():
                     }
                     insert(Object, params)
                 
-            total = request.form['totalcontent']
             
                 
             msg = "Sala criada com sucesso"
@@ -188,15 +192,14 @@ def edited():
 
          elif (request.form['actiontype'] == "save"):
             nome = request.form['salalist']
-            total = request.form['totalcontent']
             elements=request.form['elementcontent']   
             elements = elements.split('\n')
             lay = Object.query.filter_by(Object_lab=nome).all()
-            for item in elements:
-                index = item.find('id="')
-                for item2 in lay:
-                    if item[index:index+15] in item2.Object_div:
-                        print('está dentro')
+            print(len(lay))
+            pao(elements,lay, nome)
+            lay = Object.query.filter_by(Object_lab=nome).all()
+
+                        
                 
             
             

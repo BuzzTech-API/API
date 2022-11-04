@@ -8,11 +8,14 @@ instance/*
 .env
 venv/
 src/venv/
-migrations/
+src/migrations/
 
 ### Flask.Python Stack ###
 # Byte-compiled / optimized / DLL files
-__pycache__/
+src/app/__pycache__/
+src/app/controllers/__pycache__/
+src/app/models/__pycache__/
+src/__pycache__/
 *.py[cod]
 *$py.class
 

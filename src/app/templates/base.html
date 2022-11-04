@@ -20,7 +20,10 @@
             background-image: url("{{ url_for('static', filename='/img/PC_21.png') }}");
             }
         .porta1{
-            background-image: url("{{ url_for('static', filename='/img/door-open-fill.svg') }}");
+            background-image: url("{{ url_for('static', filename='/img/door.png') }}");
+            }
+        .server{
+            background-image: url("{{ url_for('static', filename='/img/server2.png') }}");
             }
     </style>
 </head>
@@ -64,7 +67,7 @@
             </div>
             
             <div class="butao">
-                <a href="#" id="botão-login" onclick="abrir(), login()">
+                <a href="/login" id="botão-login">
                     <img class="hexagAT" src="{{url_for('static', filename='img/TecnicoBut.svg')}}" alt="hexagono"></a>
             </div>
         </div>

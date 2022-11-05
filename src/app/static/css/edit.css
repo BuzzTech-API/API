@@ -186,8 +186,8 @@
     }
 
     .local {
-        width: 1300px;
-        height: 950px;
+        width: 1400px;
+        height: 980px;
     }
 
     .innertext {
@@ -226,10 +226,9 @@
         background-color: #EBD5D5;
     }
     .fundo1 {
-        position: absolute;
-        top: 1120px;
         background-color: #ffffff;
-        margin-top: 1vh;
+        width: 95%;
+        margin: 4vh auto;
         height: 30vh;
         border: 3px solid #000000;
         border-radius: 14px;

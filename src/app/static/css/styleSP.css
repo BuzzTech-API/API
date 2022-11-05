@@ -94,6 +94,7 @@ a:active {
     height: 10vw;
     width: 10vw;
 }
+
 .barrasup {
     margin-top: 1.03vw;
     text-align: center;
@@ -231,11 +232,12 @@ a:active {
 .inputNome {
     margin-right: 1vw;
 }
+
 .inputProcessador {
     margin-right: 1vw;
 }
 
-.inputBase2{
+.inputBase2 {
     background-color: #E4E1E1;
     border-radius: 25px;
     text-align: center;
@@ -246,64 +248,86 @@ a:active {
 }
 
 
-.nome{
+.nome {
     margin-left: -19.6vw;
-    margin-top: 1vw; 
+    margin-top: 1vw;
 }
-.EsNome{
-    border:1px solid black;
+
+.EsNome {
+    border: 1px solid black;
     margin-left: 40.5vw;
     margin-top: -1.9vw;
 
 }
 
-.l{
+.l {
     margin-left: 20vw;
     margin-top: -1.9vw;
 }
-.ll{
-    border:1px solid black;
+
+.ll {
+    border: 1px solid black;
     margin-left: 60vw;
     margin-top: -1.9vw;
-    
+
 
 }
 
-.so{
+.so {
     margin-left: 2vw;
     margin-top: 1vw;
 }
-.sso{
-    border:1px solid black; 
+
+.sso {
+    border: 1px solid black;
     margin-left: 50.7vw;
     margin-top: -2vw;
 
 }
 
-.processador{
+.processador {
     margin-left: -18vw;
     margin-top: 1vw;
 }
-.pr{
-    border:1px solid black; 
-    margin-left: 43vw; 
-    margin-top: -1.9vw;  
+
+.pr {
+    border: 1px solid black;
+    margin-left: 43vw;
+    margin-top: -1.9vw;
 
 }
 
-.ram{
+.ram {
     margin-left: 26vw;
     margin-top: -1.9vw;
 }
-.rm{
-    border:1px solid black;
+
+.rm {
+    border: 1px solid black;
     margin-left: 63vw;
     margin-top: -1.9vw;
 
 }
 
 
+.pos1 {
+    display: flex;
+    margin-top: -10vw;
+    margin-left: 39vw;
+}
 
+.pos2 {
+    display: flex;
+    margin-left: -28vw;
+    margin-top: -7vw;
+
+}
+
+.pos3 {
+    display: flex;
+    margin-left: -32.2vw;
+    margin-top: -4vw;
+}
 
 .techelp {
     position: absolute;
@@ -350,35 +374,35 @@ a:active {
     margin-bottom: 1vw;
 }
 
-.EsNome{
-    border:1px solid black;
+.EsNome {
+    border: 1px solid black;
 
 }
 
-.EsLocal{
+.EsLocal {
     margin-left: 15.9vw;
     margin-top: -2vw;
-    border:1px solid black;
+    border: 1px solid black;
 
 }
 
-.EsSo{
+.EsSo {
     margin-left: 7.8vw;
     margin-top: 1vw;
-    border:1px solid black;
+    border: 1px solid black;
 
 }
 
-.EsProcessador{
+.EsProcessador {
     margin-top: 1.5vw;
-    border:1px solid black;
+    border: 1px solid black;
 
 }
 
-.EsRam{
+.EsRam {
     margin-left: 15.9vw;
     margin-top: -2vw;
-    border:1px solid black;
+    border: 1px solid black;
 
 }
 

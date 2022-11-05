@@ -4,7 +4,7 @@ from app.models.model import Chamado, User, Object
 from flask_login import logout_user
 import datetime
 # Funções de interação com o banco de dados está fora do arquivo para melhor a legibilidade do código
-from app.controllers.conection import dell, update_call, user_login, insert, pao
+from app.controllers.conection import dell, update_call, user_login, insert, update_object, delete_object
 
 
 
@@ -18,6 +18,19 @@ def homepage():
     return render_template("home.html")
 
 
+# função de alteração de especificação para a RAM, processador e SO
+@app.route("/<lab>/<comp>/especificacao", methods=["POST", "GET"])
+def especificacao(lab,comp):
+    computador=Object.query.filter_by(id=int(comp)).first()
+    ram= request.form['ram']
+    computador.Object_comp_RAM=ram
+    sistema_operacional= request.form['sistema_operacional']
+    computador.Object_comp_operational_system=sistema_operacional
+    processador= request.form['processador']
+    computador.Object_comp_processor=processador
+    db.session.add(computador)
+    db.session.commit()
+    return redirect(f'/{lab}/{comp}/seleção_problemas')
 
 @app.route("/obrigado")
 def obrigado():
@@ -195,10 +208,11 @@ def edited():
             elements=request.form['elementcontent']   
             elements = elements.split('\n')
             lay = Object.query.filter_by(Object_lab=nome).all()
-            print(len(lay))
-            pao(elements,lay, nome)
-            lay = Object.query.filter_by(Object_lab=nome).all()
+            # print(len(lay))
+            update_object(elements, lay, nome)
 
+            lay = Object.query.filter_by(Object_lab=nome).all()
+            delete_object(elements, lay)
                         
                 
             

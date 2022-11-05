@@ -53,50 +53,70 @@ def user_login(email, password):
         return redirect(url_for('visualizar'))
     return "Usuário não existe"
 
-def pao(elements, lay, nome):
+def update_object(elements, lay, nome):
     for i in range(len(elements)):
-                index = elements[i].find('obj')
-                if index!=-1:
-                    cont=0
-                    for item2 in lay:
-                        
-                        if elements[i][index:index+8] in item2.Object_div:
-                            if 'class="pc"' in elements[i]:
-                                index=elements[i].find('innertext')
-                                index2=elements[i].find('</div>')
-                                item2.Object_compname = elements[i][index+11:index2]
-                                item2.Object_div=elements[i]
-                                db.session.add(item2)
-                                db.session.commit()
-                                cont=0
-                                break
-                            else:
-                                item2.Object_div=elements[i]
-                                db.session.add(item2)
-                                db.session.commit()
-                                cont=0
-                                break
-                        cont+=1 
-                    if cont!=0:
-                        if 'class="pc"' in elements[i]:
-                            index=elements[i].find('innertext')
-                            index2=elements[i].find('</div>')
-                            params={
-                                'Object_lab': nome,
-                                'Object_div': elements[i]+'\n',
-                                'Object_compname':elements[i][index+11:index2],
-                                'Object_comp_processor':"",
-                                'Object_comp_RAM': '',
-                                'Object_comp_operational_system':''
-                            }
-                            insert(Object, params)
-                        elif 'class="':
-                            params={
-                                'Object_lab': nome,
-                                'Object_div': elements[i] + '\n',
-                                'Object_compname':'',
-                                'Object_comp_processor':"",
-                                'Object_comp_RAM': '',
-                                'Object_comp_operational_system':''
-                            }
-                            insert(Object, params)
+        index = elements[i].find('obj')
+        if index!=-1:
+            cont=0
+            for item2 in lay:
+                
+                if elements[i][index:index+8] in item2.Object_div:
+                    if 'class="pc"' in elements[i]:
+                        index=elements[i].find('innertext')
+                        index2=elements[i].find('</div>')
+                        item2.Object_compname = elements[i][index+11:index2]
+                        item2.Object_div=elements[i]
+                        db.session.add(item2)
+                        db.session.commit()
+                        cont=0
+                        break
+                    else:
+                        item2.Object_div=elements[i]
+                        db.session.add(item2)
+                        db.session.commit()
+                        cont=0
+                        break
+                cont+=1 
+            if cont!=0:
+                if 'class="pc"' in elements[i]:
+                    index=elements[i].find('innertext')
+                    index2=elements[i].find('</div>')
+                    params={
+                        'Object_lab': nome,
+                        'Object_div': elements[i]+'\n',
+                        'Object_compname':elements[i][index+11:index2],
+                        'Object_comp_processor':"",
+                        'Object_comp_RAM': '',
+                        'Object_comp_operational_system':''
+                    }
+                    insert(Object, params)
+                elif 'class="':
+                    params={
+                        'Object_lab': nome,
+                        'Object_div': elements[i] + '\n',
+                        'Object_compname':'',
+                        'Object_comp_processor':"",
+                        'Object_comp_RAM': '',
+                        'Object_comp_operational_system':''
+                    }
+                    insert(Object, params)
+
+def delete_object(elements, lay):
+    for item in lay:
+        # procurando em cada tupla
+        Object_div = item.Object_div
+        c = 0
+        for item2 in elements:
+            # para cada tupla, procurar objeto por objeto
+            index = item2.find('obj')
+            if index == -1:
+                # se o objeto tá vazio
+                c = c
+            elif item2[index:index+8] in Object_div:
+                # se o objeto tá na tupla
+                c += 1
+                break
+            else :
+                c = c
+        if c == 0:
+            dell(Object, item.id)

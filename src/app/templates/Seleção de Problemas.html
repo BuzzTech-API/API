@@ -5,7 +5,7 @@
 <!-- Caso esteja logado, podendo editar -->
 {% if current_user.is_authenticated %}
 <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
-<form action="acao" class = 'dados' method="post">
+<form action="especificacao" class = 'dados' method="post">
     <section class="pos1">
         <p>Nome: <input type="text" value="{{comp.Object_compname}}" class="inputNome inputBase"></p>
         <p>Local: <input type="text" value="{{comp.Object_lab}}" class="inputLocal inputBase"></p>

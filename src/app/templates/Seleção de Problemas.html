@@ -4,25 +4,6 @@
 
 <!-- Caso esteja logado, podendo editar -->
 {% if current_user.is_authenticated %}
-<section>
-    <div class="compos">
-        <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
-    </div>  
-    <div>
-    <form action="" class = 'dados'>  
-        <input type="text" value="{{comp.Object_compname}}" class="inputNome inputBase">
-        <input type="text" value="{{comp.Object_lab}}" class="inputLocal inputBase">
-        <br>
-        <input type="text" value="{{comp.Object_comp_operational_system}}" class="inputSo inputBase">
-        <br>
-        <input type="text" value="{{comp.Object_comp_processor}}" class="inputProcessador inputBase">
-        <input type="text" value="{{comp.Object_comp_RAM}}" class="inputRam inputBase">
-    </form>
-    </div>
-</section>
-
-<!-- Caso esteja logado, podendo editar -->
-{% if current_user.is_authenticated %}
 <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
 <form action="" class = 'dados' method="post">
     <section class="pos1">

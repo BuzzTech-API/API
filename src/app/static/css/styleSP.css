@@ -7,6 +7,7 @@
     background-color: #EBD5D5;
 }
 
+
 .centro {
     height: 300px;
     width: 100%;
@@ -84,15 +85,6 @@ a:active {
     position: absolute;
 }
 
-.barrasup {
-    height: 99px;
-    width: 100%;
-    text-align: center;
-    margin-top: 1.03vw;
-    margin-bottom: -8vw;
-    display: flex;
-}
-
 .computador {
     height: 10vw;
     width: 10vw;
@@ -100,6 +92,8 @@ a:active {
 }
 
 .barrasup {
+    margin-top: 1.03vw;
+    text-align: center;
     height: 99px;
     width: 100%;
     display: flex;

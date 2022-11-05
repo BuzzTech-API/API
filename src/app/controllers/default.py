@@ -18,6 +18,14 @@ def homepage():
     return render_template("home.html")
 
 
+@app.route("/<lab>/<comp>/acao", methods=["POST", "GET"])
+def acao(lab,comp):
+    computador=Object.query.filter_by(id=int(comp)).first()
+    processador= request.form['processador']
+    computador.Object_comp_processor=processador
+    db.session.add(computador)
+    db.session.commit()
+    return redirect(f'/{lab}/{comp}/seleção_problemas')
 
 @app.route("/obrigado")
 def obrigado():

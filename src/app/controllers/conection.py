@@ -31,10 +31,8 @@ def dell(Model,id):
 # Função de atualizar de chamado no banco
 def update_call(chamado):
     '''Função de atualizar os chamado no banco'''
-    chamado.lab = request.form["lab"]
-    chamado.comp = request.form["comp"]
-    chamado.problem = request.form["problem"]
-    chamado.description = request.form["description"]
+    chamado.Problem = request.form["problem"]
+    chamado.Description = request.form["description"]
     db.session.add(chamado)
     db.session.commit()
     return 'Atualizado'

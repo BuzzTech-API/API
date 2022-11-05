@@ -4,29 +4,35 @@
 
 <!-- Caso esteja logado, podendo editar -->
 {% if current_user.is_authenticated %}
-<img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
-<form action="especificacao" class = 'dados' method="post">
-    <section class="pos1">
-        <p class="nome">Nome:</p> 
-        <div class="EsNome inputBase2">
-            <p>{{comp.Object_compname}}</p>
+
+<form action="especificacao" class ="" method="post">
+    <div class="compos">
+        <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
+    </div>
+    <div class="">
+        
+        <div class="paozinho1">
+            <div >
+                <p class="mudadisplay nome123">Nome: <p class="mudadisplay nome12 subclasse">{{comp.Object_compname}}</p></p>
+                <p class="mudadisplay local12">Local: <p class="mudadisplay local13  subclasse">{{comp.Object_lab}}</p></p>
+            </div>
         </div>
-        <p class="l">Local:</p>
-        <div class=" ll inputBase2">
-            <p>{{comp.Object_lab}}</p>
+        <div class="paozinho1">
+            <p class="mudadisplay local19">S.O.:</p>
+            <p><input type="text" value="{{comp.Object_comp_operational_system}}" name="sistema_operacional" class="local20 subclasse"></p>    
         </div>
-    </section>
-    
-    <section class="pos2">
-        <p>S.O.: <input type="text" value="{{comp.Object_comp_operational_system}}" name="sistema_operacional" class="inputSo inputBase"></p>
-    </section>
-    
-    <section class="pos3">
-        <p>Processador: <input type="text" value="{{comp.Object_comp_processor}}" name="processador" class="inputProcessador inputBase"></p>
-        <p>RAM: <input type="text" value="{{comp.Object_comp_RAM}}" name="ram" class="inputRam inputBase"></p>
-        <input type="submit">
-    </section>
+        <div class="paozinho1">
+            <p class="mudadisplay local14">Processador:</p>
+            <input type="text" value="{{comp.Object_comp_processor}}" name="processador" class="local15 subclasse">
+        </div>
+        <div class="paozinho1">
+            <p class="mudadisplay local16">RAM:</p>
+            <input type="text" value="{{comp.Object_comp_RAM}}" name="ram" class="local17 subclasse">
+            <input type="submit" class="local18 subclasse1">
+        </div>
+    </div>
 </form>
+<div class="espaçonessaporra"></div>
 <!-- Caso não esteja logado ** PARTE DA JOYCE **-->
 {% else %}
 <section>

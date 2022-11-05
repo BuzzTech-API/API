@@ -20,7 +20,9 @@
     background-position: center;
     position: fixed;
 }
-
+.espaçonessaporra{
+    margin-bottom: 7vw;
+}
 .software {
     position: absolute;
     margin-left: -330px;
@@ -43,8 +45,8 @@
 
 .compos {
     position: absolute;
-    margin-left: 26vw;
-    margin-top: -1vw;
+    top: 11vw;
+    left: 24vw;
 }
 
 .radio {
@@ -83,6 +85,7 @@ a:active {
 .dados {
     text-align: center;
     margin: 2vw;
+    margin-top: 4vw;
     margin-bottom: -4vw;
 
 }
@@ -123,15 +126,108 @@ a:active {
     margin-right: -10%;
 }
 
-.inputBase {
+.paozinho1{
+    position: absolute;
+    top: 12vw;
+    left: 36vw;
+    margin: 0%;
+
+}
+.subclasse{
     background-color: #E4E1E1;
     border-radius: 25px;
     text-align: center;
-    border-width: 0.5px;
+    border: 1px solid black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: 15vw;
     height: 2vw;
 }
+.subclasse1{
+    background-color: #E4E1E1;
+    border-radius: 25px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 5vw;
+    height: 2vw;
+}
+
+.mudadisplay{
+    display: inline-block;
+}
+.flutadireita{
+    float: right;
+}
+.nome123{
+    position: absolute;
+    top: 0vw;
+    left: 0vw;
+    margin: 0%;
+}
+
+.nome12{
+    position: absolute;
+    top: 0vw;
+    left: 4vw;
+    margin: 0%;
+}
+
+.local12{
+    position: absolute;
+    top: 0vw;
+    left: 24vw;
+    margin: 0%;
+}
+
+.local13{
+    position: absolute;
+    top: 0vw;
+    left: 28vw;
+    margin: 0%;
+}
+
+.local14{
+    position: absolute;
+    top: 7vw;
+    left: 0vw;
+    margin: 0%;
+}
+.local15{
+    position: absolute;
+    top: 7vw;
+    left: 8vw;
+    margin: 0%;
+}
+.local16{
+    position: absolute;
+    top: 7vw;
+    left: 24vw;
+    margin: 0%;
+}
+.local17{
+    position: absolute;
+    top: 7vw;
+    left: 28vw;
+    margin: 0%;
+}
+.local18{
+    position: absolute;
+    top: 7vw;
+    left: 44vw;
+    margin: 0%;
+}
+.local19{
+    position: absolute;
+    top: 3.5vw;
+    left: 10vw;
+    margin: 0%;
+}
+.local20{
+    position: absolute;
+    top: 3.5vw;
+    left: 15vw;
+    margin: 0%;
+}
+
 .inputNome {
     margin-right: 1vw;
 }
@@ -207,22 +303,7 @@ a:active {
 }
 
 
-.pos1 {
-    display: flex;
-    margin-top: -10vw;
-    margin-left: 39vw;
-}
-.pos2 {
-    display: flex;
-    margin-left: -28vw;
-    margin-top: -7vw;
-    
-}
-.pos3 {
-    display: flex;
-    margin-left: -32.2vw;
-    margin-top: -4vw;
-}
+
 
 .techelp {
     position: absolute;

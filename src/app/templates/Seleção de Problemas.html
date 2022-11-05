@@ -7,8 +7,14 @@
 <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
 <form action="especificacao" class = 'dados' method="post">
     <section class="pos1">
-        <p>Nome: <input type="text" value="{{comp.Object_compname}}" class="inputNome inputBase"></p>
-        <p>Local: <input type="text" value="{{comp.Object_lab}}" class="inputLocal inputBase"></p>
+        <p class="nome">Nome:</p> 
+        <div class="EsNome inputBase2">
+            <p>{{comp.Object_compname}}</p>
+        </div>
+        <p class="l">Local:</p>
+        <div class=" ll inputBase2">
+            <p>{{comp.Object_lab}}</p>
+        </div>
     </section>
     
     <section class="pos2">
@@ -27,8 +33,8 @@
        <div class="compos">
         <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
         </div>
-    <div class="dados">
-             <p class="nome">Nome:</p> 
+        <div class="dados">
+            <p class="nome">Nome:</p> 
         <div class="EsNome inputBase2">
             <p>{{comp.Object_compname}}</p>
         </div>

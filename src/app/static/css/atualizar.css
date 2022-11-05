@@ -22,7 +22,7 @@
     padding: 10px
 }
 
-git .att-display-descri {
+.att-display-descri {
     height: 60vh;
     display: flex;
     flex-direction: column;

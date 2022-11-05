@@ -15,7 +15,7 @@
     box-shadow: 3px 5px rgb(50, 50, 30);
 }
 
-.att-display {
+.att-display-input {
     height: 60vh;
     display: flex;
     flex-direction: column;

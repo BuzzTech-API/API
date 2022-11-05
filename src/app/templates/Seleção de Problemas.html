@@ -24,28 +24,28 @@
 <!-- Caso não esteja logado ** PARTE DA JOYCE **-->
 {% else %}
 <section>
-    <div class="compos">
+       <div class="compos">
         <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
-    </div>
-    <div class='dados'>
-            <p class="nome">Nome:</p>
-        <div class="EsNome inputBase">
+        </div>
+    <div class="dados">
+             <p class="nome">Nome:</p> 
+        <div class="EsNome inputBase2">
             <p>{{comp.Object_compname}}</p>
         </div>
             <p class="l">Local:</p>
-        <div class="EsLocal inputBase">
+        <div class=" ll inputBase2">
             <p>{{comp.Object_lab}}</p>
         </div>
              <p class="so">S.O.:</p>
-        <div class="EsSo inputBase">
+        <div class="sso inputBase2">
             <p>{{comp.Object_comp_operational_system}}</p>
         </div>
             <p class="processador">Processador:</p>
-        <div class="EsProcessador inputBase">
+        <div class="pr inputBase2">
             <p>{{comp.Object_comp_processor}}</p>
         </div>
             <p class="ram">RAM:</p>
-        <div class="EsRam inputBase">
+        <div class=" rm inputBase2">
             <p>{{comp.Object_comp_RAM}}</p>
         </div>
 

@@ -32,6 +32,21 @@ def especificacao(lab,comp):
     db.session.commit()
     return redirect(f'/{lab}/{comp}/seleção_problemas')
 
+# função de alteração de especificação para a RAM, processador e SO
+@app.route("/<lab>/<comp>/especificacao", methods=["POST", "GET"])
+def especificacao(lab,comp):
+    computador=Object.query.filter_by(id=int(comp)).first()
+    ram= request.form['ram']
+    computador.Object_comp_RAM=ram
+    sistema_operacional= request.form['sistema_operacional']
+    computador.Object_comp_operational_system=sistema_operacional
+    processador= request.form['processador']
+    computador.Object_comp_processor=processador
+    db.session.add(computador)
+    db.session.commit()
+    return redirect(f'/{lab}/{comp}/seleção_problemas')
+
+
 @app.route("/obrigado")
 def obrigado():
     return render_template("obrigado.html")

@@ -172,13 +172,24 @@
         border-radius: 10px;
     }
     .editarea {
-        margin-top: 1vh;
-        width: 90vw;
-        height: 120vh;
+        position: absolute;
+        top: 250px;
+        left: 20px;
+        right: 20px;
+        bottom: 200px;;
+        margin: 1vh auto;
+        width: 1200px;
+        height: 800px;
         background-color: #ffffff;
         border: 3px solid #000000;
         overflow: hidden;
     }
+
+    .local {
+        width: 1300px;
+        height: 950px;
+    }
+
     .innertext {
 		font-size: 100%;
         position: absolute;
@@ -215,6 +226,8 @@
         background-color: #EBD5D5;
     }
     .fundo1 {
+        position: absolute;
+        top: 1120px;
         background-color: #ffffff;
         margin-top: 1vh;
         height: 30vh;

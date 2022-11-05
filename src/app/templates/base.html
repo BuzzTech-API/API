@@ -15,16 +15,19 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/Portas_Main.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/Lab_Main.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/edit.css') }}">
-	<style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/atualizar.css') }}">
+    <style>
         .pc {
             background-image: url("{{ url_for('static', filename='/img/PC_21.png') }}");
-            }
-        .porta1{
+        }
+
+        .porta1 {
             background-image: url("{{ url_for('static', filename='/img/door.png') }}");
-            }
-        .server{
+        }
+
+        .server {
             background-image: url("{{ url_for('static', filename='/img/server2.png') }}");
-            }
+        }
     </style>
 </head>
 
@@ -65,7 +68,7 @@
                 <a href="https://siga.cps.sp.gov.br/fatec/login.aspx" target="_blank"><img class="hexagSF"
                         src="{{url_for('static', filename='img/SIGABut.svg')}}" alt="hexagono"></a>
             </div>
-            
+
             <div class="butao">
                 <a href="/login" id="botão-login">
                     <img class="hexagAT" src="{{url_for('static', filename='img/TecnicoBut.svg')}}" alt="hexagono"></a>

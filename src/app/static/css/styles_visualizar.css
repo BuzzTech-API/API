@@ -26,7 +26,8 @@
 }
 
 .updt:hover {
-    opacity: 50%;;
+    opacity: 50%;
+    ;
 }
 
 .del {
@@ -49,7 +50,7 @@
 }
 
 thead {
-    background-color: #FF9999;    
+    background-color: #FF9999;
 }
 
 tbody {
@@ -57,7 +58,7 @@ tbody {
 }
 
 tr {
-    border-radius: ;
+    border-radius: 10;
 }
 
 .table {

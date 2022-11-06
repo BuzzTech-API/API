@@ -31,6 +31,7 @@
  <a href="https://docs.python.org/3/"><img src = "https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54"/></a>
  <a href="https://www.w3schools.com/tags/tag_doctype.asp"><img src = "https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/></a>
  <a href="https://www.w3schools.com/css/"><img src = "https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/></a>
+ <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"><img src = "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/></a>
  <a href="https://getbootstrap.com/docs/4.1/getting-started/introduction/"><img src = "https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white"/></a>
  <a href="https://flask.palletsprojects.com/en/2.2.x/"><img src = "https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white"/></a>
  <a href="https://docs.github.com/pt"><img src = "https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/></a>
@@ -48,17 +49,27 @@
 
 
 
-### :bust_in_silhouette: Cadastro do técnico
+### 	:wrench: Layout editável
 
-![Cadastro do técnico](doc/sprints/sprint2/img/teste/gif/cadastrar.gif)
+<img src="doc/sprints/sprint3/img/teste/layout editável.gif" alt="Burndown" style="zoom: 150%;" />
 
-### :telephone_receiver: Abertura de chamado
 
-![Abertura de chamado](doc/sprints/sprint2/img/teste/gif/chamado.gif)
 
-### 	:eyes: Visualização do chamado
+### :microscope: Layout dos laboratórios
 
-![Visualização de chamados](doc/sprints/sprint2/img/teste/gif/visualizar.gif)
+<img src="doc/sprints/sprint3/img/teste/layout dos labs.gif" alt="Burndown" style="zoom: 150%;" />
+
+
+
+### 	:electric_plug: Componentes editáveis
+
+<img src="doc/sprints/sprint3/img/teste/componentes editáveis.gif" alt="Burndown" style="zoom: 150%;" />
+
+
+
+### :calling: Confirmação de chamado enviado
+
+<img src="doc/sprints/sprint3/img/teste/confirmação de envio.gif" alt="Burndown" style="zoom: 150%;" />
 
 
 
@@ -82,7 +93,7 @@ Desenvolver um **Sistema Web para Controle de Ordens de Serviço (SOS)** para au
 - [x] Linguagem HTML e CSS (Requisito Fatec)
 - [x] Uso do framework Bootstarp
 - [x] Apresentação via Github.
-- [ ] O sistema web deverá ser intuitivo e não ter poluições de informações, isso deverá ser uma preocupação constante dos desenvolvedores sugestões de controles serão bem-vindas e bem avaliadas.
+- [x] O sistema web deverá ser intuitivo e não ter poluições de informações, isso deverá ser uma preocupação constante dos desenvolvedores sugestões de controles serão bem-vindas e bem avaliadas.
 
  > *Requisitos Não Funcionais*
 
@@ -141,9 +152,9 @@ As instruções de como instalar e rodar a aplicação estão na [documentação
 
 🔖 SPRINT 2 ([Link da Pasta](doc/sprints/sprint2)):  Concluído :white_check_mark:
 
-🔖 SPRINT 3 ([Link da Pasta](doc/sprints/sprint3)):  Em construção::construction:
+🔖 SPRINT 3 ([Link da Pasta](doc/sprints/sprint3)):  Concluído :white_check_mark:
 
-🔖 SPRINT 4 ([Link da Pasta](doc/sprints/sprint4)):  Aguardando ::stop_sign:
+🔖 SPRINT 4 ([Link da Pasta](doc/sprints/sprint4)):  Em construção :construction:
 
 <br>
 
@@ -167,15 +178,15 @@ As instruções de como instalar e rodar a aplicação estão na [documentação
 |                  Criação da área do Técnico                  | Criar uma área para o técnico administrar esses chamados recebidos com a entrada em ordem cronológica |              <a href='#us09'>US09</a>              |    Alta    |   2    |          12h          | :white_check_mark: |
 | Login simplificado para o técnico e diferenciação da interface dependendo de quem está utilizando | Possibilidade de criar usuários para o sistema de ordem de serviço para que os técnicos tenham uma maneira segura e privada de visualizar, deletar, procurar, filtrar e atualizar os chamados criados pelos usuários. |              <a href='#us09'>US09</a>              |    Alta    |   2    |          9h           | :white_check_mark: |
 |               Implementar facilitações visuais               | Utilização de cores, ícones e outras soluções gráficas que facilitem o entendimento das informações dos sistemas para os usuários que desejem utilizá-lo. |              <a href='#us17'>US17</a>              |   Baixa    |   2    |          3h           | :white_check_mark: |
-| Conectar o Banco de Dados com área do técnico e abertura de chamados | Fazer com que a área do técnico também converse com o Banco de Dados criado. |              <a href='#us10'>US10</a>              |    Alta    |   3    |          20h          |    :stop_sign:     |
-|      Botão de conclusão de chamados na área do técnico       | Botão de "concluído" para que o técnico tenha controle dos chamados que  já foram resolvidos, mantendo uma área de trabalho *clean*. |              <a href='#us11'>US11</a>              |   Média    |   3    |          3h           |    :stop_sign:     |
-|             Confirmação de 'solicitação enviada'             | Sinalizar ao usuário solicitante da abertura do chamado quando esse chamado tiver sido  recebido pelo sistema. |              <a href='#us12'>US12</a>              |    Alta    |   3    |          7h           |    :stop_sign:     |
-|          Layout visual da localização das máquinas           | Implementação  do layout levantado das máquinas dos laboratórios. | <a href='#us13'>US13</a>, <a href='#us14'>US14</a> |    Alta    |   3    |          20h          |    :stop_sign:     |
-| Ligação do Layout da localização das Máquinas do laboratório ao Banco de Dados | Fazer  com que o layout da disposição das máquinas esteja integrado ao banco de  dados. |              <a href='#us15'>US15</a>              |    Alta    |   3    |          13h          |    :stop_sign:     |
-|       Aprimoramento da identificação dos computadores        | Abertura  de um canal para possibilizar que detalhes do computador sejam alterados e armazenados. Por exemplo, alterar as especificações  dos computadores. |              <a href='#us16'>US16</a>              |    Alta    |   4    |          10h          |    :stop_sign:     |
-|              Criação de identificações visuais               | Criar  possibilidades visuais dessas indicações e sinalizar esses defeitos e sugerir ao cliente. |              <a href='#us17'>US17</a>              |    Alta    |   4    |          10h          |    :stop_sign:     |
-|       Criação de uma página home e página de contatos        | Criar  página de detalhamento da funcionalidade do sistema e uma página de contato |              <a href='#us18'>US18</a>              |   Baixa    |   4    |          5h           |    :stop_sign:     |
-|    Aprimoramento da Identidade e Unidade Visual da Página    | Fazer a  atualização visual de todo o sistema aproximando-o do wireframe  apresentado |              <a href='#us19'>US19</a>              |   Baixa    |   4    |          20h          |    :stop_sign:     |
+|             Confirmação  de solicitação enviada              | Sinalizar  ao usuário solicitante da abertura do chamado quando esse chamado tiver sido  recebido pelo sistema. |              <a href='#us12'>US12</a>              |    Alta    |   3    |          7h           | :white_check_mark: |
+|         Criação  do layout de todos os laboratórios          | Implementação  de todos layouts dos laboratórios utilizando o levantamento feito em sprints anteriores. | <a href='#us13'>US13</a>, <a href='#us14'>US14</a> |    Alta    |   3    |          20h          | :white_check_mark: |
+|          Tornar  o layout dos laboratórios editável          | Fazer  com que o layout do laboratório possa ser editável em relação ao design e  disposição de todos os itens: computadores, mesa, servidores e lousa. | <a href='#us15'>US15</a>, <a href='#us22'>US22</a> |    Alta    |   3    |          13h          | :white_check_mark: |
+|    Possibilitar a edição das características das máquinas    | Possibilitar que detalhes do computador sejam alterados e armazenados: processador, RAM e sistema operacional. |              <a href='#us23'>US23</a>              |    Alta    |   3    |          10h          | :white_check_mark: |
+| Conectar o Banco de Dados com o layout do laboratório e informações das máquinas | Criar funções para que o banco de dados consulte e persista o que o técnico salvar durante as edições de layout do laboratório, bem como as alterações das carecterísticas dos computadores. |              <a href='#us10'>US10</a>              |    Alta    |   3    |          20h          | :white_check_mark: |
+|       Aprimoramento da identificação dos computadores        | Abertura  de um canal para possibilizar que detalhes do computador sejam alterados e armazenados. Por exemplo, alterar as especificações  dos computadores. |              <a href='#us16'>US16</a>              |    Alta    |   4    |          10h          |   :construction:   |
+|              Criação de identificações visuais               | Criar  possibilidades visuais dessas indicações e sinalizar esses defeitos e sugerir ao cliente. |              <a href='#us17'>US17</a>              |    Alta    |   4    |          10h          |   :construction:   |
+|       Criação de uma página home e página de contatos        | Criar  página de detalhamento da funcionalidade do sistema e uma página de contato |              <a href='#us18'>US18</a>              |   Baixa    |   4    |          5h           |   :construction:   |
+|    Aprimoramento da Identidade e Unidade Visual da Página    | Fazer a  atualização visual de todo o sistema aproximando-o do wireframe  apresentado |              <a href='#us19'>US19</a>              |   Baixa    |   4    |          20h          |   :construction:   |
 
 <br>
 
@@ -226,16 +237,18 @@ As instruções de como instalar e rodar a aplicação estão na [documentação
 | US09<a id='us09'></a> | Pedro necessita de uma área de acesso único para que ele visualize os pedidos de assistência e entenda sua propriedade, sem outros usuários vejam ou interferirem no  fechamento dos chamados. |
 | US10<a id='us10'></a> | Pedro precisa de um sistema integrado que faça a interação direta entre os chamados abertos e a  área do técnico para um fundamental bom gerenciamento do tempo e tarefas. |
 | US11<a id='us11'></a> | Para que o técnico Pedro tenha um controle visual melhor das chamadas ainda não atendidas, o botã de conclusão de chamadas fará com que um chamado 'concluído' saia da área de visualização pendente |
-| US12<a id='us12'></a> | Para Natália e Andréia um aviso de "confirmação de envio" da solicitação na própria página de abertura de chamados é necessário para que tenha conhecimento do envio, assim evitando que seja enviado repetidas vezes o mesmo problema, melhorando a interface com o usuário e impedindo que Pedro tenha muitos recebimentos com as mesmas solicitações |
+| US12<a id='us12'></a> | Para Natália e Andréia um aviso de "confirmação de envio" da solicitação na própria página de abertura de chamados é necessário para que tenha conhecimento do envio, assim evitando que seja enviado repetidas vezes o mesmo problema, melhorando a interface com o usuário e impedindo que Pedro tenha muitos recebimentos com as mesmas solicitações. |
 | US13<a id='us13'></a> | Natália, aluna e Andréa, professora, precisam de uma forma de identificação visual do computador dentro do laboratório disposto para confirmar que estão falando do computador correto quando abrirem o chamado. |
 | US14<a id='us14'></a> | Pedro, técnico, precisa de uma identificação visual para saber exatamente qual computador está com problemas e onde está esse computador, pois isso evitará confusões e perda de tempo. |
 | US15<a id='us15'></a> | Para que Natália, aluna, e Andréa, professora, possam especificar para qual computador estão abrindo o chamado, é necessário que o layout das máquinas esteja ligado ao banco de dados, evitando possíveis erros de digitação e interpretação. |
-|         US16          | Pedro precisa de um ambiente para que ele consiga acessar os detalhes da máquina e  que possa visualizar o histórico dela, saber se algum problema está sendo  recorrente, facilitando assim a manutenção. |
+| US16<a id='us16'></a> | Pedro precisa de um ambiente para que ele consiga acessar os detalhes da máquina e  que possa visualizar o histórico dela, saber se algum problema está sendo  recorrente, facilitando assim a manutenção. |
 | US17<a id='us17'></a> | Por ser mais velha, Andréia pode ter dificuldade de entender o que está escrito ou mesmo ao que se refere cada parte da solicitação de informações. Por isso, deverá ser criada identificações visuais, facilitando a comunicação e entendimento do usuário. |
 | US18<a id='us18'></a> | Natália pode sentir a necessidade de saber quais serviços ela pode solicitar na  página. Logo, eles estarão descritos melhor na página home. Andréia pode não conseguir expressar seu problema por escrito ou não ter seu problema resolvido, logo, uma página de contato poderá ser útil para que ela  tenha notícias sobre a sua solicitação. |
 | US19<a id='us19'></a> | Pedro, Andréia e Natália precisam de uma  identidade visual que transmita confiança, autoridade e conforto. |
 | US20<a id='us20'></a> | Pedro precisa de um ambiente o qual os dados das ordens de serviço fiquem armazenados mesmo depois que sua sessão acabar. |
 | US21<a id='us21'></a> | Pedro precisa de uma maneira de conectar o sistema web ao o banco de dados e, a partir dessa conexão, poder inserir, deletar, procurar, filtrar e atualizar os dados registrados nesse banco de dados. |
+| US22<a id='us22'></a> | É muito importante para o cliente que o técnico Pedro possa editar facilmente a disposição dos itens dentro do laboratório de forma simples e rápida, para acompanhar possíveis mudanças físicas do laboratório em tempo real e facilitando assim que o programa apresentado para Andréia e Natália não fiquem desatualizado. |
+| US23<a id='us23'></a> | Pedro precisa de algumas utilidades em sua área do técnico para que haja facilidade em seu dia-a-dia de trabalho. Entre essas funcionalidades estão: layout editável e mudança da nomenclatura, pois Pedro pode um dia sentir a necessidade de mudar o nome dos computadores; características da máquina, pois Pedro pode precisar fazer alguma alteração no hardware e deixa isso detalhado. |
 
 <br>
 

@@ -1,5 +1,5 @@
 from app import db
-from app.models.model import Chamado, User
+from app.models.model import Chamado, User, Object
 from flask import render_template, redirect, url_for, request
 from flask_login import login_user
 from datetime import datetime
@@ -23,7 +23,7 @@ def dell(Model,id):
     r = Model.query.filter_by(id=id).first()
     db.session.delete(r)
     db.session.commit()
-    return redirect("/visualizar")
+    return
 
 
 
@@ -31,10 +31,8 @@ def dell(Model,id):
 # Função de atualizar de chamado no banco
 def update_call(chamado):
     '''Função de atualizar os chamado no banco'''
-    chamado.lab = request.form["lab"]
-    chamado.comp = request.form["comp"]
-    chamado.problem = request.form["problem"]
-    chamado.description = request.form["description"]
+    chamado.Problem = request.form["problem"]
+    chamado.Description = request.form["description"]
     db.session.add(chamado)
     db.session.commit()
     return 'Atualizado'
@@ -52,3 +50,71 @@ def user_login(email, password):
         login_user(user)
         return redirect(url_for('visualizar'))
     return "Usuário não existe"
+
+def update_object(elements, lay, nome):
+    for i in range(len(elements)):
+        index = elements[i].find('obj')
+        if index!=-1:
+            cont=0
+            for item2 in lay:
+                
+                if elements[i][index:index+8] in item2.Object_div:
+                    if 'class="pc"' in elements[i]:
+                        index=elements[i].find('innertext')
+                        index2=elements[i].find('</div>')
+                        item2.Object_compname = elements[i][index+11:index2]
+                        item2.Object_div=elements[i]
+                        db.session.add(item2)
+                        db.session.commit()
+                        cont=0
+                        break
+                    else:
+                        item2.Object_div=elements[i]
+                        db.session.add(item2)
+                        db.session.commit()
+                        cont=0
+                        break
+                cont+=1 
+            if cont!=0:
+                if 'class="pc"' in elements[i]:
+                    index=elements[i].find('innertext')
+                    index2=elements[i].find('</div>')
+                    params={
+                        'Object_lab': nome,
+                        'Object_div': elements[i]+'\n',
+                        'Object_compname':elements[i][index+11:index2],
+                        'Object_comp_processor':"",
+                        'Object_comp_RAM': '',
+                        'Object_comp_operational_system':''
+                    }
+                    insert(Object, params)
+                elif 'class="':
+                    params={
+                        'Object_lab': nome,
+                        'Object_div': elements[i] + '\n',
+                        'Object_compname':'',
+                        'Object_comp_processor':"",
+                        'Object_comp_RAM': '',
+                        'Object_comp_operational_system':''
+                    }
+                    insert(Object, params)
+
+def delete_object(elements, lay):
+    for item in lay:
+        # procurando em cada tupla
+        Object_div = item.Object_div
+        c = 0
+        for item2 in elements:
+            # para cada tupla, procurar objeto por objeto
+            index = item2.find('obj')
+            if index == -1:
+                # se o objeto tá vazio
+                c = c
+            elif item2[index:index+8] in Object_div:
+                # se o objeto tá na tupla
+                c += 1
+                break
+            else :
+                c = c
+        if c == 0:
+            dell(Object, item.id)

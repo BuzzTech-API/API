@@ -4,7 +4,7 @@ from app.models.model import Chamado, User, Object
 from flask_login import logout_user
 import datetime
 # Funções de interação com o banco de dados está fora do arquivo para melhor a legibilidade do código
-from app.controllers.conection import dell, update_call, user_login, insert
+from app.controllers.conection import dell, update_call, user_login, insert, update_object, delete_object
 
 
 
@@ -19,7 +19,22 @@ def homepage():
 
 
 
-@app.route("obrigado")
+# função de alteração de especificação para a RAM, processador e SO
+@app.route("/<lab>/<comp>/especificacao", methods=["POST", "GET"])
+def especificacao(lab,comp):
+    computador=Object.query.filter_by(id=int(comp)).first()
+    ram= request.form['ram']
+    computador.Object_comp_RAM=ram
+    sistema_operacional= request.form['sistema_operacional']
+    computador.Object_comp_operational_system=sistema_operacional
+    processador= request.form['processador']
+    computador.Object_comp_processor=processador
+    db.session.add(computador)
+    db.session.commit()
+    return redirect(f'/{lab}/{comp}/seleção_problemas')
+
+
+@app.route("/obrigado")
 def obrigado():
     return render_template("obrigado.html")
 
@@ -110,7 +125,7 @@ def lab():
 
 
 
-# Rota de dos problemas
+# Rota de seleção dos problemas
 @app.route('/<lab>/<comp>/seleção_problemas', methods=["POST", "GET"])
 def seleção_problemas(lab, comp):
     """Rota de selecionar os chamados e finalizar o cadastro do chamado"""
@@ -176,7 +191,6 @@ def edited():
                     }
                     insert(Object, params)
                 
-            total = request.form['totalcontent']
             
                 
             msg = "Sala criada com sucesso"
@@ -193,15 +207,15 @@ def edited():
 
          elif (request.form['actiontype'] == "save"):
             nome = request.form['salalist']
-            total = request.form['totalcontent']
             elements=request.form['elementcontent']   
             elements = elements.split('\n')
             lay = Object.query.filter_by(Object_lab=nome).all()
-            for item in elements:
-                index = item.find('id="')
-                for item2 in lay:
-                    if item[index:index+15] in item2.Object_div:
-                        print('está dentro')
+            # print(len(lay))
+            update_object(elements, lay, nome)
+
+            lay = Object.query.filter_by(Object_lab=nome).all()
+            delete_object(elements, lay)
+                        
                 
             
             

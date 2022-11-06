@@ -97,7 +97,7 @@ Para a terceira sprint o foco foi tornar o layout dos laboratórios editável, u
 
    
 
-   <img src="img/confirmação de envio.jpg" alt="confirmação de envio do chamado" style="zoom: 150%;" />
+   <img src="img/confirmação de envio.JPG" alt="confirmação de envio do chamado" style="zoom: 150%;" />
 
    
 
@@ -109,11 +109,11 @@ Para a terceira sprint o foco foi tornar o layout dos laboratórios editável, u
 
 |       Laboratório grande de 32 computadores - sala 402       | Laboratório médio de 24 computadores - salas 301, 302 e 401  |
 | :----------------------------------------------------------: | ------------------------------------------------------------ |
-| <img src="img/layout labs/lab 32comps.jpg" alt="lab grande de 32 computadores" style="zoom: 150%;" /> | <img src="img/layout labs/lab 24comps.jpg" alt="lab médio de 24 computadores" style="zoom: 150%;" /> |
+| <img src="img/layout labs/lab 32comps.JPG" alt="lab grande de 32 computadores" style="zoom: 150%;" /> | <img src="img/layout labs/lab 24comps.JPG" alt="lab médio de 24 computadores" style="zoom: 150%;" /> |
 
 | Laboratório médio de 18 computadores - salas 403, 405, 406, 407, 408, 409, 411 e 412 |   Laboratório pequeno de 18 computadores - salas 303 e 404   |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="img/layout labs/lab 18comps a.jpg" alt="lab médiode 18 computadores" style="zoom: 150%;" /> | <img src="img/layout labs/lab 18comps b.jpg" alt="lab pequeno de 18 computadores" style="zoom: 150%;" /> |
+| <img src="img/layout labs/lab 18comps a.JPG" alt="lab médiode 18 computadores" style="zoom: 150%;" /> | <img src="img/layout labs/lab 18comps b.JPG" alt="lab pequeno de 18 computadores" style="zoom: 150%;" /> |
 
 
 
@@ -133,7 +133,7 @@ Para a terceira sprint o foco foi tornar o layout dos laboratórios editável, u
 
    
 
-   <img src="img/editar componentes.jpg" alt="Editar componentes dos computadores" style="zoom: 150%;" />
+   <img src="img/editar componentes.JPG" alt="Editar componentes dos computadores" style="zoom: 150%;" />
 
    
 

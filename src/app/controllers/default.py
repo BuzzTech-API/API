@@ -120,7 +120,12 @@ def comp(lab):
 # Rota de laboratorio
 @app.route('/lab', methods=["POST", "GET"])
 def lab():
-    return render_template('Portas.html')
+    lay=Object.query.order_by(Object.Object_lab)
+    labs=[]
+    for item in lay:
+        if item.Object_lab not in labs:
+            labs.append(item.Object_lab)
+    return render_template('Portas.html', labs=labs)
 
 
 

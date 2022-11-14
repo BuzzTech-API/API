@@ -30,6 +30,19 @@
             <input type="text" id="problem_type" name="problem" value="{{chamado.Problem}}" class="att-input">
         </p>
 
+        <p>
+            <label for="status" form="form-label">
+                <h3 style="color: black;">Status:</h3>
+            </label>
+            <select type="text" id="status" name="status" class="att-input">
+                <option value="{{chamado.Status}}" selected></option>
+                <option value="Pendente">Pendente</option>
+                <option value="Em andamento">Em andamento</option>
+                <option value="Finalizado">Finalizado</option>
+                <option value="Cancelado">Cancelado</option>
+            </select>
+        </p>
+
     </div>
 
     <div class="att-display-descri">

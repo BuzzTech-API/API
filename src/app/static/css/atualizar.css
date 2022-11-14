@@ -8,7 +8,6 @@
     border-radius: 20px;
     font-family: 'Trebuchet MS';
     font-size: 24px;
-
     display: grid;
     grid-template-columns: 4fr 5fr;
     grid-template-rows: 60vh 10vh;
@@ -49,12 +48,12 @@
 .att-description {
     background-color: rgb(210, 210, 210);
     border-radius: 8px;
-    height: 45vh;
+    height: 53vh;
 }
 
 .att-enviar {
-    background-color: cadetblue;
-    border-radius: 8px;
+    background-color: #FF1616;
+    border-radius: 50px;
     border-style: none;
     box-sizing: border-box;
     color: #FFFFFF;

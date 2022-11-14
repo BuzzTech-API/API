@@ -33,6 +33,7 @@ def update_call(chamado):
     '''Função de atualizar os chamado no banco'''
     chamado.Problem = request.form["problem"]
     chamado.Description = request.form["description"]
+    chamado.Status = request.form["status"]
     db.session.add(chamado)
     db.session.commit()
     return 'Atualizado'

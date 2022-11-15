@@ -41,16 +41,27 @@ def obrigado():
     
 
 # função e rota para visualizar os chamados
-@app.route("/visualizar", methods=["POST", "GET"])
+@app.route("/visualizar/", methods=["POST", "GET"])
 def visualizar():
     """Função e rota de visualização dos chamados"""
     tabela = Chamado.query.order_by(Chamado.id).all()
     element=[]
     element1=[]
-    for item in tabela:
-        obj=Object.query.filter_by(id=item.Object_id).first()
-        element.append(obj.Object_lab)
-        element1.append(obj.Object_compname)
+    # esse if request.method é para a função de filtrar os chamados por status
+    if request.method == 'POST':
+        for item in tabela:
+            status = request.form.get('status')
+            itemStatus = item.Status
+            if status == 'Todos':
+                for item in tabela:
+                    obj=Object.query.filter_by(id=item.Object_id).first()
+                    element.append(obj.Object_lab)
+                    element1.append(obj.Object_compname)
+            if status == itemStatus:
+                obj=Object.query.filter_by(id=item.Object_id).first()
+                element.append(obj.Object_lab)
+                element1.append(obj.Object_compname)
+    
 
     return render_template("visualizar.html", tabela=tabela, comp=element1, lab=element, len=len(element))
 

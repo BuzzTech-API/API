@@ -13,6 +13,22 @@
     padding: 30px;
 }
 
+.filter {
+    display: flex;
+    justify-content: center;
+}
+
+.filter .att-input{
+    height: 4vh;
+    margin: 0 2vh;
+}
+
+.filter .att-enviar{
+    height: 4vh;
+    margin: 0 2vh;
+    font-size: medium;
+}
+
 .btn {
     height: 50px;
     width: 50px;

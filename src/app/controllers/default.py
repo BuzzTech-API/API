@@ -48,20 +48,24 @@ def visualizar():
     element=[]
     element1=[]
     # esse if request.method é para a função de filtrar os chamados por status
+    status = request.form.get('status')
     if request.method == 'POST':
         for item in tabela:
-            status = request.form.get('status')
-            itemStatus = item.Status
-            if status == 'Todos':
-                for item in tabela:
-                    obj=Object.query.filter_by(id=item.Object_id).first()
-                    element.append(obj.Object_lab)
-                    element1.append(obj.Object_compname)
-            if status == itemStatus:
+            if item.Status == status:
+                tabela = Chamado.query.filter_by(Status=status)
                 obj=Object.query.filter_by(id=item.Object_id).first()
                 element.append(obj.Object_lab)
                 element1.append(obj.Object_compname)
-    
+            elif status == 'Todos':
+                obj=Object.query.filter_by(id=item.Object_id).first()
+                element.append(obj.Object_lab)
+                element1.append(obj.Object_compname)
+    else:
+        for item in tabela:
+            obj=Object.query.filter_by(id=item.Object_id).first()
+            element.append(obj.Object_lab)
+            element1.append(obj.Object_compname)
+   
 
     return render_template("visualizar.html", tabela=tabela, comp=element1, lab=element, len=len(element))
 

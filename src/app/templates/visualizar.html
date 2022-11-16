@@ -8,15 +8,23 @@
     <div class='central'>
         <h1>Problemas relatados</h1>
         <form action="/visualizar" method="POST" class="filter">
-            <select type="text" id="status" name="status" class="att-input">
+            <select type="text" id="statusId" name="status" class="att-input">
                 <option value="Todos">Todos</option>
                 <option value="Pendente">Pendentes</option>
                 <option value="Em andamento">Em andamento</option>
                 <option value="Finalizado">Finalizados</option>
                 <option value="Cancelado">Cancelados</option>
             </select>
-            <input type="submit" id="Enviar" value="Filtrar" class="att-enviar">            
+            <input type="submit" id="Enviar" value="Filtrar" class="att-enviar">
+                                  
+
+            
+            <script type="text/javascript">
+                document.getElementById('statusId').value = "<?php echo $_POST['status'];?>";
+            </script>
+            
         </form>
+       
         <table class="table" style="margin-bottom: 0%;">
         <thead>
             <tr>
@@ -65,6 +73,6 @@
         </tr>
         {% endfor %}
         </tbody>
-        </table>
+        </table>         
     </div>
 {% endblock %}

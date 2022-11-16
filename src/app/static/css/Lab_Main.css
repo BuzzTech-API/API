@@ -52,6 +52,9 @@
 .nomePc{
   color: black;
 }
+.nomePc:hover{
+  color: black
+}
 
 /*bancadas*/
   .Bancadas {

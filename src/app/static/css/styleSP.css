@@ -101,7 +101,7 @@ a:active {
     height: 99px;
     width: 100%;
     display: flex;
-    background-image: url(../img/Faixa.png);
+    background: -webkit-linear-gradient(90deg, #c41c1c 50%, #ff1616 50%);
     background-repeat: no-repeat;
     background-position: center;
     z-index: -2;

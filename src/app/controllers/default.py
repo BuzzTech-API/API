@@ -43,7 +43,7 @@ def obrigado():
 
 
 #pag de contatos
-@app.route("/contatos1")
+@app.route("/contatos")
 def contatos():
     return render_template("contatos.html")
 
@@ -133,7 +133,7 @@ def logout():
 
 
 # Rota de portas
-@app.route('/1/<lab>/', methods=["POST", "GET"])
+@app.route('/laboratorio/<lab>/', methods=["POST", "GET"])
 def comp(lab):
     l = Object.query.filter_by(Object_lab=lab)
     return render_template('Lab.html',lab=lab, elmnts=l)

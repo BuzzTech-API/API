@@ -15,16 +15,19 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/Portas_Main.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/Lab_Main.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/edit.css') }}">
-	<style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/atualizar.css') }}">
+    <style>
         .pc {
             background-image: url("{{ url_for('static', filename='/img/PC_21.png') }}");
-            }
-        .porta1{
+        }
+
+        .porta1 {
             background-image: url("{{ url_for('static', filename='/img/door.png') }}");
-            }
-        .server{
+        }
+
+        .server {
             background-image: url("{{ url_for('static', filename='/img/server2.png') }}");
-            }
+        }
     </style>
 </head>
 
@@ -35,19 +38,24 @@
         {% if current_user.is_authenticated %}
         <div class="buttons">
             <div class="butao">
-                <a class="butao" href="/"><img class="hexagHM" src="{{url_for('static', filename='img/Home.png')}}"
+                <a class="butao" href="/visualizar"><img class="hexagHM" src="{{url_for('static', filename='img/ChamadosSF.png')}}"
                         alt="hexagono"></a>
             </div>
-
             <div class="butao">
                 <a href="/lab"><img class="hexagRP" src="{{url_for('static', filename='img/Laboratórios.svg')}}"
                         alt="hexagono"></a>
             </div>
 
             <div class="butao">
-                <a href="/visualizar"><img class="hexagSF"
-                        src="{{url_for('static', filename='img/ProblemasJáRelatados.svg')}}" alt="hexagono"></a>
+                <a href="/editar"><img class="hexagSF"
+                        src="{{url_for('static', filename='img/EditarSF.png')}}" alt="hexagono"></a>
             </div>
+
+            <div class="butao">
+                <a href="/logout" id="botão-login">
+                    <img class="hexagAT" src="{{url_for('static', filename='img/LogoutSF.png')}}" alt="hexagono"></a>
+            </div>
+
         </div>
         {% else %}
         <div class="buttons">
@@ -57,15 +65,15 @@
             </div>
 
             <div class="butao">
-                <a href="/lab"><img class="hexagRP" src="{{url_for('static', filename='img/RelatarBut.svg')}}"
+                <a href="/visualizar"><img class="hexagRP" src="{{url_for('static', filename='img/ProblemasJáRelatados.svg')}}"
                         alt="hexagono"></a>
             </div>
-
+<!--  botão siga fatec mudei para contatos tem que mudar a rota ainda  -->
             <div class="butao">
                 <a href="https://siga.cps.sp.gov.br/fatec/login.aspx" target="_blank"><img class="hexagSF"
-                        src="{{url_for('static', filename='img/SIGABut.svg')}}" alt="hexagono"></a>
+                        src="{{url_for('static', filename='img/hexagono_contatos.png')}}"alt="hexagono"></a>
             </div>
-            
+
             <div class="butao">
                 <a href="/login" id="botão-login">
                     <img class="hexagAT" src="{{url_for('static', filename='img/TecnicoBut.svg')}}" alt="hexagono"></a>

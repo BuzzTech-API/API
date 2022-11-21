@@ -20,7 +20,7 @@
   
 }
 
-.local{
+.local1 {
   padding: 60px;
   background-color: rgb(216, 216, 216);
   border: 5px solid black;
@@ -51,6 +51,9 @@
  
 .nomePc{
   color: black;
+}
+.nomePc:hover{
+  color: black
 }
 
 /*bancadas*/

@@ -4,7 +4,7 @@ from app.models.model import Chamado, User, Object
 from flask_login import logout_user
 import datetime
 # Funções de interação com o banco de dados está fora do arquivo para melhor a legibilidade do código
-from app.controllers.conection import dell, update_call, user_login, insert, pao
+from app.controllers.conection import dell, update_call, user_login, insert, update_object, delete_object
 
 
 
@@ -19,6 +19,21 @@ def homepage():
 
 
 
+# função de alteração de especificação para a RAM, processador e SO
+@app.route("/<lab>/<comp>/especificacao", methods=["POST", "GET"])
+def especificacao(lab,comp):
+    computador=Object.query.filter_by(id=int(comp)).first()
+    ram= request.form['ram']
+    computador.Object_comp_RAM=ram
+    sistema_operacional= request.form['sistema_operacional']
+    computador.Object_comp_operational_system=sistema_operacional
+    processador= request.form['processador']
+    computador.Object_comp_processor=processador
+    db.session.add(computador)
+    db.session.commit()
+    return redirect(f'/{lab}/{comp}/seleção_problemas')
+
+
 @app.route("/obrigado")
 def obrigado():
     return render_template("obrigado.html")
@@ -26,16 +41,31 @@ def obrigado():
     
 
 # função e rota para visualizar os chamados
-@app.route("/visualizar", methods=["POST", "GET"])
+@app.route("/visualizar/", methods=["POST", "GET"])
 def visualizar():
     """Função e rota de visualização dos chamados"""
     tabela = Chamado.query.order_by(Chamado.id).all()
     element=[]
     element1=[]
-    for item in tabela:
-        obj=Object.query.filter_by(id=item.Object_id).first()
-        element.append(obj.Object_lab)
-        element1.append(obj.Object_compname)
+    # esse if request.method é para a função de filtrar os chamados por status
+    status = request.form.get('status')
+    if request.method == 'POST':
+        for item in tabela:
+            if item.Status == status:
+                tabela = Chamado.query.filter_by(Status=status)
+                obj=Object.query.filter_by(id=item.Object_id).first()
+                element.append(obj.Object_lab)
+                element1.append(obj.Object_compname)
+            elif status == 'Todos':
+                obj=Object.query.filter_by(id=item.Object_id).first()
+                element.append(obj.Object_lab)
+                element1.append(obj.Object_compname)
+    else:
+        for item in tabela:
+            obj=Object.query.filter_by(id=item.Object_id).first()
+            element.append(obj.Object_lab)
+            element1.append(obj.Object_compname)
+   
 
     return render_template("visualizar.html", tabela=tabela, comp=element1, lab=element, len=len(element))
 
@@ -105,7 +135,12 @@ def comp(lab):
 # Rota de laboratorio
 @app.route('/lab', methods=["POST", "GET"])
 def lab():
-    return render_template('Portas.html')
+    lay=Object.query.order_by(Object.Object_lab)
+    labs=[]
+    for item in lay:
+        if item.Object_lab not in labs:
+            labs.append(item.Object_lab)
+    return render_template('Portas.html', labs=labs)
 
 
 
@@ -195,10 +230,11 @@ def edited():
             elements=request.form['elementcontent']   
             elements = elements.split('\n')
             lay = Object.query.filter_by(Object_lab=nome).all()
-            print(len(lay))
-            pao(elements,lay, nome)
-            lay = Object.query.filter_by(Object_lab=nome).all()
+            # print(len(lay))
+            update_object(elements, lay, nome)
 
+            lay = Object.query.filter_by(Object_lab=nome).all()
+            delete_object(elements, lay)
                         
                 
             

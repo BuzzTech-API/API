@@ -13,6 +13,22 @@
     padding: 30px;
 }
 
+.filter {
+    display: flex;
+    justify-content: center;
+}
+
+.filter .att-input{
+    height: 4vh;
+    margin: 0 2vh;
+}
+
+.filter .att-enviar{
+    height: 4vh;
+    margin: 0 2vh;
+    font-size: medium;
+}
+
 .btn {
     height: 50px;
     width: 50px;
@@ -26,7 +42,8 @@
 }
 
 .updt:hover {
-    opacity: 50%;;
+    opacity: 50%;
+    ;
 }
 
 .del {
@@ -34,7 +51,8 @@
 }
 
 .del:hover {
-    opacity: 50%;;
+    opacity: 50%;
+    ;
 }
 
 .bi {
@@ -48,7 +66,7 @@
 }
 
 thead {
-    background-color: #FF9999;    
+    background-color: #FF9999;
 }
 
 tbody {
@@ -56,7 +74,7 @@ tbody {
 }
 
 tr {
-    border-radius: ;
+    border-radius: 10;
 }
 
 .table {

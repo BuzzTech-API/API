@@ -3,116 +3,23 @@
   <body>
     <main>
       <section class="container_geral">
-        <container class="local">
+        <container class="local1">
           <div class="rotulo"><u>Selecione o Laboratório</u></div>
 
             <!--fileiras 1-->
             <div class="fileiras" id="fileira 01">
+              {% for item in labs %}
               <div class="laboratorio_layout">
-                <a href="/301">
-                <card class="porta" id="301">
-                  <div class="texto_central">301</div>
+                <a href="/{{item}}">
+                <card class="porta" id="{{item}}">
+                  <div class="texto_central">{{item}}</div>
                 </card>
                 </a>
               </div>
-              <div class="laboratorio_layout">
-                <a href="/302">
-                <card class="porta" id="302">
-                  <div class="texto_central">302</div>
-                </card>
-                </a>
-              </div>
-              <div class="laboratorio_layout">
-                <a href="/303">
-                <card class="porta" id="303">
-                  <div class="texto_central">303</div>
-                </card>
-                </a>
-              </div>
-              <div class="laboratorio_layout">
-                <a href="/401">
-                <card class="porta" id="401">
-                  <div class="texto_central">401</div>
-                </card>
-                </a>
-              </div>
-              <div class="laboratorio_layout">
-                <a href="/402">
-                <card class="porta" id="402">
-                  <div class="texto_central">402</div>
-                </card>
-                </a>
-              </div>
-              <div class="laboratorio_layout">
-                <a href="/403">
-                <card class="porta" id="403">
-                  <div class="texto_central">403</div>
-                </card>
-                </a>
-              </div>
-              <div class="laboratoio_layout">
-                <a href="/404">
-                <card class="porta" id="404">
-                  <div class="texto_central">404</div>
-                </card>
-                </a>
-              </div>
+              {% endfor %}
             </div>
-
-            <!--fileira 2 -->
-            <div class="fileiras" id="fileira 02">
-              <div class="laboratorio_layout">
-                <a href="/405">
-                <card class="porta" id="405">
-                  <div class="texto_central">405</div>
-                </card>
-                </a>
-              </div>
-              <div class="laboratorio_layout">
-                <a href="/406">
-                <card class="porta" id="406">
-                  <div class="texto_central">406</div>
-                </card>
-                </a>
-              </div>
-              <div class="laboratorio_layout">
-                <a href="/407">
-                <card class="porta" id="407">
-                  <div class="texto_central">407</div>
-                </card>
-                </a>
-              </div>
-              <div class="laboratorio_layout">
-                <a href="/408">
-                <card class="porta" id="408">
-                  <div class="texto_central">408</div>
-                </card>
-                </a>
-              </div>
-              <div class="laboratorio_layout">
-                <a href="/409">
-                <card class="porta" id="409">
-                  <div class="texto_central">409</div>
-                </card>
-                </a>
-              </div>
-              <div class="laboratorio_layout">
-                <a href="/411">
-                <card class="porta" id="411">
-                  <div class="texto_central">411</div>
-                </card>
-                </a>
-              </div>
-              <div class="laboratorio_layout">
-                <a href="/412">
-                <card class="porta" id="412">
-                  <div class="texto_central">412</div>
-                </card>
-                </a>
-              </div>
-            </div>
+            
           </container>
-        </container>
       </section>
     </main>
   </body>

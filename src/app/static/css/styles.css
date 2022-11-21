@@ -99,7 +99,7 @@ label.inplogin{
 }
 
 h1.obrigado{
-    margin-top: 3vw;
+    margin-top: 2.5vw;
     text-decoration:underline;
 }
 
@@ -107,4 +107,12 @@ p.obrigado{
     margin-top: 2vw;
     font-size: 170%;
     text-align: center;
+}
+
+p.contatos{
+    margin-left: 6vw;
+    margin-top: 1.5vw;
+    text-align: left;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5vw;
 }

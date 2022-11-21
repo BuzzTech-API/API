@@ -34,9 +34,18 @@ def especificacao(lab,comp):
     return redirect(f'/{lab}/{comp}/seleção_problemas')
 
 
+
+#pag obrigado
 @app.route("/obrigado")
 def obrigado():
     return render_template("obrigado.html")
+
+
+
+#pag de contatos
+@app.route("/contatos1")
+def contatos():
+    return render_template("contatos.html")
 
     
 
@@ -124,7 +133,7 @@ def logout():
 
 
 # Rota de portas
-@app.route('/<lab>/', methods=["POST", "GET"])
+@app.route('/1/<lab>/', methods=["POST", "GET"])
 def comp(lab):
     l = Object.query.filter_by(Object_lab=lab)
     return render_template('Lab.html',lab=lab, elmnts=l)

@@ -18,6 +18,10 @@
     background: -webkit-linear-gradient(90deg, #c41c1c 50%, #ff1616 50%);
 }
 
+.hexcentroH:hover {
+    filter: drop-shadow(0px 15px 10px #0C0C0C);
+}
+
 .barrasupH {
     margin-top: 1.03vw;
     text-align: center;
@@ -68,14 +72,6 @@
     align-items: center;
     height: 25vw;
     width: 25vw;
-}
-
-.logoH:hover {
-    filter: drop-shadow(0px 15px 10px #0C0C0C);
-}
-
-.butTxtH:hover .logoH{
-    filter: drop-shadow(0px 15px 10px #0C0C0C);
 }
 
 .butTxtH {

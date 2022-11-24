@@ -19,7 +19,9 @@
 }
 
 .hexcentroH:hover {
-    filter: drop-shadow(0px 15px 10px #0C0C0C);
+   transform: scale(1.1);
+   transition: 0.1s;
+   cursor: pointer;
 }
 
 .barrasupH {
@@ -82,9 +84,9 @@
     text-decoration: none;
     position: absolute;
     display: flex;
-    margin-top: -18vw;
+    margin-top: -240px;
     width: 200px;
-    margin-left: 3.5vw;
+    margin-left: 45px;
     
 }
 

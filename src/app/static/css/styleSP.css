@@ -36,8 +36,6 @@
     visibility: hidden;
 }
 
-
-
 .computador {
     height: 10vw;
     width: 10vw;
@@ -63,8 +61,11 @@
     text-decoration: none;
 }
 
-.hardware:hover,
-.software:hover,
+.hardware:hover,.software:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .paodebatata:hover {
     cursor: pointer;
 }
@@ -120,11 +121,10 @@ a:active {
 }
 
 .logo {
-    height: 8.75vw;
-    width: 8.75vw;
-    place-self: center;
-    margin-left: 5%;
-    margin-right: -10%;
+    height: 113px;
+    width: 113px;
+    margin-top: -5.6px;
+    margin-left: 5vw;
 }
 
 .paozinho1{
@@ -146,10 +146,15 @@ a:active {
 .subclasse1{
     background-color: #E4E1E1;
     border-radius: 25px;
+    border-width: 1px;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: 5vw;
     height: 2vw;
+}
+
+.subclasse1:hover {
+    background-color: #cacaca;
 }
 
 .mudadisplay{
@@ -330,16 +335,15 @@ a:active {
 }
 
 .techelp {
-    position: absolute;
     place-self: center;
-    margin-left: 14vw;
-    height: 2vw;
+    margin-left: 5px;
+    height: 30px;
 }
 
 .buttons {
     height: 5vw;
     width: 30%;
-    margin-left: 60%;
+    margin-left: 40%;
     display: flex;
     flex-direction: row;
     justify-content: end;
@@ -510,12 +514,6 @@ a:active {
     margin-right: -19.4px;
 }
 
-.butao {
-    margin: 0;
-}
-
-
-
 
 /* Funcionamento do modal */
 .bg-modal {
@@ -579,6 +577,9 @@ a:active {
     background-color: rgb(212, 212, 212);
 }
 
+.problema-botão:hover{
+    background-color: rgb(180, 180, 180);
+}
 
 /* Modal Descrição */
 /* Conteúdo */
@@ -612,7 +613,10 @@ a:active {
     cursor: pointer;
     margin-top: 0vw;
     font-size: 1.2vw;
+}
 
+.btnn:hover {
+    background-color: rgb(180, 180, 180);
 }
 
 .descrição {

@@ -103,7 +103,7 @@
         user-select: none;
         text-align: center;
     }
-    .pcbutton, .portabutton, .quadrobutton, .serverbutton, .mesabutton, .resize, .delete, .edit, .clone, .adicionar, .carregar, .salvar, .deletar, .admin {
+    .pcbutton, .portabutton, .quadrobutton, .serverbutton, .mesabutton, .resize, .delete, .edit, .clone, .adicionar, .carregar, .salvar, .deletar,.retirarBorda, .admin {
         font-family: "Lucida Grande", monospace;
         font-size: 3vh;
         font-weight: 1000;
@@ -112,11 +112,11 @@
         user-select: none;
         color: #000000;
     }
-    .pcbutton:hover,.portabutton:hover, .quadrobutton:hover, .serverbutton:hover, .mesabutton:hover, .resize:hover, .delete:hover, .copy:hover, .clone:hover, .adicionar:hover, .carregar:hover, .salvar:hover, .deletar:hover, .admin:hover, .edit:hover {
+    .pcbutton:hover,.portabutton:hover, .quadrobutton:hover, .serverbutton:hover, .mesabutton:hover, .resize:hover, .delete:hover, .copy:hover, .clone:hover, .adicionar:hover, .carregar:hover, .salvar:hover, .deletar:hover, .admin:hover,.retirarBorda:hover, .edit:hover {
         color: #666666;
 		cursor: pointer;
     }
-    .pcbutton:active, .mesabutton:active,.portabutton:active, .quadrobutton:active, .serverbutton:active, .resize:active, .delete:active, .copy:active, .clone:active, .adicionar:active, .carregar:active, .salvar:active, .deletar:active, .admin:active, .edit:active {
+    .pcbutton:active, .mesabutton:active,.portabutton:active, .quadrobutton:active, .serverbutton:active, .resize:active, .delete:active, .copy:active, .clone:active, .adicionar:active, .carregar:active, .salvar:active,.retirarBorda:active, .deletar:active, .admin:active, .edit:active {
         color: #BBBBBB;
     }
     .txtx0, .txty0, .txtx1, .txtrotate,  .txty1 {
@@ -220,11 +220,15 @@
     }
 
     .conteudo1{
-        display: inline-block;
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         border: 3px solid #000000;
         border-radius: 14px;
         padding: 1vw;
         background-color: #EBD5D5;
+    }
+    .conteudo1.segundaparte{
+        grid-template-columns:1fr 1fr 1fr 1fr 1fr ;
     }
     .fundo1 {
         background-color: #ffffff;

@@ -4,20 +4,8 @@ from app.models.model import Chamado, User, Object
 from flask_login import logout_user
 import datetime
 # Funções de interação com o banco de dados está fora do arquivo para melhor a legibilidade do código
-from app.controllers.conection import dell, update_call, user_login, insert, update_object, delete_object, mostrar_chamado_aberto
+from app.controllers.conection import dell, update_call, user_login, insert, update_object, delete_object, mostrar_chamado_aberto,visualizar_chamados,filtrar_status, laboratorios
 import mysql.connector
-
-conexao = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='Apolo9654#',
-    database='api',
-    port=5523,
-    )
-cursor= conexao.cursor()
-
-
-
 
 
 @app.route("/index")
@@ -27,75 +15,54 @@ def homepage():
     return render_template("home.html")
 
 
-
 # função de alteração de especificação para a RAM, processador e SO
 @app.route("/<lab>/<comp>/especificacao", methods=["POST", "GET"])
-def especificacao(lab,comp):
-    computador=Object.query.filter_by(id=int(comp)).first()
-    ram= request.form['ram']
-    computador.Object_comp_RAM=ram
-    sistema_operacional= request.form['sistema_operacional']
-    computador.Object_comp_operational_system=sistema_operacional
-    processador= request.form['processador']
-    computador.Object_comp_processor=processador
+def especificacao(lab, comp):
+    computador = Object.query.filter_by(id=int(comp)).first()
+    ram = request.form['ram']
+    computador.Object_comp_RAM = ram
+    sistema_operacional = request.form['sistema_operacional']
+    computador.Object_comp_operational_system = sistema_operacional
+    processador = request.form['processador']
+    computador.Object_comp_processor = processador
     db.session.add(computador)
     db.session.commit()
     return redirect(f'/{lab}/{comp}/seleção_problemas')
 
 
-
-#pag obrigado
+# pag obrigado
 @app.route("/obrigado")
 def obrigado():
     return render_template("obrigado.html")
 
 
-
-#pag de contatos
+# pag de contatos
 @app.route("/contatos")
 def contatos():
     return render_template("contatos.html")
 
-    
 
 # função e rota para visualizar os chamados
 @app.route("/visualizar/", methods=["POST", "GET"])
 def visualizar():
     """Função e rota de visualização dos chamados"""
-    tabela = Chamado.query.order_by(Chamado.id).all()
-    element=[]
-    element1=[]
+    tabela = visualizar_chamados()
     # esse if request.method é para a função de filtrar os chamados por status
     status = request.form.get('status')
-    if request.method == 'POST':
-        for item in tabela:
-            if item.Status == status:
-                tabela = Chamado.query.filter_by(Status=status)
-                obj=Object.query.filter_by(id=item.Object_id).first()
-                element.append(obj.Object_lab)
-                element1.append(obj.Object_compname)
-            elif status == 'Todos':
-                obj=Object.query.filter_by(id=item.Object_id).first()
-                element.append(obj.Object_lab)
-                element1.append(obj.Object_compname)
+    if request.method == 'POST' and status!='Todos':
+        tabela=filtrar_status(status)
     else:
-        for item in tabela:
-            obj=Object.query.filter_by(id=item.Object_id).first()
-            element.append(obj.Object_lab)
-            element1.append(obj.Object_compname)
-   
+        tabela = visualizar_chamados()
 
-    return render_template("visualizar.html", tabela=tabela, comp=element1, lab=element, len=len(element))
-
+    return render_template("visualizar.html", tabela=tabela)
 
 
 # rota que deleta o chamdo do id que você colocar no caminho por ex:/deletar/2 vai deletar o chamado de id 2
 @app.route('/deletar/<int:id>')
 def deletar(id):
     """Função que deleta chamado"""
-    dell(Chamado,id)
+    dell(Chamado, id)
     return redirect("/visualizar")
-
 
 
 # função de atualizar o chamado do id informado que vai entrar em uma pagina para a pessoa preencher as modificações e assim vai pegar as informações e atualizar no banco de dados
@@ -110,19 +77,17 @@ def atualizar(id):
     return render_template("atualizar.html", chamado=r, comp=l)
 
 
-
 @app.route('/cadastrar_login', methods=['GET', 'POST'])
 def cadastrar_login():
     if request.method == 'POST':
-        params={
-        'name': request.form['name'],
-        'email': request.form['email'],
-        'password': request.form['password']
+        params = {
+            'name': request.form['name'],
+            'email': request.form['email'],
+            'password': request.form['password']
         }
         insert(User, params)
         return redirect(url_for('login'))
     return render_template('cadastrar.html')
-
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -133,34 +98,28 @@ def login():
     return render_template('login.html')
 
 
-
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('homepage'))
 
 
-
 # Rota de portas
 @app.route('/laboratorio/<lab>/', methods=["POST", "GET"])
 def comp(lab):
-    lista=mostrar_chamado_aberto(lab)
+    lista = mostrar_chamado_aberto(lab)
     return render_template('Lab.html', lab=lab, elmnts=lista)
-
-
 
 
 # Rota de laboratorio
 @app.route('/lab', methods=["POST", "GET"])
 def lab():
-    lay=Object.query.order_by(Object.Object_lab)
-    labs=[]
-    for item in lay:
-        if item.Object_lab not in labs:
-            labs.append(item.Object_lab)
+    l = laboratorios()
+    labs = []
+    for item in l:
+        if item[0] not in labs:
+            labs.append(item[0])
     return render_template('Portas.html', labs=labs)
-
-
 
 
 # Rota de seleção dos problemas
@@ -168,117 +127,107 @@ def lab():
 def seleção_problemas(lab, comp):
     """Rota de selecionar os chamados e finalizar o cadastro do chamado"""
     l = Object.query.filter_by(id=comp).first()
-    if request.method == "POST": 
-        params={
-        "Object_id":comp,
-        "Problem": request.form["problem"],
-        "Description": request.form["description"],
-        "Status": 'Pendente',
-        "Time_created":datetime.datetime.now(),
-        "User_id":1
+    if request.method == "POST":
+        params = {
+            "Object_id": comp,
+            "Problem": request.form["problem"],
+            "Description": request.form["description"],
+            "Status": 'Pendente',
+            "Time_created": datetime.datetime.now(),
+            "User_id": 1
         }
-        insert(Chamado, params)   
+        insert(Chamado, params)
         return redirect(url_for('obrigado'))
 
-    return render_template('Seleção de Problemas.html',lab=lab,comp=l)
+    return render_template('Seleção de Problemas.html', lab=lab, comp=l)
 
 
-@app.route('/editar', methods = ['POST', 'GET'])
+@app.route('/editar', methods=['POST', 'GET'])
 def editar():
-    l = Object.query.order_by(Object.Object_lab)
-    labs=[]
+    l = laboratorios()
+    labs = []
     for item in l:
-        if item.Object_lab not in labs:
-            labs.append(item.Object_lab)
+        if item[0] not in labs:
+            labs.append(item[0])
 
     return render_template('edit.html', labs=labs)
 
-@app.route('/edited', methods = ['POST', 'GET'])
+
+@app.route('/edited', methods=['POST', 'GET'])
 def edited():
-   elmnts = ""
-   if request.method == 'POST':
-      try:
-         selected = request.form["selectedvalue"]
+    elmnts = ""
+    if request.method == 'POST':
+        try:
+            selected = request.form["selectedvalue"]
 
-         if (request.form['actiontype'] == "add"):
-            nome = request.form['txtnew']
-            elements = request.form['elementcontent']
-            elements = elements.split('\n')
-            for item in elements:
-                if 'class="pc"' in item:
-                    index=item.find('innertext')
-                    index2=item.find('</div>')
-                    params={
-                        'Object_lab': nome,
-                        'Object_div': item+'\n',
-                        'Object_compname':item[index+11:index2],
-                        'Object_comp_processor':"",
-                        'Object_comp_RAM': '',
-                        'Object_comp_operational_system':''
+            if (request.form['actiontype'] == "add"):
+                nome = request.form['txtnew']
+                elements = request.form['elementcontent']
+                elements = elements.split('\n')
+                for item in elements:
+                    if 'class="pc"' in item:
+                        index = item.find('innertext')
+                        index2 = item.find('</div>')
+                        params = {
+                            'Object_lab': nome,
+                            'Object_div': item+'\n',
+                            'Object_compname': item[index+11:index2],
+                            'Object_comp_processor': "",
+                            'Object_comp_RAM': '',
+                            'Object_comp_operational_system': ''
 
-                    }
-                    insert(Object, params)
-                elif 'class="':
-                    params={
-                        'Object_lab': nome,
-                        'Object_div': item + '\n',
-                        'Object_compname':'',
-                        'Object_comp_processor':"",
-                        'Object_comp_RAM': '',
-                        'Object_comp_operational_system':''
-                    }
-                    insert(Object, params)
-                
-            
-                
-            msg = "Sala criada com sucesso"
+                        }
+                        insert(Object, params)
+                    elif 'class="':
+                        params = {
+                            'Object_lab': nome,
+                            'Object_div': item + '\n',
+                            'Object_compname': '',
+                            'Object_comp_processor': "",
+                            'Object_comp_RAM': '',
+                            'Object_comp_operational_system': ''
+                        }
+                        insert(Object, params)
 
-               
+                msg = "Sala criada com sucesso"
 
-         elif (request.form['actiontype'] == "del"):
-            nome = request.form['salalist']
-            lay= Object.query.filter_by(Object_lab=nome).all()
+            elif (request.form['actiontype'] == "del"):
+                nome = request.form['salalist']
+                lay = Object.query.filter_by(Object_lab=nome).all()
+                for item in lay:
+                    dell(Object, item.id)
+                msg = "Deletada com sucesso"
+
+            elif (request.form['actiontype'] == "save"):
+                nome = request.form['salalist']
+                elements = request.form['elementcontent']
+                elements = elements.split('\n')
+                lay = Object.query.filter_by(Object_lab=nome).all()
+                # print(len(lay))
+                update_object(elements, lay, nome)
+
+                lay = Object.query.filter_by(Object_lab=nome).all()
+                delete_object(elements, lay)
+
+                msg = "Sala modificada com sucesso"
+
+            elif (request.form['actiontype'] == "load"):
+
+                nome = request.form['salalist']
+                lay = Object.query.filter_by(Object_lab=nome).all()
+                elmnts = []
+                for item in lay:
+                    elmnts.append(item.Object_div)
+
+                msg = "Sala carregada com sucesso"
+
+        except:
+            msg = ("ERRO")
+
+        finally:
+            lay = Object.query.order_by(Object.Object_lab)
+            labs = []
             for item in lay:
-                dell(Object, item.id)
-            msg = "Deletada com sucesso"
-            
-
-         elif (request.form['actiontype'] == "save"):
-            nome = request.form['salalist']
-            elements=request.form['elementcontent']   
-            elements = elements.split('\n')
-            lay = Object.query.filter_by(Object_lab=nome).all()
-            # print(len(lay))
-            update_object(elements, lay, nome)
-
-            lay = Object.query.filter_by(Object_lab=nome).all()
-            delete_object(elements, lay)
-                        
-                
-            
-            
-            msg = "Sala modificada com sucesso"
-            
-
-         elif (request.form['actiontype'] == "load"):
-            
-            
-            nome = request.form['salalist']
-            lay=Object.query.filter_by(Object_lab=nome).all()
-            elmnts = []
-            for item in lay:
-                elmnts.append(item.Object_div)
-
-            
-            msg = "Sala carregada com sucesso"
-
-      except:
-         msg = ("ERRO")
-
-      finally:
-        lay=Object.query.order_by(Object.Object_lab)
-        labs=[]
-        for item in lay:
-            if item.Object_lab not in labs:
-                labs.append(item.Object_lab)
-        return render_template("edit.html", labs = labs, selected = selected, msg = msg, elmnts = elmnts)
+                if item.Object_lab not in labs:
+                    labs.append(item.Object_lab)
+            return render_template("edit.html", labs=labs, selected=selected, msg=msg, elmnts=elmnts)

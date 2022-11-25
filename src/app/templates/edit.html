@@ -71,8 +71,8 @@
         <span class="edittxt">altura: </span><input class="txty1" type="text" id="ysize" name="ysize">
         <span class="edittxt">name: </span><input class="txtname" type="text" id="txtname" name="txtname">
         <span class="edittxt">id: </span><input class="txtid" type="text" id="txtid" name="txtid" disabled><span class="edittxt"></span>
-        
-        <br>
+    </div>
+    <div class="conteudo1 segundaparte">
         <div class="botão1"><span class="pcbutton">Novo PC</span><span class="edittxt"></span></div>
         <div class="botão1"><span class="portabutton">Novo Porta</span><span class="edittxt"></span></div>
         <div class="botão1"><span class="quadrobutton">Novo Quadro Branco</span><span class="edittxt"></span></div>
@@ -81,8 +81,9 @@
         <div class="botão1"><span class="resize"> Redimensionar </span></div>
         <div class="botão1"><span class="clone">Clonar</span><span class="edittxt"></span></div>
         <div class="botão1"><span class="delete">Deletar</span></div>
-        <span class="edit" ></span><span class="edittxt"></span>
+        <div class="botão1"><span class="retirarBorda">Retirar Borda</span></div>
     </div>
+    <span class="edit" ></span><span class="edittxt"></span>
 </div>
 </form>
 </div>
@@ -400,6 +401,9 @@
     });
 	document.querySelector(".salalist").addEventListener("click", function (event) {
 		setSelected();
+    });
+    document.querySelector(".retirarBorda").addEventListener("click", function (event) {
+		lastelement.style.outline = "none";
     });
 
 

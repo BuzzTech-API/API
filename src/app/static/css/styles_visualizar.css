@@ -21,12 +21,14 @@
 .filter .att-input{
     height: 4vh;
     margin: 0 2vh;
+    padding: 0.1rem 1.2rem
 }
 
 .filter .att-enviar{
     height: 4vh;
     margin: 0 2vh;
     font-size: medium;
+    padding: 0.1rem 1.2rem;
 }
 
 .btn {

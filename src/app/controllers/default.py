@@ -4,8 +4,17 @@ from app.models.model import Chamado, User, Object
 from flask_login import logout_user
 import datetime
 # Funções de interação com o banco de dados está fora do arquivo para melhor a legibilidade do código
-from app.controllers.conection import dell, update_call, user_login, insert, update_object, delete_object
+from app.controllers.conection import dell, update_call, user_login, insert, update_object, delete_object, mostrar_chamado_aberto
+import mysql.connector
 
+conexao = mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='Apolo9654#',
+    database='api',
+    port=5523,
+    )
+cursor= conexao.cursor()
 
 
 
@@ -135,8 +144,8 @@ def logout():
 # Rota de portas
 @app.route('/laboratorio/<lab>/', methods=["POST", "GET"])
 def comp(lab):
-    l = Object.query.filter_by(Object_lab=lab)
-    return render_template('Lab.html',lab=lab, elmnts=l)
+    lista=mostrar_chamado_aberto(lab)
+    return render_template('Lab.html', lab=lab, elmnts=lista)
 
 
 

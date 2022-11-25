@@ -57,6 +57,7 @@
         font-family: "Monaco", monospace;
         font-weight: 750;
     	position: absolute;
+        display: inline;
         background-repeat: no-repeat;
         background-size: contain;
         z-index: 3;

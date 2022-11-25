@@ -19,13 +19,16 @@
             <div class="editarea">
               <div class="pctablemaster">
                 {% for row in elmnts %}
-                {% if 'class="pc"' in row.Object_div %}
-                  <a class="nomePc" href="/{{row.Object_lab}}/{{row.id}}/seleção_problemas"><p>{{row.Object_div |safe}}</p></a>
+                {% if 'class="pc"' in row[2] %}
+ 
+                  <span class="chamado_existente">
+                    <a class="nomePc" href="/{{row[1]}}/{{row[0]}}/seleção_problemas">{{row[2] |safe}}</a>
+                  </span>
                 {% else %}
-                  <p>{{row.Object_div |safe}}</p>
+                <p>{{row[2] |safe}}</p>
                 {% endif %}
                 {% endfor %}
-                </div>
+              </div>
             </div>
             </center>
           </container>

@@ -3,7 +3,16 @@ from app.models.model import Chamado, User, Object
 from flask import render_template, redirect, url_for, request
 from flask_login import login_user
 from datetime import datetime
+import mysql.connector
 
+conexao = mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='Apolo9654#',
+    database='api',
+    port=5523,
+    )
+cursor= conexao.cursor()
 
 # Função de inserção de tupla no banco
 def insert(Model, params):
@@ -119,3 +128,33 @@ def delete_object(elements, lay):
                 c = c
         if c == 0:
             dell(Object, item.id)
+
+
+def mostrar_chamado_aberto(lab):
+    conexao.reconnect()
+    comando=f'SELECT * from object WHERE Object_lab={lab}'
+    cursor= conexao.cursor()
+    cursor.execute(comando)
+    l = cursor.fetchall()
+    lista=[]
+    for item in l:
+        lista.append([item[0],item[1],item[2],item[3]])
+    comando=f'SELECT Object_id from calls'
+    cursor= conexao.cursor()
+    cursor.execute(comando)
+    tabela= cursor.fetchall()
+    print(tabela)
+    cursor.close()
+    for item in tabela:
+        comando=f'SELECT * FROM object WHERE id={item[0]}'
+        cursor= conexao.cursor()
+        cursor.execute(comando)
+        item2=cursor.fetchone()
+        index1=item2[2].find('style="')+7
+        item3=item2[2]
+        item3=item3[:index1]+'background-color: rgba(255, 0, 0, 0.3); border-radius: 10px; filter: drop-shadow(2px 4px 6px red); '+item3[index1:]
+        for item in lista:
+            if item[0]==item2[0]:
+                item[2]=item3
+        cursor.close()
+    return lista

@@ -56,7 +56,6 @@ def visualizar():
 
     return render_template("visualizar.html", tabela=tabela)
 
-
 # rota que deleta o chamdo do id que você colocar no caminho por ex:/deletar/2 vai deletar o chamado de id 2
 @app.route('/deletar/<int:id>')
 def deletar(id):

@@ -6,11 +6,11 @@ from datetime import datetime
 import mysql.connector
 
 conexao = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='Apolo9654#',
+    host='35.174.216.24',
+    user='fatec',
+    password='fatec',
     database='api',
-    port=5523,
+    port=3306,
     )
 cursor= conexao.cursor()
 

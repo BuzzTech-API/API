@@ -1,6 +1,6 @@
 from app import db
 from app.models.model import Chamado, User, Object
-from flask import render_template, redirect, url_for, request
+from flask import render_template, redirect, url_for, request, flash
 from flask_login import login_user
 from datetime import datetime
 import mysql.connector
@@ -32,12 +32,13 @@ def insert(Model, params):
 # Função de deletar de tupla no banco
 def dell(Model, id):
     '''Função de deletar de tupla no banco'''
+    r = Model.query.filter_by(id=id).first()
     if Model == Object:
         comando=f"SELECT Object_id FROM calls WHERE Object_id={id}"
         l = executar_busca(comando)
         if len(l)!=0:
-            return print('existe um chamado registrado')
-    r = Model.query.filter_by(id=id).first()
+            return flash(f'Existe um chamado registrado no computador {r.Object_compname} no laboratório {r.Object_lab}, por isso não foi possível excluir ele')
+    
     db.session.delete(r)
     db.session.commit()
     return
@@ -60,8 +61,8 @@ def user_login(email, password):
     user = User.query.filter_by(email=email).first()
 
     if user and user.verify_password(password):
-        print(user.verify_password(password))
         login_user(user)
+        flash('Logado com Sucesso')
         return redirect(url_for('visualizar'))
     return "Usuário não existe"
 

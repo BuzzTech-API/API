@@ -1,5 +1,5 @@
 from app import app, db
-from flask import render_template, redirect, url_for, request
+from flask import render_template, redirect, url_for, request, flash
 from app.models.model import Chamado, User, Object
 from flask_login import logout_user
 import datetime
@@ -253,14 +253,14 @@ def edited():
                         }
                         insert(Object, params)
 
-                msg = "Sala criada com sucesso"
+                flash("Sala criada com sucesso")
 
             elif (request.form['actiontype'] == "del"):
                 nome = request.form['salalist']
                 lay = Object.query.filter_by(Object_lab=nome).all()
                 for item in lay:
                     dell(Object, item.id)
-                msg = "Deletada com sucesso"
+                flash("Deletada com sucesso")
 
             elif (request.form['actiontype'] == "save"):
                 nome = request.form['salalist']
@@ -273,7 +273,7 @@ def edited():
                 lay = Object.query.filter_by(Object_lab=nome).all()
                 delete_object(elements, lay)
 
-                msg = "Sala modificada com sucesso"
+                flash("Sala modificada com sucesso")
 
             elif (request.form['actiontype'] == "load"):
 
@@ -283,10 +283,10 @@ def edited():
                 for item in lay:
                     elmnts.append(item.Object_div)
 
-                msg = "Sala carregada com sucesso"
+                flash("Sala carregada com sucesso")
 
         except:
-            msg = ("ERRO")
+            flash("ERRO")
 
         finally:
             lay = Object.query.order_by(Object.Object_lab)
@@ -294,7 +294,7 @@ def edited():
             for item in lay:
                 if item.Object_lab not in labs:
                     labs.append(item.Object_lab)
-            return render_template("edit.html", labs=labs, selected=selected, msg=msg, elmnts=elmnts)
+            return render_template("edit.html", labs=labs, selected=selected, elmnts=elmnts)
 
 
 
@@ -333,6 +333,7 @@ def cadastrar_login():
 def login():
     if request.method == 'POST':
         user_login(request.form['email'], request.form['password'])
+
         return redirect(url_for('homepage'))
     return render_template('login.html')
 
@@ -349,5 +350,6 @@ def login():
 @app.route('/logout')
 def logout():
     logout_user()
+    flash('Deslogado com Sucesso')
     return redirect(url_for('homepage'))
 

@@ -61,6 +61,7 @@
         </div>
         {% else %}
         <div class="buttons">
+            
             <div class="butao">
                 <a class="butao" href="/"><img class="hexagHM" src="{{url_for('static', filename='img/Home.png')}}"
                         alt="hexagono"></a>
@@ -83,11 +84,32 @@
         </div>
         {% endif %}
     </div>
+    
+    
     <section>
         {% block content%}
         {% endblock %}
     </section>
-
+    {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            
+            <div class="bg-modal">
+                <div class="modal-content-mensagem">
+                    <div class="close" onclick="fechar()">+</div>
+                    <h1>Avisos</h1>
+                            <ul class="flashes">
+                                {% for message in messages %}
+                                    <li class="alert alert-danger">{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                </div>
+            </div>
+            <script>
+                document.querySelector('.bg-modal').style.display = 'flex';
+                document.querySelector('.modal-content-mensagem').style.display = 'fit-content'
+            </script>
+        {% endif %}
+    {% endwith %}
     <!-- Modal Técnico -->
     <div class="bg-modal">
         <div class="modal-content-login">
@@ -101,6 +123,23 @@
                 <br><input class="inp" type="password" name="password" placeholder="Sua senha">
                 <br><input class="inpsub" type="submit" value="Entrar">
             </form>
+
+        </div>
+        <div class="modal-content-mensagem">
+            <div class="close" onclick="fechar()">+</div>
+            <h1>Avisos</h1>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <div class="alert alert-danger" style="text-align: center; font-size: 1.1rem;">
+                    <ul class=flashes>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            {% endwith %}
 
         </div>
     </div>

@@ -32,6 +32,11 @@ def insert(Model, params):
 # Função de deletar de tupla no banco
 def dell(Model, id):
     '''Função de deletar de tupla no banco'''
+    if Model == Object:
+        comando=f"SELECT Object_id FROM calls WHERE Object_id={id}"
+        l = executar_busca(comando)
+        if len(l)!=0:
+            return print('existe um chamado registrado')
     r = Model.query.filter_by(id=id).first()
     db.session.delete(r)
     db.session.commit()
@@ -162,26 +167,31 @@ def mostrar_chamado_aberto(lab):
     return lista
 
 def visualizar_chamados():
-    conexao.reconnect()
     comando = f'SELECT calls.*, object.id, object.Object_lab, object.Object_compname from calls, object WHERE calls.Object_id=object.id'
-    cursor = conexao.cursor()
-    cursor.execute(comando)
-    l = cursor.fetchall()
-    return l
+    return executar_busca(comando)
 
 def filtrar_status(status):
-    conexao.reconnect()
     comando = f'SELECT calls.*, object.id, object.Object_lab, object.Object_compname from calls, object WHERE calls.Object_id=object.id and calls.status="{status}"'
-    cursor = conexao.cursor()
-    cursor.execute(comando)
-    l = cursor.fetchall()
-    return l
+    return executar_busca(comando)
 
 def laboratorios():
-    conexao.reconnect()
     comando = f'SELECT Object_lab from object'
+    l = executar_busca(comando)
+    l.sort()
+    return l
+
+
+def executar_busca(comando):
+    conexao.reconnect()
     cursor = conexao.cursor()
     cursor.execute(comando)
-    l = cursor.fetchall()
-    print(l)
-    return l
+    return cursor.fetchall()
+
+# Mudar as especificações dos computadores nas salas dentro do HTML mudar_especificacao
+def mudar_spc(sala, sistema_operacional, processador, ram):
+    conexao.reconnect()
+    cursor = conexao.cursor()
+    comando=f"UPDATE object SET Object_comp_processor = '{processador}', Object_comp_RAM='{ram}', Object_comp_operational_system = '{sistema_operacional}' WHERE Object_lab={sala} AND Object_compname NOT IN ('')"
+    cursor.execute(comando)
+    conexao.commit()
+    return

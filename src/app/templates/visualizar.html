@@ -3,6 +3,10 @@
 {% block content %}
 <head>
     <link rel="stylesheet" href="{{url_for('static', filename='css/styles_visualizar.css')}}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+
+    
 </head>
     
     <!-- Aqui temos a tabela de visualização-->
@@ -26,7 +30,7 @@
             
         </form>
        
-        <table class="table" style="margin-bottom: 0%;">
+        <table id="dataTable" class="table" style="margin-bottom: 0%;">
         <thead>
             <tr>
                 <!-- Aqui fica a parte de identificação das colunas -->
@@ -76,4 +80,10 @@
         </tbody>
         </table>         
     </div>
+
+    <div class="chart">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="../static/js/graph.js"></script> <!-- JS dos gráficos -->
 {% endblock %}

@@ -8,11 +8,21 @@ from app.controllers.conection import dell, update_call, user_login, insert, upd
 import mysql.connector
 
 
+
+
+
+
+
+
 @app.route("/index")
 @app.route("/")
 def homepage():
     """Função e rota da página home"""
     return render_template("home.html")
+
+
+
+
 
 
 # função de alteração de especificação para a RAM, processador e SO
@@ -30,10 +40,20 @@ def especificacao(lab, comp):
     return redirect(f'/{lab}/{comp}/seleção_problemas')
 
 
+
+
+
+
 # pag obrigado
 @app.route("/obrigado")
 def obrigado():
     return render_template("obrigado.html")
+
+
+
+
+
+
 
 
 # pag de contatos
@@ -42,11 +62,16 @@ def contatos():
     return render_template("contatos.html")
 
 
+
+
+
+
+
 # função e rota para visualizar os chamados
 @app.route("/visualizar/", methods=["POST", "GET"])
 def visualizar():
     """Função e rota de visualização dos chamados"""
-    tabela = visualizar_chamados()
+
     # esse if request.method é para a função de filtrar os chamados por status
     status = request.form.get('status')
     if request.method == 'POST' and status!='Todos':
@@ -56,12 +81,21 @@ def visualizar():
 
     return render_template("visualizar.html", tabela=tabela)
 
+
+
+
+
+
 # rota que deleta o chamdo do id que você colocar no caminho por ex:/deletar/2 vai deletar o chamado de id 2
 @app.route('/deletar/<int:id>')
 def deletar(id):
     """Função que deleta chamado"""
     dell(Chamado, id)
     return redirect("/visualizar")
+
+
+
+
 
 
 # função de atualizar o chamado do id informado que vai entrar em uma pagina para a pessoa preencher as modificações e assim vai pegar as informações e atualizar no banco de dados
@@ -76,31 +110,10 @@ def atualizar(id):
     return render_template("atualizar.html", chamado=r, comp=l)
 
 
-@app.route('/cadastrar_login', methods=['GET', 'POST'])
-def cadastrar_login():
-    if request.method == 'POST':
-        params = {
-            'name': request.form['name'],
-            'email': request.form['email'],
-            'password': request.form['password']
-        }
-        insert(User, params)
-        return redirect(url_for('login'))
-    return render_template('cadastrar.html')
 
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        user_login(request.form['email'], request.form['password'])
-        return redirect(url_for('homepage'))
-    return render_template('login.html')
 
 
-@app.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('homepage'))
 
 
 # Rota de portas
@@ -108,6 +121,13 @@ def logout():
 def comp(lab):
     lista = mostrar_chamado_aberto(lab)
     return render_template('Lab.html', lab=lab, elmnts=lista)
+
+
+
+
+
+
+
 
 
 # Rota de laboratorio
@@ -119,6 +139,12 @@ def lab():
         if item[0] not in labs:
             labs.append(item[0])
     return render_template('Portas.html', labs=labs)
+
+
+
+
+
+
 
 
 # Rota de seleção dos problemas
@@ -141,6 +167,14 @@ def seleção_problemas(lab, comp):
     return render_template('Seleção de Problemas.html', lab=lab, comp=l)
 
 
+
+
+
+
+
+
+
+
 @app.route('/editar', methods=['POST', 'GET'])
 def editar():
     l = laboratorios()
@@ -150,6 +184,16 @@ def editar():
             labs.append(item[0])
 
     return render_template('edit.html', labs=labs)
+
+
+
+
+
+
+
+
+
+
 
 
 @app.route('/edited', methods=['POST', 'GET'])
@@ -230,3 +274,59 @@ def edited():
                 if item.Object_lab not in labs:
                     labs.append(item.Object_lab)
             return render_template("edit.html", labs=labs, selected=selected, msg=msg, elmnts=elmnts)
+
+
+
+
+
+
+
+
+
+
+@app.route('/cadastrar_login', methods=['GET', 'POST'])
+def cadastrar_login():
+    if request.method == 'POST':
+        params = {
+            'name': request.form['name'],
+            'email': request.form['email'],
+            'password': request.form['password']
+        }
+        insert(User, params)
+        return redirect(url_for('login'))
+    return render_template('cadastrar.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        user_login(request.form['email'], request.form['password'])
+        return redirect(url_for('homepage'))
+    return render_template('login.html')
+
+
+
+
+
+
+
+
+
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('homepage'))
+

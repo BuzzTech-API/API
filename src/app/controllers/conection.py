@@ -186,3 +186,12 @@ def executar_busca(comando):
     cursor = conexao.cursor()
     cursor.execute(comando)
     return cursor.fetchall()
+
+# Mudar as especificações dos computadores nas salas dentro do HTML mudar_especificacao
+def mudar_spc(sala, sistema_operacional, processador, ram):
+    conexao.reconnect()
+    cursor = conexao.cursor()
+    comando=f"UPDATE object SET Object_comp_processor = '{processador}', Object_comp_RAM='{ram}', Object_comp_operational_system = '{sistema_operacional}' WHERE Object_lab={sala} AND Object_compname NOT IN ('')"
+    cursor.execute(comando)
+    conexao.commit()
+    return

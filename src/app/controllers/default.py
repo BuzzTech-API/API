@@ -3,8 +3,9 @@ from flask import render_template, redirect, url_for, request
 from app.models.model import Chamado, User, Object
 from flask_login import logout_user
 import datetime
+
 # Funções de interação com o banco de dados está fora do arquivo para melhor a legibilidade do código
-from app.controllers.conection import dell, update_call, user_login, insert, update_object, delete_object, mostrar_chamado_aberto,visualizar_chamados,filtrar_status, laboratorios
+from app.controllers.conection import dell, update_call, user_login, insert, update_object, delete_object, mostrar_chamado_aberto,visualizar_chamados,filtrar_status, laboratorios, mudar_spc
 import mysql.connector
 
 
@@ -142,6 +143,26 @@ def lab():
 
 
 
+
+
+# Rota da página HTML mudar_especificacao (não existe botão que chegue nesse HTML)
+# Página HTML criada para mudar todos os computadores de cada sala com um único comando
+@app.route('/mudar_especificacao', methods=["POST", "GET"])
+def mudar_especificacao():
+    l = laboratorios()
+    labs = []
+    for item in l:
+        if item[0] not in labs:
+            labs.append(item[0])
+    
+    if request.method=='POST':
+        sala = request.form['salalist']
+        sistema_operacional = request.form['sistema_operacional']
+        processador = request.form['processador']
+        ram = request.form['ram']
+        mudar_spc(sala, sistema_operacional, processador, ram)
+
+    return render_template('mudar_especificacao.html', labs=labs)
 
 
 

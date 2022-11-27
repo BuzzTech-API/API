@@ -96,17 +96,6 @@ a:active {
     width: 10vw;
 }
 
-.barrasup {
-    margin-top: 1.03vw;
-    text-align: center;
-    height: 99px;
-    width: 100%;
-    display: flex;
-    background: -webkit-linear-gradient(90deg, #c41c1c 50%, #ff1616 50%);
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: -2;
-}
 
 .circuloE {
     fill: #555555;
@@ -120,12 +109,6 @@ a:active {
     margin-left: 300px;
 }
 
-.logo {
-    height: 113px;
-    width: 113px;
-    margin-top: -5.6px;
-    margin-left: 5vw;
-}
 
 .paozinho1{
     position: absolute;
@@ -334,20 +317,9 @@ a:active {
     margin-top: -4vw;
 }
 
-.techelp {
-    place-self: center;
-    margin-left: 5px;
-    height: 30px;
-}
 
-.buttons {
-    height: 5vw;
-    width: 30%;
-    margin-left: 40%;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-}
+
+
 
 .butTxt {
     text-align: center;
@@ -486,33 +458,11 @@ a:active {
     margin-top: 5px;
 }
 
-.hexagHM {
-    height: 77px;
-    width: 77px;
-    margin-top: -5.6px;
-    margin-right: -19.4px;
-}
 
-.hexagRP {
-    height: 77px;
-    width: 77px;
-    margin-top: 27.5px;
-    margin-right: -19.4px;
-}
 
-.hexagSF {
-    height: 77px;
-    width: 77px;
-    margin-top: -5.2px;
-    margin-right: -19.4px;
-}
 
-.hexagAT {
-    height: 77px;
-    width: 77px;
-    margin-top: 27.5px;
-    margin-right: -19.4px;
-}
+
+
 
 
 /* Funcionamento do modal */
@@ -743,46 +693,3 @@ a:active {
 }
 
 
-/* Modal Login */
-.modal-content-login {
-    width: 40vw;
-    height: 31vw;
-    background-color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    border-radius: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    display: none;
-}
-
-.inplogin {
-    font-size: 1.75vw;
-    margin-bottom: 0vw;
-    margin-top: 1vw;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.inp {
-    width: 34vw;
-    height: 1vw;
-    margin-top: 1vw;
-    border-radius: 1vw;
-    padding: 1vw;
-    font-size: 1.25vw;
-    margin-bottom: 0.5vw;
-    background-color: #E4E1E1;
-    border-style: none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.inpsub {
-    width: 10vw;
-    height: 4vw;
-    margin-top: 5vw;
-    border-radius: 1vw;
-    font-size: 1.25vw;
-    background-color: #E4E1E1;
-    border-style: none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}

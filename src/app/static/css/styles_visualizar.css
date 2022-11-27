@@ -136,7 +136,22 @@ tr {
 }
 
 .chart {
-    margin: 2vh auto 5vh;
-    width: auto;
-    height: 50vh;
+    margin: 2vh 0vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1280px;
+    height: 40vh;
+    padding: 2rem 36rem 2rem 1rem;
+}
+
+.porta-grafico{
+    display: flex;
+    border: 0.2rem solid black; 
+    border-radius: 1rem; 
+    width:fit-content; 
+    height:75vh; 
+    background-color: #e4e1e1;
+    margin: 2vw auto;
+    padding: 0; 
+    padding-right: 4vw;
 }

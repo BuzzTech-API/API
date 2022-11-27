@@ -1,7 +1,7 @@
 // Criar gráficos
-function graficozao(tabela) {
-  function BuildChart(labels, values, chartTitle) {
-    let ctx = document.getElementById("myChart").getContext('2d');
+function graficozao(tabela, div_name, info) {
+  function BuildChart(labels, values, chartTitle,div_name) {
+    let ctx = document.getElementById(`${div_name}`).getContext('2d');
     let myChart = new Chart(ctx, {
       type: 'doughnut',
       data: {
@@ -40,31 +40,17 @@ function graficozao(tabela) {
     });
     return myChart;
   }
-  
 
-    var json = [];
-    for (var i = 0; i < tabela.length; i++) {
-    var rowData = {
-        id:`${tabela[i][0]}`,
-        data:tabela[i][5],
-        laboratorio:tabela[i][8],
-        computador: tabela[i][9],
-        problema:tabela[i][2],
-        descrição:tabela[i][3],
-        status:tabela[i][4]
-    };
-    json.push(rowData);
-    }
     // Map JSON values back to label array
-    var labels = [...new Set(json.map(item => item.problema))]; // Pegando os distintos status
+    var labels = [...new Set(tabela.map(item => item[info]))]; // Pegando os distintos status
     
     // Map JSON values back to values array
     var values = labels.map(function (labels) {
-        e = json.filter(item => item.problema === labels).length;
+        e = tabela.filter(item => item[info] === labels).length;
         return e;
     });
 
-    var chart = BuildChart(labels, values, "Status de chamado");
+    var chart = BuildChart(labels, values, "Problemas dos chamados", div_name);
 }
 
 

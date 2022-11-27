@@ -1,19 +1,8 @@
 {% extends 'base.html'%}
 {%block title%}TECHELP - Home{% endblock %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/styles-home.css')}}">
-    
-    <script defer type="text/javascript" src="../static/js/java.js"></script>
-    <title>TECHELP - Home</title>
-</head>
-<body class="fundoH">
+
     <div class="centroH">
         <div class="hexcentroH">
             <a href="/lab"><img class="logoH" src="../static/img/Hexagono.png" alt="hexagono">
@@ -21,22 +10,6 @@
             </a>
         </div>
     </div>
-    <!-- Modal Técnico -->
-    <div class="bg-modalH">
-        <div class="modal-content-loginH">
-            <div class="closeH" onclick="fechar()">+</div>
-            <h1>Login Técnico</h1>
 
-            <form action="loginH" method="post">
-                <label for="" class="inploginH">E-mail:</label>
-                <br><input class="inpH" type="email" name="email" placeholder="Digite seu e-mail">
-                <br><label for="" class="inploginH">Senha:</label>
-                <br><input class="inpH" type="password" name="password" placeholder="Sua senha">
-                <br><input class="inpsubH" type="submit" value="Entrar">
-            </form>
 
-        </div>
-    </div>
-</body>
 {% endblock %}
-</html>

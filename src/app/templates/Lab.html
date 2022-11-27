@@ -11,9 +11,10 @@
   </style>
   <body>
     <main>
-      
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/edit.css') }}">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/Lab_Main.css')}}">
       <section class="lab_geral">
-        <container class="local">
+        <container class="local1 local">
           <div class="rotulo">Laboratório {{lab}}</div>
           <center>
             <div class="editarea">

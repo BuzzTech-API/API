@@ -55,17 +55,25 @@
         {% endfor %}
     </div>
 </div>
+<div class="porta-grafico">
 
-<div class="chart">
-    <canvas id="myChart"></canvas>
+    <div class="chart">
+        <canvas id="myChart"></canvas>
+        <canvas id="myChart1"></canvas>
+        <canvas id="myChart2"></canvas>
+        <canvas id="myChart3"></canvas>
+    </div>
+    
 </div>
-
 <!-- JS dos gráficos -->
 <script src="../static/js/graph.js"></script>
 <script>
     // Criar gráficos
         var tabela = {{tabela|tojson}}
-        graficozao(tabela)
+        graficozao(tabela, "myChart", 2)
+        graficozao(tabela, "myChart1", 8)
+        graficozao(tabela, "myChart2", 5)
+        graficozao(tabela, "myChart3", 4)
         
 </script>
 {% endblock %}

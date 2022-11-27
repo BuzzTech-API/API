@@ -75,8 +75,8 @@ def visualizar():
 
     # esse if request.method é para a função de filtrar os chamados por status
     status = request.form.get('status')
-    if request.method == 'POST' and status!='Todos':
-        tabela=filtrar_status(status)
+    if request.method == 'POST' and status != 'Todos':
+        tabela = filtrar_status(status)
     else:
         tabela = visualizar_chamados()
 
@@ -88,6 +88,8 @@ def visualizar():
 
 
 # rota que deleta o chamdo do id que você colocar no caminho por ex:/deletar/2 vai deletar o chamado de id 2
+
+
 @app.route('/deletar/<int:id>')
 def deletar(id):
     """Função que deleta chamado"""

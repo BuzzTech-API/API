@@ -126,3 +126,16 @@ tr {
     background-color: rgb(255, 118, 118);
     border-radius: 8px;
 }
+
+/* {
+border-collapse: separate;
+border-spacing: 10px 10px;
+width: 90%;
+margin: 30px 0;
+} */
+
+.chart {
+    margin: 2vh auto 5vh;
+    width: auto;
+    height: 50vh;
+}

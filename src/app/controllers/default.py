@@ -1,11 +1,18 @@
 from app import app, db
-from flask import render_template, redirect, url_for, request
+from flask import render_template, redirect, url_for, request, flash
 from app.models.model import Chamado, User, Object
 from flask_login import logout_user
 import datetime
+
 # Funções de interação com o banco de dados está fora do arquivo para melhor a legibilidade do código
-from app.controllers.conection import dell, update_call, user_login, insert, update_object, delete_object, mostrar_chamado_aberto, visualizar_chamados, filtrar_status, laboratorios
+from app.controllers.conection import dell, update_call, user_login, insert, update_object, delete_object, mostrar_chamado_aberto,visualizar_chamados,filtrar_status, laboratorios, mudar_spc
 import mysql.connector
+
+
+
+
+
+
 
 
 @app.route("/index")
@@ -13,6 +20,10 @@ import mysql.connector
 def homepage():
     """Função e rota da página home"""
     return render_template("home.html")
+
+
+
+
 
 
 # função de alteração de especificação para a RAM, processador e SO
@@ -30,10 +41,20 @@ def especificacao(lab, comp):
     return redirect(f'/{lab}/{comp}/seleção_problemas')
 
 
+
+
+
+
 # pag obrigado
 @app.route("/obrigado")
 def obrigado():
     return render_template("obrigado.html")
+
+
+
+
+
+
 
 
 # pag de contatos
@@ -42,11 +63,16 @@ def contatos():
     return render_template("contatos.html")
 
 
+
+
+
+
+
 # função e rota para visualizar os chamados
 @app.route("/visualizar/", methods=["POST", "GET"])
 def visualizar():
     """Função e rota de visualização dos chamados"""
-    tabela = visualizar_chamados()
+
     # esse if request.method é para a função de filtrar os chamados por status
     status = request.form.get('status')
     if request.method == 'POST' and status != 'Todos':
@@ -56,6 +82,11 @@ def visualizar():
 
     return render_template("visualizar.html", tabela=tabela)
 
+
+
+
+
+
 # rota que deleta o chamdo do id que você colocar no caminho por ex:/deletar/2 vai deletar o chamado de id 2
 
 
@@ -64,6 +95,10 @@ def deletar(id):
     """Função que deleta chamado"""
     dell(Chamado, id)
     return redirect("/visualizar")
+
+
+
+
 
 
 # função de atualizar o chamado do id informado que vai entrar em uma pagina para a pessoa preencher as modificações e assim vai pegar as informações e atualizar no banco de dados
@@ -78,31 +113,10 @@ def atualizar(id):
     return render_template("atualizar.html", chamado=r, comp=l)
 
 
-@app.route('/cadastrar_login', methods=['GET', 'POST'])
-def cadastrar_login():
-    if request.method == 'POST':
-        params = {
-            'name': request.form['name'],
-            'email': request.form['email'],
-            'password': request.form['password']
-        }
-        insert(User, params)
-        return redirect(url_for('login'))
-    return render_template('cadastrar.html')
 
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        user_login(request.form['email'], request.form['password'])
-        return redirect(url_for('homepage'))
-    return render_template('login.html')
 
 
-@app.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('homepage'))
 
 
 # Rota de portas
@@ -110,6 +124,13 @@ def logout():
 def comp(lab):
     lista = mostrar_chamado_aberto(lab)
     return render_template('Lab.html', lab=lab, elmnts=lista)
+
+
+
+
+
+
+
 
 
 # Rota de laboratorio
@@ -121,6 +142,32 @@ def lab():
         if item[0] not in labs:
             labs.append(item[0])
     return render_template('Portas.html', labs=labs)
+
+
+
+
+
+# Rota da página HTML mudar_especificacao (não existe botão que chegue nesse HTML)
+# Página HTML criada para mudar todos os computadores de cada sala com um único comando
+@app.route('/mudar_especificacao', methods=["POST", "GET"])
+def mudar_especificacao():
+    l = laboratorios()
+    labs = []
+    for item in l:
+        if item[0] not in labs:
+            labs.append(item[0])
+    
+    if request.method=='POST':
+        sala = request.form['salalist']
+        sistema_operacional = request.form['sistema_operacional']
+        processador = request.form['processador']
+        ram = request.form['ram']
+        mudar_spc(sala, sistema_operacional, processador, ram)
+
+    return render_template('mudar_especificacao.html', labs=labs)
+
+
+
 
 
 # Rota de seleção dos problemas
@@ -143,6 +190,14 @@ def seleção_problemas(lab, comp):
     return render_template('Seleção de Problemas.html', lab=lab, comp=l)
 
 
+
+
+
+
+
+
+
+
 @app.route('/editar', methods=['POST', 'GET'])
 def editar():
     l = laboratorios()
@@ -152,6 +207,16 @@ def editar():
             labs.append(item[0])
 
     return render_template('edit.html', labs=labs)
+
+
+
+
+
+
+
+
+
+
 
 
 @app.route('/edited', methods=['POST', 'GET'])
@@ -190,14 +255,14 @@ def edited():
                         }
                         insert(Object, params)
 
-                msg = "Sala criada com sucesso"
+                flash("Sala criada com sucesso")
 
             elif (request.form['actiontype'] == "del"):
                 nome = request.form['salalist']
                 lay = Object.query.filter_by(Object_lab=nome).all()
                 for item in lay:
                     dell(Object, item.id)
-                msg = "Deletada com sucesso"
+                flash("Deletada com sucesso")
 
             elif (request.form['actiontype'] == "save"):
                 nome = request.form['salalist']
@@ -210,7 +275,7 @@ def edited():
                 lay = Object.query.filter_by(Object_lab=nome).all()
                 delete_object(elements, lay)
 
-                msg = "Sala modificada com sucesso"
+                flash("Sala modificada com sucesso")
 
             elif (request.form['actiontype'] == "load"):
 
@@ -220,10 +285,10 @@ def edited():
                 for item in lay:
                     elmnts.append(item.Object_div)
 
-                msg = "Sala carregada com sucesso"
+                flash("Sala carregada com sucesso")
 
         except:
-            msg = ("ERRO")
+            flash("ERRO")
 
         finally:
             lay = Object.query.order_by(Object.Object_lab)
@@ -231,4 +296,62 @@ def edited():
             for item in lay:
                 if item.Object_lab not in labs:
                     labs.append(item.Object_lab)
-            return render_template("edit.html", labs=labs, selected=selected, msg=msg, elmnts=elmnts)
+            return render_template("edit.html", labs=labs, selected=selected, elmnts=elmnts)
+
+
+
+
+
+
+
+
+
+
+@app.route('/cadastrar_login', methods=['GET', 'POST'])
+def cadastrar_login():
+    if request.method == 'POST':
+        params = {
+            'name': request.form['name'],
+            'email': request.form['email'],
+            'password': request.form['password']
+        }
+        insert(User, params)
+        return redirect(url_for('login'))
+    return render_template('cadastrar.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        user_login(request.form['email'], request.form['password'])
+
+        return redirect(url_for('homepage'))
+    return render_template('login.html')
+
+
+
+
+
+
+
+
+
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    flash('Deslogado com Sucesso')
+    return redirect(url_for('homepage'))
+

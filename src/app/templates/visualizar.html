@@ -4,6 +4,10 @@
 
 <head>
     <link rel="stylesheet" href="{{url_for('static', filename='css/styles_visualizar.css')}}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+
+
 </head>
 
 <!-- Aqui temos a tabela de visualização-->
@@ -53,4 +57,9 @@
         {% endfor %}
     </div>
 </div>
+<div class="chart">
+    <canvas id="myChart"></canvas>
+</div>
+
+<script src="../static/js/graph.js"></script> <!-- JS dos gráficos -->
 {% endblock %}

@@ -1,16 +1,16 @@
 from app import db
 from app.models.model import Chamado, User, Object
-from flask import render_template, redirect, url_for, request
+from flask import render_template, redirect, url_for, request, flash
 from flask_login import login_user
 from datetime import datetime
 import mysql.connector
 
 conexao = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='',
+    host='35.174.216.24',
+    user='fatec',
+    password='fatec',
     database='api',
-    port=5523,
+    port=3306,
 )
 cursor = conexao.cursor()
 
@@ -33,6 +33,12 @@ def insert(Model, params):
 def dell(Model, id):
     '''Função de deletar de tupla no banco'''
     r = Model.query.filter_by(id=id).first()
+    if Model == Object:
+        comando=f"SELECT Object_id FROM calls WHERE Object_id={id}"
+        l = executar_busca(comando)
+        if len(l)!=0:
+            return flash(f'Existe um chamado registrado no computador {r.Object_compname} no laboratório {r.Object_lab}, por isso não foi possível excluir ele')
+    
     db.session.delete(r)
     db.session.commit()
     return
@@ -55,8 +61,8 @@ def user_login(email, password):
     user = User.query.filter_by(email=email).first()
 
     if user and user.verify_password(password):
-        print(user.verify_password(password))
         login_user(user)
+        flash('Logado com Sucesso')
         return redirect(url_for('visualizar'))
     return "Usuário não existe"
 
@@ -162,26 +168,31 @@ def mostrar_chamado_aberto(lab):
     return lista
 
 def visualizar_chamados():
-    conexao.reconnect()
     comando = f'SELECT calls.*, object.id, object.Object_lab, object.Object_compname from calls, object WHERE calls.Object_id=object.id'
-    cursor = conexao.cursor()
-    cursor.execute(comando)
-    l = cursor.fetchall()
-    return l
+    return executar_busca(comando)
 
 def filtrar_status(status):
-    conexao.reconnect()
     comando = f'SELECT calls.*, object.id, object.Object_lab, object.Object_compname from calls, object WHERE calls.Object_id=object.id and calls.status="{status}"'
-    cursor = conexao.cursor()
-    cursor.execute(comando)
-    l = cursor.fetchall()
-    return l
+    return executar_busca(comando)
 
 def laboratorios():
-    conexao.reconnect()
     comando = f'SELECT Object_lab from object'
+    l = executar_busca(comando)
+    l.sort()
+    return l
+
+
+def executar_busca(comando):
+    conexao.reconnect()
     cursor = conexao.cursor()
     cursor.execute(comando)
-    l = cursor.fetchall()
-    print(l)
-    return l
+    return cursor.fetchall()
+
+# Mudar as especificações dos computadores nas salas dentro do HTML mudar_especificacao
+def mudar_spc(sala, sistema_operacional, processador, ram):
+    conexao.reconnect()
+    cursor = conexao.cursor()
+    comando=f"UPDATE object SET Object_comp_processor = '{processador}', Object_comp_RAM='{ram}', Object_comp_operational_system = '{sistema_operacional}' WHERE Object_lab={sala} AND Object_compname NOT IN ('')"
+    cursor.execute(comando)
+    conexao.commit()
+    return

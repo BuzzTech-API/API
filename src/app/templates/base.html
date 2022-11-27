@@ -35,7 +35,7 @@
 
 <body class="fundo">
     <div class="barrasup">
-        <img class="logo" src="{{url_for('static', filename='img/Logo.png')}}" alt="logo">
+        <a href="{{url_for('homepage')}}"><img class="logo" src="{{url_for('static', filename='img/Logo.png')}}" alt="logo"></a>
         <img class="techelp" src="{{url_for('static', filename='img/techelp.png')}}" alt="techelp">
         {% if current_user.is_authenticated %}
         <div class="buttons">

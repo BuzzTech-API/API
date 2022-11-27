@@ -91,6 +91,22 @@
     
 }
 
+@media only screen and (max-wiith:1280px){
+    .butTxtH {
+        text-align: center !important;
+        color: #A90405 !important;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+        font-size: 15mm;
+        text-decoration: none;
+        position: absolute;
+        display: flex;
+        margin-top: -240px;
+        width: 200px;
+        margin-left: 400px;
+        background-color: blue;
+    } 
+}
+
 .hexagH {
     height: 250px;
     width: 250px;

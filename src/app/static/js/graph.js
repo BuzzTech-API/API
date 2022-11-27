@@ -42,14 +42,7 @@ function graficozao(tabela) {
   }
   
 
-  // Ler a tabela
-  // var table = document.getElementById('dataTable');
-    var json = []; // First row needs to be headers 
-    var headers =[];
-    for (var i = 0; i < tabela.length; i++) {
-    headers[i] = tabela[i][2];
-    }
-    // Go through cells 
+    var json = [];
     for (var i = 0; i < tabela.length; i++) {
     var rowData = {
         id:`${tabela[i][0]}`,

@@ -4,7 +4,7 @@ from app.models.model import Chamado, User, Object
 from flask_login import logout_user
 import datetime
 # Funções de interação com o banco de dados está fora do arquivo para melhor a legibilidade do código
-from app.controllers.conection import dell, update_call, user_login, insert, update_object, delete_object, mostrar_chamado_aberto,visualizar_chamados,filtrar_status, laboratorios
+from app.controllers.conection import dell, update_call, user_login, insert, update_object, delete_object, mostrar_chamado_aberto, visualizar_chamados, filtrar_status, laboratorios
 import mysql.connector
 
 
@@ -49,14 +49,16 @@ def visualizar():
     tabela = visualizar_chamados()
     # esse if request.method é para a função de filtrar os chamados por status
     status = request.form.get('status')
-    if request.method == 'POST' and status!='Todos':
-        tabela=filtrar_status(status)
+    if request.method == 'POST' and status != 'Todos':
+        tabela = filtrar_status(status)
     else:
         tabela = visualizar_chamados()
 
     return render_template("visualizar.html", tabela=tabela)
 
 # rota que deleta o chamdo do id que você colocar no caminho por ex:/deletar/2 vai deletar o chamado de id 2
+
+
 @app.route('/deletar/<int:id>')
 def deletar(id):
     """Função que deleta chamado"""

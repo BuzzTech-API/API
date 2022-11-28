@@ -6,11 +6,17 @@ from datetime import datetime
 import mysql.connector
 
 conexao = mysql.connector.connect(
+<<<<<<< Updated upstream
     host='localhost',
     user='root',
     password='',
+=======
+    host='35.174.216.24',
+    user='fatec',
+    password='fatec',
+>>>>>>> Stashed changes
     database='api',
-    port=5523,
+    port=3306,
 )
 cursor = conexao.cursor()
 

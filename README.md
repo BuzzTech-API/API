@@ -43,33 +43,29 @@
 <br>
 <br>
 
-> Status do Projeto: Em construção :construction:
+> Status do Projeto: Concluído! :white_check_mark:
 
 <br>
 
 
 
-### 	:wrench: Layout editável
+### 	:art: Identificações visuais
 
-<img src="doc/sprints/sprint3/img/teste/layout editável.gif" alt="Burndown" style="zoom: 150%;" />
-
-
-
-### :microscope: Layout dos laboratórios
-
-<img src="doc/sprints/sprint3/img/teste/layout dos labs.gif" alt="Burndown" style="zoom: 150%;" />
+<img src="doc/sprints/sprint4/img/idVisual.gif" alt="aprimoramento da identidade visual" style="zoom: 150%;" />
 
 
 
-### 	:electric_plug: Componentes editáveis
+### :telephone: Contatos
 
-<img src="doc/sprints/sprint3/img/teste/componentes editáveis.gif" alt="Burndown" style="zoom: 150%;" />
+<img src="doc/sprints/sprint4/img/contatos.gif" alt="criação da páginad de contatos" style="zoom: 150%;" />
 
 
 
-### :calling: Confirmação de chamado enviado
+### 	:traffic_light: Modificar status
 
-<img src="doc/sprints/sprint3/img/teste/confirmação de envio.gif" alt="Burndown" style="zoom: 150%;" />
+<img src="doc/sprints/sprint4/img/status.gif" alt="modificação do status do chamado" style="zoom: 150%;" />
+
+
 
 
 
@@ -154,7 +150,7 @@ As instruções de como instalar e rodar a aplicação estão na [documentação
 
 🔖 SPRINT 3 ([Link da Pasta](doc/sprints/sprint3)):  Concluído :white_check_mark:
 
-🔖 SPRINT 4 ([Link da Pasta](doc/sprints/sprint4)):  Em construção :construction:
+🔖 SPRINT 4 ([Link da Pasta](doc/sprints/sprint4)):  Em construção :white_check_mark:
 
 <br>
 
@@ -183,10 +179,10 @@ As instruções de como instalar e rodar a aplicação estão na [documentação
 |          Tornar  o layout dos laboratórios editável          | Fazer  com que o layout do laboratório possa ser editável em relação ao design e  disposição de todos os itens: computadores, mesa, servidores e lousa. | <a href='#us15'>US15</a>, <a href='#us22'>US22</a> |    Alta    |   3    |          13h          | :white_check_mark: |
 |    Possibilitar a edição das características das máquinas    | Possibilitar que detalhes do computador sejam alterados e armazenados: processador, RAM e sistema operacional. |              <a href='#us23'>US23</a>              |    Alta    |   3    |          10h          | :white_check_mark: |
 | Conectar o Banco de Dados com o layout do laboratório e informações das máquinas | Criar funções para que o banco de dados consulte e persista o que o técnico salvar durante as edições de layout do laboratório, bem como as alterações das carecterísticas dos computadores. |              <a href='#us10'>US10</a>              |    Alta    |   3    |          20h          | :white_check_mark: |
-|       Aprimoramento da identificação dos computadores        | Abertura  de um canal para possibilizar que detalhes do computador sejam alterados e armazenados. Por exemplo, alterar as especificações  dos computadores. |              <a href='#us16'>US16</a>              |    Alta    |   4    |          10h          |   :construction:   |
-|              Criação de identificações visuais               | Criar  possibilidades visuais dessas indicações e sinalizar esses defeitos e sugerir ao cliente. |              <a href='#us17'>US17</a>              |    Alta    |   4    |          10h          |   :construction:   |
-|       Criação de uma página home e página de contatos        | Criar  página de detalhamento da funcionalidade do sistema e uma página de contato |              <a href='#us18'>US18</a>              |   Baixa    |   4    |          5h           |   :construction:   |
-|    Aprimoramento da Identidade e Unidade Visual da Página    | Fazer a  atualização visual de todo o sistema aproximando-o do wireframe  apresentado |              <a href='#us19'>US19</a>              |   Baixa    |   4    |          20h          |   :construction:   |
+|              Finalizar  identificações visuais               | Criar  possibilidades visuais dessas indicações   sinalizar esses defeitos e sugerir ao cliente. |              <a href='#us13'>US13</a>              |    Alta    |   4    |          30h          | :white_check_mark: |
+|              Criação  de uma página de contatos              | Criar  página de detalhamento da funcionalidade do sistema e uma página de contato |              <a href='#us17'>US17</a>              |   Baixa    |   4    |          5h           | :white_check_mark: |
+| Função  de alteração do status do chamado na área do tecnico | Página  home clicável com detalhamentos e página de contatos também clicável com os  meios de contato (telefone e e-mail) |              <a href='#us18'>US18</a>              |   Média    |   4    |          13h          | :white_check_mark: |
+|                   Testes e  correções</a>                    | Testes em todas as funcionalidades do sistema para identificação e correção de qualquer possível erro. |                <a href='#us14'></a>                |    Alta    |   4    |          20h          | :white_check_mark: |
 
 <br>
 
@@ -194,7 +190,7 @@ As instruções de como instalar e rodar a aplicação estão na [documentação
 
 
 
-![Roadmap - Backlog do Produto](doc/frontend/roadmap2.png)
+![Roadmap - Backlog do Produto](doc/frontend/roadmap4.png)
 
 <br>
 

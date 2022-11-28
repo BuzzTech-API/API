@@ -9,25 +9,33 @@
 
 
 .centro {
-    height: 300px;
+    height: 50vw;
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 10vw;
     background-repeat: no-repeat;
     background-position: center;
-    position: fixed;
+    position: absolute;
+    top: 25vw;
 }
 .espaçonessaporra{
     margin-bottom: 7vw;
 }
+
+.tipobut{
+    height:37.1vw;
+    width:37vw;
+    position: absolute;
+    top: 6.5vw;
+    left: 31vw;
+}
 .software {
     position: absolute;
-    margin-left: -330px;
-    font-size: 45px;
-    margin-top: -31px;
+    left: 3.6vw;
+    font-size: 4vw;
+    top: 22.5vw;
     color: #555555;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -39,6 +47,9 @@
 .computador {
     height: 10vw;
     width: 10vw;
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
 }
 
 .compos {
@@ -53,9 +64,9 @@
 
 .hardware {
     position: absolute;
-    margin-left: 145px;
-    margin-top: -30px;
-    font-size: 45px;
+    left: 81vw;
+    top: 22.5vw;
+    font-size: 4vw;
     color: #555555;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-decoration: none;
@@ -81,6 +92,9 @@ a:active {
 .linha {
     z-index: -1;
     position: absolute;
+    width:55vw;
+    size: 2vw;
+    border: 1vw solid #555555;
 }
 
 .dados {
@@ -91,24 +105,29 @@ a:active {
 
 }
 
-.computador {
-    height: 10vw;
-    width: 10vw;
-}
-
-
 .circuloE {
     fill: #555555;
-    position: fixed;
-    margin-left: -300px;
+    left: 20vw;
+    top: 23vw;
 }
 
 .circuloD {
     fill: #555555;
-    position: fixed;
-    margin-left: 300px;
+    left: 77vw;
+    top: 23vw;
+}
+.fonte{
+ font-size: 1.5vw;
 }
 
+.dot {
+    height: 4vw;
+    width: 4vw;
+    background-color: #555555;
+    border-radius: 50vw;
+    position: absolute;
+    display: inline-block;
+  }
 
 .paozinho1{
     position: absolute;
@@ -119,20 +138,21 @@ a:active {
 }
 .subclasse{
     background-color: #E4E1E1;
-    border-radius: 25px;
+    border-radius: 1vw;
     text-align: center;
-    border: 1px solid black;
+    border: 0.1vw solid black;
+    padding: 0.2vw;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: 15vw;
     height: 2vw;
 }
 .subclasse1{
     background-color: #E4E1E1;
-    border-radius: 25px;
-    border-width: 1px;
+    border-radius: 1vw;
+    border-width: 0.1vw;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    width: 5vw;
+    width: 6vw;
     height: 2vw;
 }
 
@@ -140,80 +160,82 @@ a:active {
     background-color: #cacaca;
 }
 
-.mudadisplay{
-    display: inline-block;
-}
 .flutadireita{
     float: right;
 }
+
+.padinzin{
+    padding: 0vw;
+}
+
 .nome123{
     position: absolute;
-    top: 0vw;
-    left: 0vw;
+    top: 0.3vw;
+    left: 5vw;
     margin: 0%;
 }
 
 .nome12{
     position: absolute;
-    top: 0vw;
-    left: 4vw;
+    top: 0.5vw;
+    left: 11vw;
     margin: 0%;
 }
 
 .local12{
     position: absolute;
-    top: 0vw;
-    left: 24vw;
+    top: 0.3vw;
+    left: 27vw;
     margin: 0%;
 }
 
 .local13{
     position: absolute;
-    top: 0vw;
-    left: 28vw;
-    margin: 0%;
+    top: 0.5vw;
+    left: 32vw;
+    margin: 0%
 }
 
 .local14{
     position: absolute;
-    top: 7vw;
-    left: 0vw;
+    top: 7.1vw;
+    left: 1vw;
     margin: 0%;
 }
 .local15{
     position: absolute;
-    top: 7vw;
-    left: 8vw;
+    top: 7.5vw;
+    left: 11vw;
     margin: 0%;
 }
 .local16{
     position: absolute;
-    top: 7vw;
-    left: 24vw;
+    top: 7.5vw;
+    left: 27vw;
     margin: 0%;
 }
 .local17{
     position: absolute;
-    top: 7vw;
-    left: 28vw;
+    top: 7.5vw;
+    left: 32vw;
     margin: 0%;
 }
 .local18{
     position: absolute;
-    top: 7vw;
-    left: 44vw;
+    top: 7.5vw;
+    left: 48vw;
     margin: 0%;
 }
 .local19{
     position: absolute;
-    top: 3.5vw;
-    left: 10vw;
+    top: 3.7vw;
+    left: 17vw;
     margin: 0%;
 }
 .local20{
     position: absolute;
-    top: 3.5vw;
-    left: 15vw;
+    top: 3.9vw;
+    left: 21vw;
     margin: 0%;
 }
 
@@ -227,9 +249,8 @@ a:active {
 
 .inputBase2 {
     background-color: #E4E1E1;
-    border-radius: 25px;
+    border-radius: 1vw;
     text-align: center;
-    border-width: 0.5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: 15vw;
     height: 2vw;
@@ -237,84 +258,96 @@ a:active {
 
 
 .nome {
-    margin-left: -19.6vw;
-    margin-top: 1vw;
+    top: 13.1vw;
+    left: 43.5vw;
+    position: absolute;
 }
 
 .EsNome {
-    border: 1px solid black;
-    margin-left: 40.5vw;
-    margin-top: -1.9vw;
-
+    top: 13.5vw;
+    left: 49.5vw;
+    position: absolute;
+    border: 0.1vw solid black;
 }
 
 .l {
-    margin-left: 20vw;
-    margin-top: -1.9vw;
+    left: 70.5vw;
+    top: 13.1vw;
+    position: absolute;
 }
 
 .ll {
-    border: 1px solid black;
-    margin-left: 60vw;
-    margin-top: -1.9vw;
+    border: 0.1vw solid black;
+    left: 76vw;
+    top: 13.5vw;
+    position: absolute;
 
 
 }
 
 .so {
-    margin-left: 2vw;
-    margin-top: 1vw;
+    left: 53.5vw;
+    top: 16.7vw;
+    position: absolute;
 }
 
 .sso {
-    border: 1px solid black;
-    margin-left: 50.7vw;
-    margin-top: -2vw;
+    border: 0.1vw solid black;
+    left: 58.5vw;
+    top: 16.9vw;
+    position: absolute;
 
 }
 
 .processador {
-    margin-left: -18vw;
-    margin-top: 1vw;
+    left: 39.5vw;
+    top: 20.1vw;
+    position: absolute;
 }
 
 .pr {
-    border: 1px solid black;
-    margin-left: 43vw;
-    margin-top: -1.9vw;
+    border: 0.1vw solid black;
+    left: 49.5vw;
+    top: 20.5vw;
+    position: absolute;
 
 }
 
 .ram {
-    margin-left: 26vw;
-    margin-top: -1.9vw;
+    left: 70.5vw;
+    top: 20.1vw;
+    position: absolute;
 }
 
 .rm {
-    border: 1px solid black;
-    margin-left: 63vw;
-    margin-top: -1.9vw;
+    border: 0.1vw solid black;
+    left: 76vw;
+    top: 20.5vw;
+    position: absolute;
 
 }
 
 
 .pos1 {
     display: flex;
-    margin-top: -10vw;
-    margin-left: 39vw;
+    left: 38.5vw;
+    top: 17.1vw;
+    position: absolute;
 }
 
 .pos2 {
     display: flex;
-    margin-left: -28vw;
-    margin-top: -7vw;
+    left: 38.5vw;
+    top: 17.1vw;
+    position: absolute;
 
 }
 
 .pos3 {
     display: flex;
-    margin-left: -32.2vw;
-    margin-top: -4vw;
+    left: 38.5vw;
+    top: 17.1vw;
+    position: absolute;
 }
 
 
@@ -336,7 +369,7 @@ a:active {
 
 .inputBase {
     background-color: #E4E1E1;
-    border-radius: 25px;
+    border-radius: 1vw;
     text-align: center;
     border-width: 0.5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -350,35 +383,30 @@ a:active {
     margin-bottom: 1vw;
 }
 
-.EsNome {
-    border: 1px solid black;
-
-}
-
 .EsLocal {
     margin-left: 15.9vw;
     margin-top: -2vw;
-    border: 1px solid black;
+    border: 0.1vw solid black;
 
 }
 
 .EsSo {
     margin-left: 7.8vw;
     margin-top: 1vw;
-    border: 1px solid black;
+    border: 0.1vw solid black;
 
 }
 
 .EsProcessador {
     margin-top: 1.5vw;
-    border: 1px solid black;
+    border: 0.1vw solid black;
 
 }
 
 .EsRam {
     margin-left: 15.9vw;
     margin-top: -2vw;
-    border: 1px solid black;
+    border: 0.1vw solid black;
 
 }
 
@@ -498,7 +526,7 @@ a:active {
     padding: 2rem;
     position: relative;
     border: 0.1rem solid black;
-    border-radius: 20px;
+    border-radius: 1vw;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     z-index: 5;
 }
@@ -558,7 +586,7 @@ a:active {
     text-align: center;
     padding: 20px;
     position: relative;
-    border-radius: 20px;
+    border-radius: 1vw;
     display: none;
 }
 
@@ -575,7 +603,7 @@ a:active {
 .btnn {
     width: 10vw;
     height: 4vh;
-    border-radius: 100px;
+    border-radius: 1vw;
     border: none;
     background-color: rgb(212, 212, 212);
     cursor: pointer;
@@ -590,7 +618,7 @@ a:active {
 .descrição {
     resize: none;
     padding: 1vw;
-    border-radius: 2vw;
+    border-radius: 1vw;
     text-align: justify;
     font-family: 'Trebuchet MS';
     font-size: 2vw;
@@ -612,7 +640,7 @@ a:active {
     text-align: center;
     padding: 20px;
     position: relative;
-    border-radius: 20px;
+    border-radius: 1vw;
     display: none;
 }
 
@@ -648,7 +676,7 @@ a:active {
 
 .nn {
     width: 200px;
-    border-radius: 100px;
+    border-radius: 1vw;
     border: none;
     background-color: rgb(212, 212, 212);
     cursor: pointer;
@@ -665,7 +693,7 @@ a:active {
 
 .nn2 {
     width: 200px;
-    border-radius: 100px;
+    border-radius: 1vw;
     margin: 1.5vw;
     border: none;
     background-color: rgb(212, 212, 212);

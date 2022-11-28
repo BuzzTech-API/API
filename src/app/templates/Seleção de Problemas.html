@@ -12,23 +12,16 @@
     <div class="">
         
         <div class="paozinho1">
-            <div >
-                <p class="mudadisplay nome123">Nome: <p class="mudadisplay nome12 subclasse">{{comp.Object_compname}}</p></p>
-                <p class="mudadisplay local12">Local: <p class="mudadisplay local13  subclasse">{{comp.Object_lab}}</p></p>
-            </div>
-        </div>
-        <div class="paozinho1">
-            <p class="mudadisplay local19">S.O.:</p>
-            <p><input type="text" value="{{comp.Object_comp_operational_system}}" name="sistema_operacional" class="local20 subclasse"></p>    
-        </div>
-        <div class="paozinho1">
-            <p class="mudadisplay local14">Processador:</p>
-            <input type="text" value="{{comp.Object_comp_processor}}" name="processador" class="local15 subclasse">
-        </div>
-        <div class="paozinho1">
-            <p class="mudadisplay local16">RAM:</p>
-            <input type="text" value="{{comp.Object_comp_RAM}}" name="ram" class="local17 subclasse">
-            <input type="submit" class="local18 subclasse1">
+                <p class="fonte nome123">Nome: <p class="fonte nome12 subclasse padinzin">{{comp.Object_compname}}</p></p>
+                <p class="fonte local12">Local: <p class="fonte local13  subclasse padinzin">{{comp.Object_lab}}</p></p>
+                <p class="fonte local19">S.O.:</p>
+                <p><input type="text" value="{{comp.Object_comp_operational_system}}" name="sistema_operacional" class="fonte padinzin local20 subclasse"></p>    
+
+                <p class="fonte local14">Processador:</p>
+                <input type="text" value="{{comp.Object_comp_processor}}" name="processador" class="fonte local15 subclasse padinzin">
+                <p class="fonte local16">RAM:</p>
+                <input type="text" value="{{comp.Object_comp_RAM}}" name="ram" class="fonte local17 subclasse padinzin">
+                <input type="submit" class="fonte local18 subclasse1 padinzin">
         </div>
     </div>
 </form>
@@ -36,33 +29,34 @@
 <!-- Caso não esteja logado ** PARTE DA JOYCE **-->
 {% else %}
 <section>
-       <div class="compos">
-        <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
+        <div class="compos">
+            <img src="{{url_for('static', filename='img/computador.png')}}" alt="computador" class="computador">
         </div>
-        <div class="dados">
-            <p class="nome">Nome:</p> 
-        <div class="EsNome inputBase2">
-            <p>{{comp.Object_compname}}</p>
-        </div>
-            <p class="l">Local:</p>
-        <div class=" ll inputBase2">
-            <p>{{comp.Object_lab}}</p>
-        </div>
-             <p class="so">S.O.:</p>
-        <div class="sso inputBase2">
-            <p>{{comp.Object_comp_operational_system}}</p>
-        </div>
-            <p class="processador">Processador:</p>
-        <div class="pr inputBase2">
-            <p>{{comp.Object_comp_processor}}</p>
-        </div>
-            <p class="ram">RAM:</p>
-        <div class=" rm inputBase2">
-            <p>{{comp.Object_comp_RAM}}</p>
-        </div>
+            <div class="dados fonte">
+                <p class="nome">Nome:</p> 
+            <div class="EsNome inputBase2 padinzin">
+                <p>{{comp.Object_compname}}</p>
+            </div>
+                <p class="l">Local:</p>
+            <div class=" ll inputBase2 padinzin">
+                <p>{{comp.Object_lab}}</p>
+            </div>
+                <p class="so">S.O.:</p>
+            <div class="sso inputBase2 padinzin">
+                <p>{{comp.Object_comp_operational_system}}</p>
+            </div>
+                <p class="processador">Processador:</p>
+            <div class="pr inputBase2 padinzin">
+                <p>{{comp.Object_comp_processor}}</p>
+            </div>
+                <p class="ram">RAM:</p>
+            <div class=" rm inputBase2 padinzin">
+                <p>{{comp.Object_comp_RAM}}</p>
+            </div>
 
-    </div>
+        </div>
 </section>
+<div class="espaçonessaporra"></div>
 {% endif %}
 
     <!-- Botão Software -->
@@ -74,16 +68,16 @@
         <input id="problem1" class="software" name="problem" style="visibility: hidden;" value='Software'
             class="esconde" onclick="descrição()" type="radio" form="form2">
     </a>
-    <hr class="linha" size="6" width="600px" align="left" color="#555555">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="circuloE">
-        <circle cx="15" cy="15" r="15" />
+    <hr class="linha" align="left" color="#555555">
+    <svg xmlns="http://www.w3.org/2000/svg" class="circuloE">
+        <span class="dot circuloE"></span>
     </svg>
 
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="circuloD">
-        <circle cx="15" cy="15" r="15" />
+    <svg xmlns="http://www.w3.org/2000/svg" class="circuloD">
+        <span class="dot circuloD"></span>
     </svg>
 
-    <img class="" src="{{ url_for('static', filename='img/TipoBut.png') }}" alt="logo" height="370px" width="350px">
+    <img class="tipobut" src="{{ url_for('static', filename='img/TipoBut.png') }}" alt="logo">
  
     <!-- Botão Hardware -->
     <a href="#" id="botão-hardware">

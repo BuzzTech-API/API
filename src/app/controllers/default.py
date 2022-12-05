@@ -102,8 +102,8 @@ def deletar(id):
 
 
 # função de atualizar o chamado do id informado que vai entrar em uma pagina para a pessoa preencher as modificações e assim vai pegar as informações e atualizar no banco de dados
-@app.route('/atualizar/<int:id>', methods=["POST", "GET"])
-def atualizar(id):
+@app.route('/ver_mais/<int:id>', methods=["POST", "GET"])
+def ver_mais(id):
     r = Chamado.query.filter_by(id=id).first()
     l = Object.query.filter_by(id=r.Object_id).first()
     if request.method == "POST":

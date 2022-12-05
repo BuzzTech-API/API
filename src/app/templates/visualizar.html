@@ -23,8 +23,6 @@
         </select>
         <input type="submit" id="Enviar" value="Filtrar" class="att-enviar">
 
-
-
         <script type="text/javascript">
             document.getElementById('statusId').value = "<?php echo $_POST['status'];?>";
         </script>
@@ -33,7 +31,9 @@
 
     <!-- Aqui tem um for para conseguir colocar na tabela somente as informações da cada campo não o banco em formato de lista-->
     <div class="l-cards">
+        
         {% for i in tabela %}
+        
         <article class="c-card">
             <div class="card-content">
                 <h3>ID #{{i[0]}}</h3>
@@ -43,7 +43,7 @@
                     <h4 class="card-info">Computador: {{i[9]}}</h4>
                     <h4 class="card-info">Problema: {{i[2]}}</h4>
                     <h4 class="card-info">Status: {{i[4]}}</h4>
-                    <a class="card-vermais" href='/atualizar/{{i[0]}}'>
+                    <a class="card-vermais" href='/ver_mais/{{i[0]}}'>
                         <h4 class="card-vermais">Ver Mais</h4>
                     </a>
                     {% if current_user.is_authenticated %}
@@ -55,9 +55,25 @@
         {% endfor %}
     </div>
 </div>
-<div class="chart">
-    <canvas id="myChart"></canvas>
-</div>
+<div class="porta-grafico">
 
-<script src="../static/js/graph.js"></script> <!-- JS dos gráficos -->
+    <div class="chart">
+        <canvas id="myChart"></canvas>
+        <canvas id="myChart1"></canvas>
+        <canvas id="myChart2"></canvas>
+        <canvas id="myChart3"></canvas>
+    </div>
+    
+</div>
+<!-- JS dos gráficos -->
+<script src="../static/js/graph.js"></script>
+<script>
+    // Criar gráficos
+        var tabela = {{tabela|tojson}}
+        graficozao(tabela, "myChart", 2)
+        graficozao(tabela, "myChart1", 8)
+        graficozao(tabela, "myChart2", 5)
+        graficozao(tabela, "myChart3", 4)
+        
+</script>
 {% endblock %}

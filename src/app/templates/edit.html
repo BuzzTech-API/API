@@ -2,6 +2,7 @@
 {%block title%}Atualizar Chamado{% endblock %}
 {% block content %}
 
+<link rel="stylesheet" href="{{url_for('static', filename='css/Lab_Main.css')}}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/edit.css') }}">
 <style>
     .pc {
@@ -27,7 +28,7 @@
 
 
 <section class="lab_geral">
-<div class="local">
+<div class="local local1">
 <div class="rotulo">Laboratório</div>
 <center>
 <div class="editarea"><div class="pctablemaster">{% for row in elmnts %}{{row |safe}}{% endfor %}</div></div>
